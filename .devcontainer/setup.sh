@@ -42,6 +42,14 @@ sudo mysql -e "CREATE USER IF NOT EXISTS 'glpi'@'localhost' IDENTIFIED BY 'glpi'
 sudo mysql -e "GRANT ALL ON glpi.* TO 'glpi'@'localhost';"
 sudo mysql -e "FLUSH PRIVILEGES;"
 
+echo "==> Restauration de la base de données..."
+if [ -f /workspaces/glpi/.devcontainer/glpi_backup.sql ]; then
+  sudo mysql glpi < /workspaces/glpi/.devcontainer/glpi_backup.sql
+  echo "==> Base restaurée depuis le backup !"
+else
+  echo "==> Pas de backup trouvé, installation GLPI à faire via le navigateur."
+fi
+
 echo "==> Création du .htaccess..."
 sudo bash -c 'cat > /var/www/html/glpi/public/.htaccess <<HTEOF
 RewriteEngine On
