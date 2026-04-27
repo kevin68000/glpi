@@ -1,0 +1,9 @@
+{
+  "name": "GLPI",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "forwardPorts": [8080],
+  "portsAttributes": {
+    "8080": { "label": "GLPI", "onAutoForward": "notify" }
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh"
+}
