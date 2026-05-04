@@ -58,7 +58,7 @@ CREATE TABLE `glpi_agents` (
   KEY `entities_id` (`entities_id`),
   KEY `is_recursive` (`is_recursive`),
   KEY `item` (`itemtype`,`items_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,6 +67,8 @@ CREATE TABLE `glpi_agents` (
 
 LOCK TABLES `glpi_agents` WRITE;
 /*!40000 ALTER TABLE `glpi_agents` DISABLE KEYS */;
+INSERT INTO `glpi_agents` VALUES
+(1,'codespaces-695962-2026-05-04-12-19-17',0,0,'codespaces-695962-2026-05-04-12-19-17',1,'2026-05-04 12:33:38','1.17-1',0,'Computer',2,'GLPI-Agent_v1.17-1',NULL,NULL,'10.0.3.40',1,1,0,0,1,1,0,1,0,0,0,0);
 /*!40000 ALTER TABLE `glpi_agents` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -494,7 +496,7 @@ CREATE TABLE `glpi_autoupdatesystems` (
   `comment` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -504,7 +506,8 @@ CREATE TABLE `glpi_autoupdatesystems` (
 LOCK TABLES `glpi_autoupdatesystems` WRITE;
 /*!40000 ALTER TABLE `glpi_autoupdatesystems` DISABLE KEYS */;
 INSERT INTO `glpi_autoupdatesystems` VALUES
-(1,'Microsoft','');
+(1,'Microsoft',''),
+(2,'GLPI Native Inventory','');
 /*!40000 ALTER TABLE `glpi_autoupdatesystems` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1884,7 +1887,7 @@ CREATE TABLE `glpi_computermodels` (
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`),
   KEY `product_number` (`product_number`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1894,7 +1897,8 @@ CREATE TABLE `glpi_computermodels` (
 LOCK TABLES `glpi_computermodels` WRITE;
 /*!40000 ALTER TABLE `glpi_computermodels` DISABLE KEYS */;
 INSERT INTO `glpi_computermodels` VALUES
-(1,'OptiPlex - 7090','','',0,1,1,0,0,0,NULL,NULL,NULL,'2026-05-04 11:27:59','2026-05-04 11:27:11');
+(1,'OptiPlex - 7090','','',0,1,1,0,0,0,NULL,NULL,NULL,'2026-05-04 11:27:59','2026-05-04 11:27:11'),
+(2,'Virtual Machine','',NULL,0,1,1,0,0,0,NULL,NULL,NULL,'2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_computermodels` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1959,7 +1963,7 @@ CREATE TABLE `glpi_computers` (
   KEY `uuid` (`uuid`),
   KEY `date_creation` (`date_creation`),
   KEY `is_recursive` (`is_recursive`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1969,7 +1973,8 @@ CREATE TABLE `glpi_computers` (
 LOCK TABLES `glpi_computers` WRITE;
 /*!40000 ALTER TABLE `glpi_computers` DISABLE KEYS */;
 INSERT INTO `glpi_computers` VALUES
-(1,0,'PC-Direction-01','DELL-001','DELL-001','Kevin MEYER','',5,0,'','2026-05-04 11:34:18',0,5,1,1,1,0,NULL,1,0,0,5,0,5,0.0000,'','2026-05-04 11:18:10',0,NULL,NULL);
+(1,0,'PC-Direction-01','DELL-001','DELL-001','','',5,0,'','2026-05-04 11:51:20',0,5,1,1,1,0,NULL,1,0,0,0,0,5,0.0000,'','2026-05-04 11:18:10',0,NULL,NULL),
+(2,0,'codespaces-695962','0000-0010-6422-0099-2543-5504-87','7783-7084-3265-9085-8269-3286-77','wtmp',NULL,0,0,NULL,'2026-05-04 12:33:37',2,0,0,2,4,0,NULL,17,0,1,0,0,0,0.0000,'71e12d95-60a2-b040-93b0-b16afcde2c17','2026-05-04 12:33:37',0,'2026-05-04 12:33:37','2026-05-04 11:31:05');
 /*!40000 ALTER TABLE `glpi_computers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1992,7 +1997,7 @@ CREATE TABLE `glpi_computers_items` (
   KEY `item` (`itemtype`,`items_id`),
   KEY `is_deleted` (`is_deleted`),
   KEY `is_dynamic` (`is_dynamic`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2001,6 +2006,8 @@ CREATE TABLE `glpi_computers_items` (
 
 LOCK TABLES `glpi_computers_items` WRITE;
 /*!40000 ALTER TABLE `glpi_computers_items` DISABLE KEYS */;
+INSERT INTO `glpi_computers_items` VALUES
+(1,1,1,'Monitor',0,0);
 /*!40000 ALTER TABLE `glpi_computers_items` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2021,7 +2028,7 @@ CREATE TABLE `glpi_computertypes` (
   KEY `name` (`name`),
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2033,7 +2040,8 @@ LOCK TABLES `glpi_computertypes` WRITE;
 INSERT INTO `glpi_computertypes` VALUES
 (1,'Fixe','','2026-05-04 11:24:08','2026-05-04 11:24:08'),
 (2,'Portable','','2026-05-04 11:24:12','2026-05-04 11:24:12'),
-(3,'VM','','2026-05-04 11:24:15','2026-05-04 11:24:15');
+(3,'VM','','2026-05-04 11:24:15','2026-05-04 11:24:15'),
+(4,'Docker','','2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_computertypes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2344,7 +2352,7 @@ INSERT INTO `glpi_configs` VALUES
 (231,'core','initialized_rules_collections','[\"RuleImportAssetCollection\",\"RuleMailCollectorCollection\",\"RuleRightCollection\",\"RuleSoftwareCategoryCollection\",\"RuleTicketCollection\",\"RuleAssetCollection\",\"RuleDictionnaryOperatingSystemCollection\",\"RuleDictionnaryOperatingSystemVersionCollection\",\"RuleDictionnaryOperatingSystemEditionCollection\"]'),
 (232,'core','timeline_action_btn_layout','0'),
 (233,'core','timeline_date_format','0'),
-(234,'inventory','enabled_inventory','0'),
+(234,'inventory','enabled_inventory','1'),
 (235,'inventory','import_software','1'),
 (236,'inventory','import_volume','1'),
 (237,'inventory','import_antivirus','1'),
@@ -2379,7 +2387,7 @@ INSERT INTO `glpi_configs` VALUES
 (266,'inventory','import_printer','1'),
 (267,'inventory','import_peripheral','1'),
 (268,'inventory','stale_agents_delay','0'),
-(269,'inventory','stale_agents_action','[0]'),
+(269,'inventory','stale_agents_action','[\"0\"]'),
 (270,'inventory','stale_agents_status','0');
 /*!40000 ALTER TABLE `glpi_configs` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -2815,7 +2823,7 @@ CREATE TABLE `glpi_crontasklogs` (
   KEY `date` (`date`),
   KEY `crontasks_id` (`crontasks_id`),
   KEY `crontasklogs_id_state` (`crontasklogs_id`,`state`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2849,7 +2857,27 @@ INSERT INTO `glpi_crontasklogs` VALUES
 (22,19,0,'2026-05-04 11:27:49',0,0,0,'Run mode: GLPI'),
 (23,19,22,'2026-05-04 11:27:49',2,0.00312614,0,'Action completed, fully processed'),
 (24,20,0,'2026-05-04 11:32:51',0,0,0,'Run mode: GLPI'),
-(25,20,24,'2026-05-04 11:32:51',2,0.00342417,0,'Action completed, no processing required');
+(25,20,24,'2026-05-04 11:32:51',2,0.00342417,0,'Action completed, no processing required'),
+(26,21,0,'2026-05-04 11:37:56',0,0,0,'Run mode: GLPI'),
+(27,21,26,'2026-05-04 11:37:56',2,0.0191019,0,'Action completed, no processing required'),
+(28,22,0,'2026-05-04 11:42:59',0,0,0,'Run mode: GLPI'),
+(29,22,28,'2026-05-04 11:42:59',2,0.00465298,0,'Action completed, no processing required'),
+(30,23,0,'2026-05-04 11:49:41',0,0,0,'Run mode: GLPI'),
+(31,23,30,'2026-05-04 11:49:41',2,0.00259995,0,'Action completed, no processing required'),
+(32,24,0,'2026-05-04 11:54:46',0,0,0,'Run mode: GLPI'),
+(33,24,32,'2026-05-04 11:54:46',2,0.00479913,0,'Action completed, no processing required'),
+(34,25,0,'2026-05-04 12:01:44',0,0,0,'Run mode: GLPI'),
+(35,25,34,'2026-05-04 12:01:44',2,0.00451589,0,'Action completed, no processing required'),
+(36,31,0,'2026-05-04 12:20:05',0,0,0,'Run mode: GLPI'),
+(37,31,36,'2026-05-04 12:20:05',2,0.00349307,0,'Action completed, no processing required'),
+(38,32,0,'2026-05-04 12:23:36',0,0,0,'Run mode: GLPI'),
+(39,32,38,'2026-05-04 12:23:36',2,0.00496006,0,'Action completed, no processing required'),
+(40,9,0,'2026-05-04 12:29:52',0,0,0,'Run mode: GLPI'),
+(41,9,40,'2026-05-04 12:29:52',2,0.00537395,0,'Action completed, no processing required'),
+(42,13,0,'2026-05-04 12:34:18',0,0,0,'Run mode: GLPI'),
+(43,13,42,'2026-05-04 12:34:18',2,0.00503898,0,'Action completed, no processing required'),
+(44,14,0,'2026-05-04 12:41:31',0,0,0,'Run mode: GLPI'),
+(45,14,44,'2026-05-04 12:41:31',2,0.00212097,0,'Action completed, no processing required');
 /*!40000 ALTER TABLE `glpi_crontasklogs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2899,30 +2927,30 @@ INSERT INTO `glpi_crontasks` VALUES
 (5,'Contract','contract',86400,NULL,1,1,3,0,24,30,'2026-04-28 07:45:00',NULL,NULL,NULL,NULL),
 (6,'Infocom','infocom',86400,NULL,1,1,3,0,24,30,'2026-04-28 07:53:00',NULL,NULL,NULL,NULL),
 (7,'CronTask','logs',86400,30,0,1,3,0,24,30,NULL,NULL,NULL,NULL,NULL),
-(9,'MailCollector','mailgate',600,10,1,1,3,0,24,30,'2026-04-28 07:58:00',NULL,NULL,NULL,NULL),
+(9,'MailCollector','mailgate',600,10,1,1,3,0,24,30,'2026-05-04 12:29:00',NULL,NULL,NULL,NULL),
 (10,'DBconnection','checkdbreplicate',300,NULL,0,1,3,0,24,30,NULL,NULL,NULL,NULL,NULL),
 (11,'CronTask','checkupdate',604800,NULL,0,1,3,0,24,30,NULL,NULL,NULL,NULL,NULL),
 (12,'CronTask','session',86400,NULL,1,1,3,0,24,30,'2026-04-28 07:59:00',NULL,NULL,NULL,NULL),
-(13,'CronTask','graph',3600,NULL,1,1,3,0,24,30,'2026-04-28 08:00:00',NULL,NULL,NULL,NULL),
-(14,'ReservationItem','reservation',3600,NULL,1,1,3,0,24,30,'2026-04-28 08:00:00',NULL,NULL,NULL,NULL),
+(13,'CronTask','graph',3600,NULL,1,1,3,0,24,30,'2026-05-04 12:34:00',NULL,NULL,NULL,NULL),
+(14,'ReservationItem','reservation',3600,NULL,1,1,3,0,24,30,'2026-05-04 12:41:00',NULL,NULL,NULL,NULL),
 (15,'Ticket','closeticket',43200,NULL,1,1,3,0,24,30,'2026-05-04 11:02:00',NULL,NULL,NULL,NULL),
 (16,'Ticket','alertnotclosed',43200,NULL,1,1,3,0,24,30,'2026-05-04 11:03:00',NULL,NULL,NULL,NULL),
 (17,'SlaLevel_Ticket','slaticket',300,NULL,1,1,3,0,24,30,'2026-05-04 11:16:00',NULL,NULL,NULL,NULL),
 (18,'Ticket','createinquest',86400,NULL,1,1,3,0,24,30,'2026-05-04 11:22:00',NULL,NULL,NULL,NULL),
 (19,'CronTask','watcher',86400,NULL,1,1,3,0,24,30,'2026-05-04 11:27:00',NULL,NULL,NULL,NULL),
 (20,'CommonITILRecurrentCron','RecurrentItems',3600,NULL,1,1,3,0,24,30,'2026-05-04 11:32:00',NULL,NULL,NULL,NULL),
-(21,'PlanningRecall','planningrecall',300,NULL,1,1,3,0,24,30,NULL,NULL,NULL,NULL,NULL),
-(22,'QueuedNotification','queuednotification',60,50,1,1,3,0,24,30,NULL,NULL,NULL,NULL,NULL),
-(23,'QueuedNotification','queuednotificationclean',86400,30,1,1,3,0,24,30,NULL,NULL,NULL,NULL,NULL),
-(24,'CronTask','temp',3600,NULL,1,1,3,0,24,30,NULL,NULL,NULL,NULL,NULL),
-(25,'MailCollector','mailgateerror',86400,NULL,1,1,3,0,24,30,NULL,NULL,NULL,NULL,NULL),
+(21,'PlanningRecall','planningrecall',300,NULL,1,1,3,0,24,30,'2026-05-04 11:37:00',NULL,NULL,NULL,NULL),
+(22,'QueuedNotification','queuednotification',60,50,1,1,3,0,24,30,'2026-05-04 11:42:00',NULL,NULL,NULL,NULL),
+(23,'QueuedNotification','queuednotificationclean',86400,30,1,1,3,0,24,30,'2026-05-04 11:49:00',NULL,NULL,NULL,NULL),
+(24,'CronTask','temp',3600,NULL,1,1,3,0,24,30,'2026-05-04 11:54:00',NULL,NULL,NULL,NULL),
+(25,'MailCollector','mailgateerror',86400,NULL,1,1,3,0,24,30,'2026-05-04 12:01:00',NULL,NULL,NULL,NULL),
 (26,'CronTask','circularlogs',86400,4,0,1,3,0,24,30,NULL,NULL,NULL,NULL,NULL),
 (27,'ObjectLock','unlockobject',86400,4,0,1,3,0,24,30,NULL,NULL,NULL,NULL,NULL),
 (28,'SavedSearch','countAll',604800,NULL,0,1,3,0,24,30,NULL,NULL,NULL,NULL,NULL),
 (29,'SavedSearch_Alert','savedsearchesalerts',86400,NULL,0,1,3,0,24,30,NULL,NULL,NULL,NULL,NULL),
 (30,'Telemetry','telemetry',2592000,NULL,0,1,3,0,24,30,NULL,NULL,NULL,NULL,NULL),
-(31,'Certificate','certificate',86400,NULL,1,1,3,0,24,30,NULL,NULL,NULL,NULL,NULL),
-(32,'OlaLevel_Ticket','olaticket',300,NULL,1,1,3,0,24,30,NULL,NULL,NULL,NULL,NULL),
+(31,'Certificate','certificate',86400,NULL,1,1,3,0,24,30,'2026-05-04 12:20:00',NULL,NULL,NULL,NULL),
+(32,'OlaLevel_Ticket','olaticket',300,NULL,1,1,3,0,24,30,'2026-05-04 12:23:00',NULL,NULL,NULL,NULL),
 (33,'PurgeLogs','PurgeLogs',604800,24,1,2,3,0,24,30,NULL,NULL,NULL,NULL,NULL),
 (34,'Ticket','purgeticket',604800,NULL,0,2,3,0,24,30,NULL,NULL,NULL,NULL,NULL),
 (35,'Document','cleanorphans',604800,NULL,0,2,3,0,24,30,NULL,NULL,NULL,NULL,NULL),
@@ -3205,7 +3233,7 @@ CREATE TABLE `glpi_databaseinstances` (
   KEY `is_helpdesk_visible` (`is_helpdesk_visible`),
   KEY `is_dynamic` (`is_dynamic`),
   KEY `autoupdatesystems_id` (`autoupdatesystems_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3214,6 +3242,8 @@ CREATE TABLE `glpi_databaseinstances` (
 
 LOCK TABLES `glpi_databaseinstances` WRITE;
 /*!40000 ALTER TABLE `glpi_databaseinstances` DISABLE KEYS */;
+INSERT INTO `glpi_databaseinstances` VALUES
+(1,0,0,'MariaDB','10.11.14-0ubuntu0.24.04.1','3306','',48,1,0,0,21,0,0,0,'Computer',2,0,1,0,1,1,0,'2026-05-04 12:33:37','2026-05-04 12:33:37',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `glpi_databaseinstances` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3234,7 +3264,7 @@ CREATE TABLE `glpi_databaseinstancetypes` (
   KEY `name` (`name`),
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3243,6 +3273,8 @@ CREATE TABLE `glpi_databaseinstancetypes` (
 
 LOCK TABLES `glpi_databaseinstancetypes` WRITE;
 /*!40000 ALTER TABLE `glpi_databaseinstancetypes` DISABLE KEYS */;
+INSERT INTO `glpi_databaseinstancetypes` VALUES
+(1,'mysql','','2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_databaseinstancetypes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3278,7 +3310,7 @@ CREATE TABLE `glpi_databases` (
   KEY `date_creation` (`date_creation`),
   KEY `date_mod` (`date_mod`),
   KEY `databaseinstances_id` (`databaseinstances_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3287,6 +3319,12 @@ CREATE TABLE `glpi_databases` (
 
 LOCK TABLES `glpi_databases` WRITE;
 /*!40000 ALTER TABLE `glpi_databases` DISABLE KEYS */;
+INSERT INTO `glpi_databases` VALUES
+(1,0,0,'glpi',42,1,0,1,0,1,'2026-05-04 12:33:37','2026-05-04 12:33:37',NULL,NULL),
+(2,0,0,'information_schema',0,1,0,1,0,1,'2026-05-04 12:33:37','2026-05-04 12:33:37',NULL,NULL),
+(3,0,0,'mysql',5,1,0,1,0,1,'2026-05-04 12:33:37','2026-05-04 12:33:37',NULL,NULL),
+(4,0,0,'performance_schema',0,1,0,1,0,1,'2026-05-04 12:33:37','2026-05-04 12:33:37',NULL,NULL),
+(5,0,0,'sys',0,1,0,1,0,1,'2026-05-04 12:33:37','2026-05-04 12:33:37',NULL,NULL);
 /*!40000 ALTER TABLE `glpi_databases` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3685,7 +3723,7 @@ CREATE TABLE `glpi_devicecontrols` (
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`),
   KEY `devicecontrolmodels_id` (`devicecontrolmodels_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3694,6 +3732,13 @@ CREATE TABLE `glpi_devicecontrols` (
 
 LOCK TABLES `glpi_devicecontrols` WRITE;
 /*!40000 ALTER TABLE `glpi_devicecontrols` DISABLE KEYS */;
+INSERT INTO `glpi_devicecontrols` VALUES
+(1,'440BX/ZX/DX - 82443BX/ZX/DX Host bridge (AGP disabled)',0,NULL,16,9,0,0,NULL,'2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(2,'82371AB/EB/MB PIIX4 ISA',0,NULL,16,10,0,0,NULL,'2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(3,'82371AB/EB/MB PIIX4 IDE',0,NULL,16,11,0,0,NULL,'2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(4,'82371AB/EB/MB PIIX4 ACPI',0,NULL,16,12,0,0,NULL,'2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(5,'Hyper-V virtual VGA',0,NULL,17,13,0,0,NULL,'2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(6,'MT27800 Family [ConnectX-5 Virtual Function]',0,NULL,18,14,0,0,NULL,'2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_devicecontrols` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3821,7 +3866,7 @@ CREATE TABLE `glpi_devicefirmwares` (
   KEY `date_creation` (`date_creation`),
   KEY `devicefirmwaremodels_id` (`devicefirmwaremodels_id`),
   KEY `devicefirmwaretypes_id` (`devicefirmwaretypes_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3830,6 +3875,8 @@ CREATE TABLE `glpi_devicefirmwares` (
 
 LOCK TABLES `glpi_devicefirmwares` WRITE;
 /*!40000 ALTER TABLE `glpi_devicefirmwares` DISABLE KEYS */;
+INSERT INTO `glpi_devicefirmwares` VALUES
+(1,'American Megatrends Inc. BIOS',NULL,15,'2018-12-07','090008',1,0,0,NULL,'2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_devicefirmwares` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4018,7 +4065,7 @@ CREATE TABLE `glpi_devicegraphiccards` (
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`),
   KEY `devicegraphiccardmodels_id` (`devicegraphiccardmodels_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4027,6 +4074,8 @@ CREATE TABLE `glpi_devicegraphiccards` (
 
 LOCK TABLES `glpi_devicegraphiccards` WRITE;
 /*!40000 ALTER TABLE `glpi_devicegraphiccards` DISABLE KEYS */;
+INSERT INTO `glpi_devicegraphiccards` VALUES
+(1,'Microsoft Corporation Hyper-V virtual VGA',0,NULL,0,0,0,0,NULL,'VGA compatible controller','2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_devicegraphiccards` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4045,7 +4094,7 @@ CREATE TABLE `glpi_deviceharddrivemodels` (
   PRIMARY KEY (`id`),
   KEY `name` (`name`),
   KEY `product_number` (`product_number`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4054,6 +4103,8 @@ CREATE TABLE `glpi_deviceharddrivemodels` (
 
 LOCK TABLES `glpi_deviceharddrivemodels` WRITE;
 /*!40000 ALTER TABLE `glpi_deviceharddrivemodels` DISABLE KEYS */;
+INSERT INTO `glpi_deviceharddrivemodels` VALUES
+(1,'SSD','','');
 /*!40000 ALTER TABLE `glpi_deviceharddrivemodels` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4087,7 +4138,7 @@ CREATE TABLE `glpi_deviceharddrives` (
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`),
   KEY `deviceharddrivemodels_id` (`deviceharddrivemodels_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4096,6 +4147,10 @@ CREATE TABLE `glpi_deviceharddrives` (
 
 LOCK TABLES `glpi_deviceharddrives` WRITE;
 /*!40000 ALTER TABLE `glpi_deviceharddrives` DISABLE KEYS */;
+INSERT INTO `glpi_deviceharddrives` VALUES
+(1,'Kingston SSD 512 Go','',0,'0','',10,0,0,0,1,'2026-05-04 11:45:19','2026-05-04 11:45:19'),
+(2,'Virtual Disk',NULL,0,NULL,NULL,22,0,0,0,NULL,'2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(3,'Virtual CD',NULL,0,NULL,NULL,22,0,0,0,NULL,'2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_deviceharddrives` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4128,7 +4183,7 @@ CREATE TABLE `glpi_devicememories` (
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`),
   KEY `devicememorymodels_id` (`devicememorymodels_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4137,6 +4192,11 @@ CREATE TABLE `glpi_devicememories` (
 
 LOCK TABLES `glpi_devicememories` WRITE;
 /*!40000 ALTER TABLE `glpi_devicememories` DISABLE KEYS */;
+INSERT INTO `glpi_devicememories` VALUES
+(1,'Intel RAM 16Go','0','',9,0,0,0,0,0,'2026-05-04 11:45:47','2026-05-04 11:42:27'),
+(2,'Intel RAM 32Go','0','',9,0,0,0,0,0,'2026-05-04 11:46:14','2026-05-04 11:42:37'),
+(3,'Intel RAM 8Go','0','',9,0,0,0,0,0,'2026-05-04 11:45:59','2026-05-04 11:42:45'),
+(4,'Other',NULL,NULL,19,0,5,0,0,NULL,'2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_devicememories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4184,7 +4244,7 @@ CREATE TABLE `glpi_devicememorytypes` (
   KEY `name` (`name`),
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4197,7 +4257,8 @@ INSERT INTO `glpi_devicememorytypes` VALUES
 (1,'EDO',NULL,NULL,NULL),
 (2,'DDR',NULL,NULL,NULL),
 (3,'SDRAM',NULL,NULL,NULL),
-(4,'SDRAM-2',NULL,NULL,NULL);
+(4,'SDRAM-2',NULL,NULL,NULL),
+(5,'Other','','2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_devicememorytypes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4520,7 +4581,7 @@ CREATE TABLE `glpi_deviceprocessors` (
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`),
   KEY `deviceprocessormodels_id` (`deviceprocessormodels_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4529,6 +4590,9 @@ CREATE TABLE `glpi_deviceprocessors` (
 
 LOCK TABLES `glpi_deviceprocessors` WRITE;
 /*!40000 ALTER TABLE `glpi_deviceprocessors` DISABLE KEYS */;
+INSERT INTO `glpi_deviceprocessors` VALUES
+(1,'Intel Core i5-10500',0,'',9,0,0,0,0,0,0,'2026-05-04 11:40:45','2026-05-04 11:40:33'),
+(2,'Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz',2800,NULL,9,2800,NULL,NULL,0,0,NULL,'2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_deviceprocessors` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5496,7 +5560,7 @@ CREATE TABLE `glpi_domains` (
   KEY `date_expiration` (`date_expiration`),
   KEY `date_domaincreation` (`date_domaincreation`),
   KEY `date_creation` (`date_creation`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5505,6 +5569,8 @@ CREATE TABLE `glpi_domains` (
 
 LOCK TABLES `glpi_domains` WRITE;
 /*!40000 ALTER TABLE `glpi_domains` DISABLE KEYS */;
+INSERT INTO `glpi_domains` VALUES
+(1,'edw1tvzko0suvgin0n0cpa3k5f.zx.internal.cloudapp.net',0,0,0,NULL,NULL,0,0,0,NULL,0,NULL,0,'2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_domains` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5529,7 +5595,7 @@ CREATE TABLE `glpi_domains_items` (
   KEY `item` (`itemtype`,`items_id`),
   KEY `is_dynamic` (`is_dynamic`),
   KEY `is_deleted` (`is_deleted`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5538,6 +5604,8 @@ CREATE TABLE `glpi_domains_items` (
 
 LOCK TABLES `glpi_domains_items` WRITE;
 /*!40000 ALTER TABLE `glpi_domains_items` DISABLE KEYS */;
+INSERT INTO `glpi_domains_items` VALUES
+(1,1,2,'Computer',1,1,0);
 /*!40000 ALTER TABLE `glpi_domains_items` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5929,7 +5997,7 @@ CREATE TABLE `glpi_events` (
   KEY `date` (`date`),
   KEY `level` (`level`),
   KEY `item` (`type`,`items_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5986,7 +6054,38 @@ INSERT INTO `glpi_events` VALUES
 (45,5,'Location','2026-05-04 11:30:38','setup',4,'glpi ajoute l\'élément Direction'),
 (46,5,'State','2026-05-04 11:31:03','setup',4,'glpi ajoute l\'élément En Production'),
 (47,1,'computers','2026-05-04 11:31:13','inventory',4,'glpi met à jour un élément'),
-(48,1,'computers','2026-05-04 11:34:18','inventory',4,'glpi met à jour un élément');
+(48,1,'computers','2026-05-04 11:34:18','inventory',4,'glpi met à jour un élément'),
+(49,9,'Manufacturer','2026-05-04 11:40:17','setup',4,'glpi ajoute l\'élément Intel'),
+(50,1,'DeviceProcessor','2026-05-04 11:40:33','inventory',4,'glpi ajoute l\'élément Intel Core i5-1050°'),
+(51,1,'DeviceProcessor','2026-05-04 11:40:45','setup',4,'glpi met à jour un élément'),
+(52,1,'DeviceMemory','2026-05-04 11:42:27','inventory',4,'glpi ajoute l\'élément 16Go'),
+(53,2,'DeviceMemory','2026-05-04 11:42:37','inventory',4,'glpi ajoute l\'élément 32Go'),
+(54,3,'DeviceMemory','2026-05-04 11:42:45','inventory',4,'glpi ajoute l\'élément 8Go'),
+(55,10,'Manufacturer','2026-05-04 11:44:27','setup',4,'glpi ajoute l\'élément Kingston'),
+(56,11,'Manufacturer','2026-05-04 11:44:33','setup',4,'glpi ajoute l\'élément Crucial'),
+(57,12,'Manufacturer','2026-05-04 11:44:41','setup',4,'glpi ajoute l\'élément SanDisk'),
+(58,1,'DeviceHardDriveModel','2026-05-04 11:45:04','setup',4,'glpi ajoute l\'élément SSD'),
+(59,1,'DeviceHardDrive','2026-05-04 11:45:19','inventory',4,'glpi ajoute l\'élément Kingston SSD 512 Go'),
+(60,1,'DeviceMemory','2026-05-04 11:45:47','setup',4,'glpi met à jour un élément'),
+(61,3,'DeviceMemory','2026-05-04 11:45:59','setup',4,'glpi met à jour un élément'),
+(62,2,'DeviceMemory','2026-05-04 11:46:14','setup',4,'glpi met à jour un élément'),
+(63,13,'Manufacturer','2026-05-04 11:48:50','setup',4,'glpi ajoute l\'élément LG'),
+(64,1,'MonitorModel','2026-05-04 11:49:14','setup',4,'glpi ajoute l\'élément 27UK850'),
+(65,1,'monitors','2026-05-04 11:49:41','inventory',4,'glpi ajoute l\'élément Écran-Direction-01'),
+(66,1,'computers','2026-05-04 11:50:38','inventory',5,'glpi connecte un élément'),
+(67,1,'computers','2026-05-04 11:51:20','inventory',4,'glpi met à jour un élément'),
+(68,7,'users','2026-05-04 11:54:45','setup',4,'glpi ajoute l\'élément Normal'),
+(69,6,'Location','2026-05-04 11:56:59','setup',4,'glpi ajoute l\'élément Rez-de-chaussée'),
+(70,1,'PrinterModel','2026-05-04 11:57:43','setup',4,'glpi ajoute l\'élément LaserJet'),
+(71,1,'printers','2026-05-04 11:58:10','inventory',4,'glpi ajoute l\'élément Imprimante-RDC-01'),
+(72,1,'PrinterModel','2026-05-04 11:58:27','setup',4,'glpi met à jour un élément'),
+(73,7,'Location','2026-05-04 11:59:58','setup',4,'glpi ajoute l\'élément Salle Serveur'),
+(74,1,'NetworkEquipmentType','2026-05-04 12:00:32','setup',4,'glpi ajoute l\'élément Switch'),
+(75,14,'Manufacturer','2026-05-04 12:00:44','setup',4,'glpi ajoute l\'élément Cisco'),
+(76,1,'NetworkEquipmentModel','2026-05-04 12:01:12','setup',4,'glpi ajoute l\'élément Catalyst 2960'),
+(77,1,'networkequipment','2026-05-04 12:01:42','inventory',4,'glpi ajoute l\'élément SW-Principal-01'),
+(78,0,'system','2026-05-04 12:20:16','login',3,'glpi se connecte depuis l\'IP 195.220.0.66'),
+(79,0,'system','2026-05-04 12:23:50','login',3,'glpi se connecte depuis l\'IP 195.220.0.66');
 /*!40000 ALTER TABLE `glpi_events` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6698,7 +6797,7 @@ CREATE TABLE `glpi_interfacetypes` (
   KEY `name` (`name`),
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -6715,7 +6814,13 @@ INSERT INTO `glpi_interfacetypes` VALUES
 (5,'AGP',NULL,NULL,NULL),
 (6,'PCI',NULL,NULL,NULL),
 (7,'PCIe',NULL,NULL,NULL),
-(8,'PCI-X',NULL,NULL,NULL);
+(8,'PCI-X',NULL,NULL,NULL),
+(9,'Host bridge','','2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(10,'ISA bridge','','2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(11,'IDE interface','','2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(12,'Bridge','','2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(13,'VGA compatible controller','','2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(14,'Ethernet controller','','2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_interfacetypes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6749,7 +6854,7 @@ CREATE TABLE `glpi_ipaddresses` (
   KEY `is_dynamic` (`is_dynamic`),
   KEY `item` (`itemtype`,`items_id`,`is_deleted`),
   KEY `mainitem` (`mainitemtype`,`mainitems_id`,`is_deleted`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -6758,6 +6863,13 @@ CREATE TABLE `glpi_ipaddresses` (
 
 LOCK TABLES `glpi_ipaddresses` WRITE;
 /*!40000 ALTER TABLE `glpi_ipaddresses` DISABLE KEYS */;
+INSERT INTO `glpi_ipaddresses` VALUES
+(1,0,1,'NetworkName',4,'127.0.0.1',0,0,65535,2130706433,0,1,2,'Computer'),
+(2,0,1,'NetworkName',6,'::1',0,0,0,1,0,1,2,'Computer'),
+(3,0,2,'NetworkName',4,'10.0.3.40',0,0,65535,167772968,0,1,2,'Computer'),
+(4,0,2,'NetworkName',6,'fe80::7eed:8dff:fe6b:4323',4269801472,0,2129497599,4268442403,0,1,2,'Computer'),
+(5,0,3,'NetworkName',6,'fe80::7eed:8dff:fe6b:4323',4269801472,0,2129497599,4268442403,0,1,2,'Computer'),
+(6,0,4,'NetworkName',4,'172.17.0.1',0,0,65535,2886795265,0,1,2,'Computer');
 /*!40000 ALTER TABLE `glpi_ipaddresses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6775,7 +6887,7 @@ CREATE TABLE `glpi_ipaddresses_ipnetworks` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unicity` (`ipaddresses_id`,`ipnetworks_id`),
   KEY `ipnetworks_id` (`ipnetworks_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -6784,6 +6896,8 @@ CREATE TABLE `glpi_ipaddresses_ipnetworks` (
 
 LOCK TABLES `glpi_ipaddresses_ipnetworks` WRITE;
 /*!40000 ALTER TABLE `glpi_ipaddresses_ipnetworks` DISABLE KEYS */;
+INSERT INTO `glpi_ipaddresses_ipnetworks` VALUES
+(1,3,1);
 /*!40000 ALTER TABLE `glpi_ipaddresses_ipnetworks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6835,7 +6949,7 @@ CREATE TABLE `glpi_ipnetworks` (
   KEY `date_creation` (`date_creation`),
   KEY `ipnetworks_id` (`ipnetworks_id`),
   KEY `level` (`level`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -6844,6 +6958,8 @@ CREATE TABLE `glpi_ipnetworks` (
 
 LOCK TABLES `glpi_ipnetworks` WRITE;
 /*!40000 ALTER TABLE `glpi_ipnetworks` DISABLE KEYS */;
+INSERT INTO `glpi_ipnetworks` VALUES
+(1,0,0,0,'10.0.0.0/255.255.0.0 - 10.0.0.1',1,'[]',NULL,0,4,'10.0.0.0/255.255.0.0 - 10.0.0.1','10.0.0.0',0,0,65535,167772160,'255.255.0.0',4294967295,4294967295,4294967295,4294901760,'10.0.0.1',0,0,65535,167772161,NULL,'2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_ipnetworks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -7119,7 +7235,7 @@ CREATE TABLE `glpi_items_devicecontrols` (
   KEY `otherserial` (`otherserial`),
   KEY `locations_id` (`locations_id`),
   KEY `states_id` (`states_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -7128,6 +7244,13 @@ CREATE TABLE `glpi_items_devicecontrols` (
 
 LOCK TABLES `glpi_items_devicecontrols` WRITE;
 /*!40000 ALTER TABLE `glpi_items_devicecontrols` DISABLE KEYS */;
+INSERT INTO `glpi_items_devicecontrols` VALUES
+(1,2,'Computer',1,0,1,0,0,NULL,NULL,NULL,0,0),
+(2,2,'Computer',2,0,1,0,0,NULL,NULL,NULL,0,0),
+(3,2,'Computer',3,0,1,0,0,NULL,NULL,NULL,0,0),
+(4,2,'Computer',4,0,1,0,0,NULL,NULL,NULL,0,0),
+(5,2,'Computer',5,0,1,0,0,NULL,NULL,NULL,0,0),
+(6,2,'Computer',6,0,1,0,0,NULL,NULL,NULL,0,0);
 /*!40000 ALTER TABLE `glpi_items_devicecontrols` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -7207,7 +7330,7 @@ CREATE TABLE `glpi_items_devicefirmwares` (
   KEY `otherserial` (`otherserial`),
   KEY `locations_id` (`locations_id`),
   KEY `states_id` (`states_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -7216,6 +7339,8 @@ CREATE TABLE `glpi_items_devicefirmwares` (
 
 LOCK TABLES `glpi_items_devicefirmwares` WRITE;
 /*!40000 ALTER TABLE `glpi_items_devicefirmwares` DISABLE KEYS */;
+INSERT INTO `glpi_items_devicefirmwares` VALUES
+(1,2,'Computer',1,0,1,0,0,NULL,NULL,0,0);
 /*!40000 ALTER TABLE `glpi_items_devicefirmwares` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -7297,7 +7422,7 @@ CREATE TABLE `glpi_items_devicegraphiccards` (
   KEY `otherserial` (`otherserial`),
   KEY `locations_id` (`locations_id`),
   KEY `states_id` (`states_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -7306,6 +7431,8 @@ CREATE TABLE `glpi_items_devicegraphiccards` (
 
 LOCK TABLES `glpi_items_devicegraphiccards` WRITE;
 /*!40000 ALTER TABLE `glpi_items_devicegraphiccards` DISABLE KEYS */;
+INSERT INTO `glpi_items_devicegraphiccards` VALUES
+(1,2,'Computer',1,0,0,1,0,0,NULL,NULL,NULL,0,0);
 /*!40000 ALTER TABLE `glpi_items_devicegraphiccards` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -7344,7 +7471,7 @@ CREATE TABLE `glpi_items_deviceharddrives` (
   KEY `otherserial` (`otherserial`),
   KEY `locations_id` (`locations_id`),
   KEY `states_id` (`states_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -7353,6 +7480,12 @@ CREATE TABLE `glpi_items_deviceharddrives` (
 
 LOCK TABLES `glpi_items_deviceharddrives` WRITE;
 /*!40000 ALTER TABLE `glpi_items_deviceharddrives` DISABLE KEYS */;
+INSERT INTO `glpi_items_deviceharddrives` VALUES
+(1,1,'Computer',1,0,NULL,0,0,0,0,NULL,NULL,5,0),
+(2,2,'Computer',2,48318,'952de171',0,1,0,0,NULL,NULL,0,0),
+(3,2,'Computer',2,32213,'D92A8177-2DAE-47C5-B03B-57392E3A903F',0,1,0,0,NULL,NULL,0,0),
+(4,2,'Computer',2,549755,'EB0B9CE9-7855-4187-BD7D-5E3851295A6C',0,1,0,0,NULL,NULL,0,0),
+(5,2,'Computer',3,536870,NULL,0,1,0,0,NULL,NULL,0,0);
 /*!40000 ALTER TABLE `glpi_items_deviceharddrives` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -7391,7 +7524,7 @@ CREATE TABLE `glpi_items_devicememories` (
   KEY `otherserial` (`otherserial`),
   KEY `locations_id` (`locations_id`),
   KEY `states_id` (`states_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -7400,6 +7533,10 @@ CREATE TABLE `glpi_items_devicememories` (
 
 LOCK TABLES `glpi_items_devicememories` WRITE;
 /*!40000 ALTER TABLE `glpi_items_devicememories` DISABLE KEYS */;
+INSERT INTO `glpi_items_devicememories` VALUES
+(1,1,'Computer',1,0,NULL,0,0,0,0,NULL,NULL,5,0),
+(2,2,'Computer',4,1024,NULL,0,1,0,0,'1',NULL,0,0),
+(3,2,'Computer',4,7168,NULL,0,1,0,0,'2',NULL,0,0);
 /*!40000 ALTER TABLE `glpi_items_devicememories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -7620,7 +7757,7 @@ CREATE TABLE `glpi_items_deviceprocessors` (
   KEY `otherserial` (`otherserial`),
   KEY `locations_id` (`locations_id`),
   KEY `states_id` (`states_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -7629,6 +7766,9 @@ CREATE TABLE `glpi_items_deviceprocessors` (
 
 LOCK TABLES `glpi_items_deviceprocessors` WRITE;
 /*!40000 ALTER TABLE `glpi_items_deviceprocessors` DISABLE KEYS */;
+INSERT INTO `glpi_items_deviceprocessors` VALUES
+(1,1,'Computer',1,0,NULL,0,0,0,0,0,0,NULL,NULL,5,0),
+(2,2,'Computer',2,2800,NULL,0,1,1,2,0,0,NULL,NULL,0,0);
 /*!40000 ALTER TABLE `glpi_items_deviceprocessors` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -7814,7 +7954,7 @@ CREATE TABLE `glpi_items_disks` (
   KEY `is_dynamic` (`is_dynamic`),
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -7823,6 +7963,10 @@ CREATE TABLE `glpi_items_disks` (
 
 LOCK TABLES `glpi_items_disks` WRITE;
 /*!40000 ALTER TABLE `glpi_items_disks` DISABLE KEYS */;
+INSERT INTO `glpi_items_disks` VALUES
+(1,0,'Computer',2,'cloudimg-rootfs','/dev/root','/vscode',4,29588,10812,0,1,0,NULL,NULL,NULL,'2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(2,0,'Computer',2,'/workspaces','/dev/loop4','/workspaces',4,32077,19615,0,1,0,NULL,NULL,NULL,'2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(3,0,'Computer',2,'/tmp','/dev/sda1','/tmp',4,45046,40501,0,1,0,NULL,NULL,NULL,'2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_items_disks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -7930,7 +8074,7 @@ CREATE TABLE `glpi_items_operatingsystems` (
   KEY `is_recursive` (`is_recursive`),
   KEY `date_creation` (`date_creation`),
   KEY `date_mod` (`date_mod`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -7939,6 +8083,8 @@ CREATE TABLE `glpi_items_operatingsystems` (
 
 LOCK TABLES `glpi_items_operatingsystems` WRITE;
 /*!40000 ALTER TABLE `glpi_items_operatingsystems` DISABLE KEYS */;
+INSERT INTO `glpi_items_operatingsystems` VALUES
+(1,2,'Computer',1,1,0,1,1,NULL,NULL,NULL,NULL,'007f0100',0,'2026-05-04 12:33:37','2026-05-04 12:33:37',0,1,0,0,'2026-04-06');
 /*!40000 ALTER TABLE `glpi_items_operatingsystems` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -8117,7 +8263,7 @@ CREATE TABLE `glpi_items_softwareversions` (
   KEY `is_deleted_item` (`is_deleted_item`),
   KEY `is_template_item` (`is_template_item`),
   KEY `date_install` (`date_install`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=768 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -8126,6 +8272,774 @@ CREATE TABLE `glpi_items_softwareversions` (
 
 LOCK TABLES `glpi_items_softwareversions` WRITE;
 /*!40000 ALTER TABLE `glpi_items_softwareversions` DISABLE KEYS */;
+INSERT INTO `glpi_items_softwareversions` VALUES
+(1,2,'Computer',1,0,0,0,0,1,NULL),
+(2,2,'Computer',2,0,0,0,0,1,NULL),
+(3,2,'Computer',3,0,0,0,0,1,NULL),
+(4,2,'Computer',4,0,0,0,0,1,NULL),
+(5,2,'Computer',5,0,0,0,0,1,NULL),
+(6,2,'Computer',6,0,0,0,0,1,NULL),
+(7,2,'Computer',7,0,0,0,0,1,NULL),
+(8,2,'Computer',8,0,0,0,0,1,NULL),
+(9,2,'Computer',9,0,0,0,0,1,NULL),
+(10,2,'Computer',10,0,0,0,0,1,NULL),
+(11,2,'Computer',11,0,0,0,0,1,NULL),
+(12,2,'Computer',12,0,0,0,0,1,NULL),
+(13,2,'Computer',13,0,0,0,0,1,NULL),
+(14,2,'Computer',14,0,0,0,0,1,NULL),
+(15,2,'Computer',15,0,0,0,0,1,NULL),
+(16,2,'Computer',16,0,0,0,0,1,NULL),
+(17,2,'Computer',17,0,0,0,0,1,NULL),
+(18,2,'Computer',18,0,0,0,0,1,NULL),
+(19,2,'Computer',19,0,0,0,0,1,NULL),
+(20,2,'Computer',20,0,0,0,0,1,NULL),
+(21,2,'Computer',21,0,0,0,0,1,NULL),
+(22,2,'Computer',22,0,0,0,0,1,NULL),
+(23,2,'Computer',23,0,0,0,0,1,NULL),
+(24,2,'Computer',24,0,0,0,0,1,NULL),
+(25,2,'Computer',25,0,0,0,0,1,NULL),
+(26,2,'Computer',26,0,0,0,0,1,NULL),
+(27,2,'Computer',27,0,0,0,0,1,NULL),
+(28,2,'Computer',28,0,0,0,0,1,NULL),
+(29,2,'Computer',29,0,0,0,0,1,NULL),
+(30,2,'Computer',30,0,0,0,0,1,NULL),
+(31,2,'Computer',31,0,0,0,0,1,NULL),
+(32,2,'Computer',32,0,0,0,0,1,NULL),
+(33,2,'Computer',33,0,0,0,0,1,NULL),
+(34,2,'Computer',34,0,0,0,0,1,NULL),
+(35,2,'Computer',35,0,0,0,0,1,NULL),
+(36,2,'Computer',36,0,0,0,0,1,NULL),
+(37,2,'Computer',37,0,0,0,0,1,NULL),
+(38,2,'Computer',38,0,0,0,0,1,NULL),
+(39,2,'Computer',39,0,0,0,0,1,NULL),
+(40,2,'Computer',40,0,0,0,0,1,NULL),
+(41,2,'Computer',41,0,0,0,0,1,NULL),
+(42,2,'Computer',42,0,0,0,0,1,NULL),
+(43,2,'Computer',43,0,0,0,0,1,NULL),
+(44,2,'Computer',44,0,0,0,0,1,NULL),
+(45,2,'Computer',45,0,0,0,0,1,NULL),
+(46,2,'Computer',46,0,0,0,0,1,NULL),
+(47,2,'Computer',47,0,0,0,0,1,NULL),
+(48,2,'Computer',48,0,0,0,0,1,NULL),
+(49,2,'Computer',49,0,0,0,0,1,NULL),
+(50,2,'Computer',50,0,0,0,0,1,NULL),
+(51,2,'Computer',51,0,0,0,0,1,NULL),
+(52,2,'Computer',52,0,0,0,0,1,NULL),
+(53,2,'Computer',53,0,0,0,0,1,NULL),
+(54,2,'Computer',54,0,0,0,0,1,NULL),
+(55,2,'Computer',55,0,0,0,0,1,NULL),
+(56,2,'Computer',56,0,0,0,0,1,NULL),
+(57,2,'Computer',57,0,0,0,0,1,NULL),
+(58,2,'Computer',58,0,0,0,0,1,NULL),
+(59,2,'Computer',59,0,0,0,0,1,NULL),
+(60,2,'Computer',60,0,0,0,0,1,NULL),
+(61,2,'Computer',61,0,0,0,0,1,NULL),
+(62,2,'Computer',62,0,0,0,0,1,NULL),
+(63,2,'Computer',63,0,0,0,0,1,NULL),
+(64,2,'Computer',64,0,0,0,0,1,NULL),
+(65,2,'Computer',65,0,0,0,0,1,NULL),
+(66,2,'Computer',66,0,0,0,0,1,NULL),
+(67,2,'Computer',67,0,0,0,0,1,NULL),
+(68,2,'Computer',68,0,0,0,0,1,NULL),
+(69,2,'Computer',69,0,0,0,0,1,NULL),
+(70,2,'Computer',70,0,0,0,0,1,NULL),
+(71,2,'Computer',71,0,0,0,0,1,NULL),
+(72,2,'Computer',72,0,0,0,0,1,NULL),
+(73,2,'Computer',73,0,0,0,0,1,NULL),
+(74,2,'Computer',74,0,0,0,0,1,NULL),
+(75,2,'Computer',75,0,0,0,0,1,NULL),
+(76,2,'Computer',76,0,0,0,0,1,NULL),
+(77,2,'Computer',77,0,0,0,0,1,NULL),
+(78,2,'Computer',78,0,0,0,0,1,NULL),
+(79,2,'Computer',79,0,0,0,0,1,NULL),
+(80,2,'Computer',80,0,0,0,0,1,NULL),
+(81,2,'Computer',81,0,0,0,0,1,NULL),
+(82,2,'Computer',82,0,0,0,0,1,NULL),
+(83,2,'Computer',83,0,0,0,0,1,NULL),
+(84,2,'Computer',84,0,0,0,0,1,NULL),
+(85,2,'Computer',85,0,0,0,0,1,NULL),
+(86,2,'Computer',86,0,0,0,0,1,NULL),
+(87,2,'Computer',87,0,0,0,0,1,NULL),
+(88,2,'Computer',88,0,0,0,0,1,NULL),
+(89,2,'Computer',89,0,0,0,0,1,NULL),
+(90,2,'Computer',90,0,0,0,0,1,NULL),
+(91,2,'Computer',91,0,0,0,0,1,NULL),
+(92,2,'Computer',92,0,0,0,0,1,NULL),
+(93,2,'Computer',93,0,0,0,0,1,NULL),
+(94,2,'Computer',94,0,0,0,0,1,NULL),
+(95,2,'Computer',95,0,0,0,0,1,NULL),
+(96,2,'Computer',96,0,0,0,0,1,NULL),
+(97,2,'Computer',97,0,0,0,0,1,NULL),
+(98,2,'Computer',98,0,0,0,0,1,NULL),
+(99,2,'Computer',99,0,0,0,0,1,NULL),
+(100,2,'Computer',100,0,0,0,0,1,NULL),
+(101,2,'Computer',101,0,0,0,0,1,NULL),
+(102,2,'Computer',102,0,0,0,0,1,NULL),
+(103,2,'Computer',103,0,0,0,0,1,NULL),
+(104,2,'Computer',104,0,0,0,0,1,NULL),
+(105,2,'Computer',105,0,0,0,0,1,NULL),
+(106,2,'Computer',106,0,0,0,0,1,NULL),
+(107,2,'Computer',107,0,0,0,0,1,NULL),
+(108,2,'Computer',108,0,0,0,0,1,NULL),
+(109,2,'Computer',109,0,0,0,0,1,NULL),
+(110,2,'Computer',110,0,0,0,0,1,NULL),
+(111,2,'Computer',111,0,0,0,0,1,NULL),
+(112,2,'Computer',112,0,0,0,0,1,NULL),
+(113,2,'Computer',113,0,0,0,0,1,NULL),
+(114,2,'Computer',114,0,0,0,0,1,NULL),
+(115,2,'Computer',115,0,0,0,0,1,NULL),
+(116,2,'Computer',116,0,0,0,0,1,NULL),
+(117,2,'Computer',117,0,0,0,0,1,NULL),
+(118,2,'Computer',118,0,0,0,0,1,NULL),
+(119,2,'Computer',119,0,0,0,0,1,NULL),
+(120,2,'Computer',120,0,0,0,0,1,NULL),
+(121,2,'Computer',121,0,0,0,0,1,NULL),
+(122,2,'Computer',122,0,0,0,0,1,NULL),
+(123,2,'Computer',123,0,0,0,0,1,NULL),
+(124,2,'Computer',124,0,0,0,0,1,NULL),
+(125,2,'Computer',125,0,0,0,0,1,NULL),
+(126,2,'Computer',126,0,0,0,0,1,NULL),
+(127,2,'Computer',127,0,0,0,0,1,NULL),
+(128,2,'Computer',128,0,0,0,0,1,NULL),
+(129,2,'Computer',129,0,0,0,0,1,NULL),
+(130,2,'Computer',130,0,0,0,0,1,NULL),
+(131,2,'Computer',131,0,0,0,0,1,NULL),
+(132,2,'Computer',132,0,0,0,0,1,NULL),
+(133,2,'Computer',133,0,0,0,0,1,NULL),
+(134,2,'Computer',134,0,0,0,0,1,NULL),
+(135,2,'Computer',135,0,0,0,0,1,NULL),
+(136,2,'Computer',136,0,0,0,0,1,NULL),
+(137,2,'Computer',137,0,0,0,0,1,NULL),
+(138,2,'Computer',138,0,0,0,0,1,NULL),
+(139,2,'Computer',139,0,0,0,0,1,NULL),
+(140,2,'Computer',140,0,0,0,0,1,NULL),
+(141,2,'Computer',141,0,0,0,0,1,NULL),
+(142,2,'Computer',142,0,0,0,0,1,NULL),
+(143,2,'Computer',143,0,0,0,0,1,NULL),
+(144,2,'Computer',144,0,0,0,0,1,NULL),
+(145,2,'Computer',145,0,0,0,0,1,NULL),
+(146,2,'Computer',146,0,0,0,0,1,NULL),
+(147,2,'Computer',147,0,0,0,0,1,NULL),
+(148,2,'Computer',148,0,0,0,0,1,NULL),
+(149,2,'Computer',149,0,0,0,0,1,NULL),
+(150,2,'Computer',150,0,0,0,0,1,NULL),
+(151,2,'Computer',151,0,0,0,0,1,NULL),
+(152,2,'Computer',152,0,0,0,0,1,NULL),
+(153,2,'Computer',153,0,0,0,0,1,NULL),
+(154,2,'Computer',154,0,0,0,0,1,NULL),
+(155,2,'Computer',155,0,0,0,0,1,NULL),
+(156,2,'Computer',156,0,0,0,0,1,NULL),
+(157,2,'Computer',157,0,0,0,0,1,NULL),
+(158,2,'Computer',158,0,0,0,0,1,NULL),
+(159,2,'Computer',159,0,0,0,0,1,NULL),
+(160,2,'Computer',160,0,0,0,0,1,NULL),
+(161,2,'Computer',161,0,0,0,0,1,NULL),
+(162,2,'Computer',162,0,0,0,0,1,NULL),
+(163,2,'Computer',163,0,0,0,0,1,NULL),
+(164,2,'Computer',164,0,0,0,0,1,NULL),
+(165,2,'Computer',165,0,0,0,0,1,NULL),
+(166,2,'Computer',166,0,0,0,0,1,NULL),
+(167,2,'Computer',167,0,0,0,0,1,NULL),
+(168,2,'Computer',168,0,0,0,0,1,NULL),
+(169,2,'Computer',169,0,0,0,0,1,NULL),
+(170,2,'Computer',170,0,0,0,0,1,NULL),
+(171,2,'Computer',171,0,0,0,0,1,NULL),
+(172,2,'Computer',172,0,0,0,0,1,NULL),
+(173,2,'Computer',173,0,0,0,0,1,NULL),
+(174,2,'Computer',174,0,0,0,0,1,NULL),
+(175,2,'Computer',175,0,0,0,0,1,NULL),
+(176,2,'Computer',176,0,0,0,0,1,NULL),
+(177,2,'Computer',177,0,0,0,0,1,NULL),
+(178,2,'Computer',178,0,0,0,0,1,NULL),
+(179,2,'Computer',179,0,0,0,0,1,NULL),
+(180,2,'Computer',180,0,0,0,0,1,NULL),
+(181,2,'Computer',181,0,0,0,0,1,NULL),
+(182,2,'Computer',182,0,0,0,0,1,NULL),
+(183,2,'Computer',183,0,0,0,0,1,NULL),
+(184,2,'Computer',184,0,0,0,0,1,NULL),
+(185,2,'Computer',185,0,0,0,0,1,NULL),
+(186,2,'Computer',186,0,0,0,0,1,NULL),
+(187,2,'Computer',187,0,0,0,0,1,NULL),
+(188,2,'Computer',188,0,0,0,0,1,NULL),
+(189,2,'Computer',189,0,0,0,0,1,NULL),
+(190,2,'Computer',190,0,0,0,0,1,NULL),
+(191,2,'Computer',191,0,0,0,0,1,NULL),
+(192,2,'Computer',192,0,0,0,0,1,NULL),
+(193,2,'Computer',193,0,0,0,0,1,NULL),
+(194,2,'Computer',194,0,0,0,0,1,NULL),
+(195,2,'Computer',195,0,0,0,0,1,NULL),
+(196,2,'Computer',196,0,0,0,0,1,NULL),
+(197,2,'Computer',197,0,0,0,0,1,NULL),
+(198,2,'Computer',198,0,0,0,0,1,NULL),
+(199,2,'Computer',199,0,0,0,0,1,NULL),
+(200,2,'Computer',200,0,0,0,0,1,NULL),
+(201,2,'Computer',201,0,0,0,0,1,NULL),
+(202,2,'Computer',202,0,0,0,0,1,NULL),
+(203,2,'Computer',203,0,0,0,0,1,NULL),
+(204,2,'Computer',204,0,0,0,0,1,NULL),
+(205,2,'Computer',205,0,0,0,0,1,NULL),
+(206,2,'Computer',206,0,0,0,0,1,NULL),
+(207,2,'Computer',207,0,0,0,0,1,NULL),
+(208,2,'Computer',208,0,0,0,0,1,NULL),
+(209,2,'Computer',209,0,0,0,0,1,NULL),
+(210,2,'Computer',210,0,0,0,0,1,NULL),
+(211,2,'Computer',211,0,0,0,0,1,NULL),
+(212,2,'Computer',212,0,0,0,0,1,NULL),
+(213,2,'Computer',213,0,0,0,0,1,NULL),
+(214,2,'Computer',214,0,0,0,0,1,NULL),
+(215,2,'Computer',215,0,0,0,0,1,NULL),
+(216,2,'Computer',216,0,0,0,0,1,NULL),
+(217,2,'Computer',217,0,0,0,0,1,NULL),
+(218,2,'Computer',218,0,0,0,0,1,NULL),
+(219,2,'Computer',219,0,0,0,0,1,NULL),
+(220,2,'Computer',220,0,0,0,0,1,NULL),
+(221,2,'Computer',221,0,0,0,0,1,NULL),
+(222,2,'Computer',222,0,0,0,0,1,NULL),
+(223,2,'Computer',223,0,0,0,0,1,NULL),
+(224,2,'Computer',224,0,0,0,0,1,NULL),
+(225,2,'Computer',225,0,0,0,0,1,NULL),
+(226,2,'Computer',226,0,0,0,0,1,NULL),
+(227,2,'Computer',227,0,0,0,0,1,NULL),
+(228,2,'Computer',228,0,0,0,0,1,NULL),
+(229,2,'Computer',229,0,0,0,0,1,NULL),
+(230,2,'Computer',230,0,0,0,0,1,NULL),
+(231,2,'Computer',231,0,0,0,0,1,NULL),
+(232,2,'Computer',232,0,0,0,0,1,NULL),
+(233,2,'Computer',233,0,0,0,0,1,NULL),
+(234,2,'Computer',234,0,0,0,0,1,NULL),
+(235,2,'Computer',235,0,0,0,0,1,NULL),
+(236,2,'Computer',236,0,0,0,0,1,NULL),
+(237,2,'Computer',237,0,0,0,0,1,NULL),
+(238,2,'Computer',238,0,0,0,0,1,NULL),
+(239,2,'Computer',239,0,0,0,0,1,NULL),
+(240,2,'Computer',240,0,0,0,0,1,NULL),
+(241,2,'Computer',241,0,0,0,0,1,NULL),
+(242,2,'Computer',242,0,0,0,0,1,NULL),
+(243,2,'Computer',243,0,0,0,0,1,NULL),
+(244,2,'Computer',244,0,0,0,0,1,NULL),
+(245,2,'Computer',245,0,0,0,0,1,NULL),
+(246,2,'Computer',246,0,0,0,0,1,NULL),
+(247,2,'Computer',247,0,0,0,0,1,NULL),
+(248,2,'Computer',248,0,0,0,0,1,NULL),
+(249,2,'Computer',249,0,0,0,0,1,NULL),
+(250,2,'Computer',250,0,0,0,0,1,NULL),
+(251,2,'Computer',251,0,0,0,0,1,NULL),
+(252,2,'Computer',252,0,0,0,0,1,NULL),
+(253,2,'Computer',253,0,0,0,0,1,NULL),
+(254,2,'Computer',254,0,0,0,0,1,NULL),
+(255,2,'Computer',255,0,0,0,0,1,NULL),
+(256,2,'Computer',256,0,0,0,0,1,NULL),
+(257,2,'Computer',257,0,0,0,0,1,NULL),
+(258,2,'Computer',258,0,0,0,0,1,NULL),
+(259,2,'Computer',259,0,0,0,0,1,NULL),
+(260,2,'Computer',260,0,0,0,0,1,NULL),
+(261,2,'Computer',261,0,0,0,0,1,NULL),
+(262,2,'Computer',262,0,0,0,0,1,NULL),
+(263,2,'Computer',263,0,0,0,0,1,NULL),
+(264,2,'Computer',264,0,0,0,0,1,NULL),
+(265,2,'Computer',265,0,0,0,0,1,NULL),
+(266,2,'Computer',266,0,0,0,0,1,NULL),
+(267,2,'Computer',267,0,0,0,0,1,NULL),
+(268,2,'Computer',268,0,0,0,0,1,NULL),
+(269,2,'Computer',269,0,0,0,0,1,NULL),
+(270,2,'Computer',270,0,0,0,0,1,NULL),
+(271,2,'Computer',271,0,0,0,0,1,NULL),
+(272,2,'Computer',272,0,0,0,0,1,NULL),
+(273,2,'Computer',273,0,0,0,0,1,NULL),
+(274,2,'Computer',274,0,0,0,0,1,NULL),
+(275,2,'Computer',275,0,0,0,0,1,NULL),
+(276,2,'Computer',276,0,0,0,0,1,NULL),
+(277,2,'Computer',277,0,0,0,0,1,NULL),
+(278,2,'Computer',278,0,0,0,0,1,NULL),
+(279,2,'Computer',279,0,0,0,0,1,NULL),
+(280,2,'Computer',280,0,0,0,0,1,NULL),
+(281,2,'Computer',281,0,0,0,0,1,NULL),
+(282,2,'Computer',282,0,0,0,0,1,NULL),
+(283,2,'Computer',283,0,0,0,0,1,NULL),
+(284,2,'Computer',284,0,0,0,0,1,NULL),
+(285,2,'Computer',285,0,0,0,0,1,NULL),
+(286,2,'Computer',286,0,0,0,0,1,NULL),
+(287,2,'Computer',287,0,0,0,0,1,NULL),
+(288,2,'Computer',288,0,0,0,0,1,NULL),
+(289,2,'Computer',289,0,0,0,0,1,NULL),
+(290,2,'Computer',290,0,0,0,0,1,NULL),
+(291,2,'Computer',291,0,0,0,0,1,NULL),
+(292,2,'Computer',292,0,0,0,0,1,NULL),
+(293,2,'Computer',293,0,0,0,0,1,NULL),
+(294,2,'Computer',294,0,0,0,0,1,NULL),
+(295,2,'Computer',295,0,0,0,0,1,NULL),
+(296,2,'Computer',296,0,0,0,0,1,NULL),
+(297,2,'Computer',297,0,0,0,0,1,NULL),
+(298,2,'Computer',298,0,0,0,0,1,NULL),
+(299,2,'Computer',299,0,0,0,0,1,NULL),
+(300,2,'Computer',300,0,0,0,0,1,NULL),
+(301,2,'Computer',301,0,0,0,0,1,NULL),
+(302,2,'Computer',302,0,0,0,0,1,NULL),
+(303,2,'Computer',303,0,0,0,0,1,NULL),
+(304,2,'Computer',304,0,0,0,0,1,NULL),
+(305,2,'Computer',305,0,0,0,0,1,NULL),
+(306,2,'Computer',306,0,0,0,0,1,NULL),
+(307,2,'Computer',307,0,0,0,0,1,NULL),
+(308,2,'Computer',308,0,0,0,0,1,NULL),
+(309,2,'Computer',309,0,0,0,0,1,NULL),
+(310,2,'Computer',310,0,0,0,0,1,NULL),
+(311,2,'Computer',311,0,0,0,0,1,NULL),
+(312,2,'Computer',312,0,0,0,0,1,NULL),
+(313,2,'Computer',313,0,0,0,0,1,NULL),
+(314,2,'Computer',314,0,0,0,0,1,NULL),
+(315,2,'Computer',315,0,0,0,0,1,NULL),
+(316,2,'Computer',316,0,0,0,0,1,NULL),
+(317,2,'Computer',317,0,0,0,0,1,NULL),
+(318,2,'Computer',318,0,0,0,0,1,NULL),
+(319,2,'Computer',319,0,0,0,0,1,NULL),
+(320,2,'Computer',320,0,0,0,0,1,NULL),
+(321,2,'Computer',321,0,0,0,0,1,NULL),
+(322,2,'Computer',322,0,0,0,0,1,NULL),
+(323,2,'Computer',323,0,0,0,0,1,NULL),
+(324,2,'Computer',324,0,0,0,0,1,NULL),
+(325,2,'Computer',325,0,0,0,0,1,NULL),
+(326,2,'Computer',326,0,0,0,0,1,NULL),
+(327,2,'Computer',327,0,0,0,0,1,NULL),
+(328,2,'Computer',328,0,0,0,0,1,NULL),
+(329,2,'Computer',329,0,0,0,0,1,NULL),
+(330,2,'Computer',330,0,0,0,0,1,NULL),
+(331,2,'Computer',331,0,0,0,0,1,NULL),
+(332,2,'Computer',332,0,0,0,0,1,NULL),
+(333,2,'Computer',333,0,0,0,0,1,NULL),
+(334,2,'Computer',334,0,0,0,0,1,NULL),
+(335,2,'Computer',335,0,0,0,0,1,NULL),
+(336,2,'Computer',336,0,0,0,0,1,NULL),
+(337,2,'Computer',337,0,0,0,0,1,NULL),
+(338,2,'Computer',338,0,0,0,0,1,NULL),
+(339,2,'Computer',339,0,0,0,0,1,NULL),
+(340,2,'Computer',340,0,0,0,0,1,NULL),
+(341,2,'Computer',341,0,0,0,0,1,NULL),
+(342,2,'Computer',342,0,0,0,0,1,NULL),
+(343,2,'Computer',343,0,0,0,0,1,NULL),
+(344,2,'Computer',344,0,0,0,0,1,NULL),
+(345,2,'Computer',345,0,0,0,0,1,NULL),
+(346,2,'Computer',346,0,0,0,0,1,NULL),
+(347,2,'Computer',347,0,0,0,0,1,NULL),
+(348,2,'Computer',348,0,0,0,0,1,NULL),
+(349,2,'Computer',349,0,0,0,0,1,NULL),
+(350,2,'Computer',350,0,0,0,0,1,NULL),
+(351,2,'Computer',351,0,0,0,0,1,NULL),
+(352,2,'Computer',352,0,0,0,0,1,NULL),
+(353,2,'Computer',353,0,0,0,0,1,NULL),
+(354,2,'Computer',354,0,0,0,0,1,NULL),
+(355,2,'Computer',355,0,0,0,0,1,NULL),
+(356,2,'Computer',356,0,0,0,0,1,NULL),
+(357,2,'Computer',357,0,0,0,0,1,NULL),
+(358,2,'Computer',358,0,0,0,0,1,NULL),
+(359,2,'Computer',359,0,0,0,0,1,NULL),
+(360,2,'Computer',360,0,0,0,0,1,NULL),
+(361,2,'Computer',361,0,0,0,0,1,NULL),
+(362,2,'Computer',362,0,0,0,0,1,NULL),
+(363,2,'Computer',363,0,0,0,0,1,NULL),
+(364,2,'Computer',364,0,0,0,0,1,NULL),
+(365,2,'Computer',365,0,0,0,0,1,NULL),
+(366,2,'Computer',366,0,0,0,0,1,NULL),
+(367,2,'Computer',367,0,0,0,0,1,NULL),
+(368,2,'Computer',368,0,0,0,0,1,NULL),
+(369,2,'Computer',369,0,0,0,0,1,NULL),
+(370,2,'Computer',370,0,0,0,0,1,NULL),
+(371,2,'Computer',371,0,0,0,0,1,NULL),
+(372,2,'Computer',372,0,0,0,0,1,NULL),
+(373,2,'Computer',373,0,0,0,0,1,NULL),
+(374,2,'Computer',374,0,0,0,0,1,NULL),
+(375,2,'Computer',375,0,0,0,0,1,NULL),
+(376,2,'Computer',376,0,0,0,0,1,NULL),
+(377,2,'Computer',377,0,0,0,0,1,NULL),
+(378,2,'Computer',378,0,0,0,0,1,NULL),
+(379,2,'Computer',379,0,0,0,0,1,NULL),
+(380,2,'Computer',380,0,0,0,0,1,NULL),
+(381,2,'Computer',381,0,0,0,0,1,NULL),
+(382,2,'Computer',382,0,0,0,0,1,NULL),
+(383,2,'Computer',383,0,0,0,0,1,NULL),
+(384,2,'Computer',384,0,0,0,0,1,NULL),
+(385,2,'Computer',385,0,0,0,0,1,NULL),
+(386,2,'Computer',386,0,0,0,0,1,NULL),
+(387,2,'Computer',387,0,0,0,0,1,NULL),
+(388,2,'Computer',388,0,0,0,0,1,NULL),
+(389,2,'Computer',389,0,0,0,0,1,NULL),
+(390,2,'Computer',390,0,0,0,0,1,NULL),
+(391,2,'Computer',391,0,0,0,0,1,NULL),
+(392,2,'Computer',392,0,0,0,0,1,NULL),
+(393,2,'Computer',393,0,0,0,0,1,NULL),
+(394,2,'Computer',394,0,0,0,0,1,NULL),
+(395,2,'Computer',395,0,0,0,0,1,NULL),
+(396,2,'Computer',396,0,0,0,0,1,NULL),
+(397,2,'Computer',397,0,0,0,0,1,NULL),
+(398,2,'Computer',398,0,0,0,0,1,NULL),
+(399,2,'Computer',399,0,0,0,0,1,NULL),
+(400,2,'Computer',400,0,0,0,0,1,NULL),
+(401,2,'Computer',401,0,0,0,0,1,NULL),
+(402,2,'Computer',402,0,0,0,0,1,NULL),
+(403,2,'Computer',403,0,0,0,0,1,NULL),
+(404,2,'Computer',404,0,0,0,0,1,NULL),
+(405,2,'Computer',405,0,0,0,0,1,NULL),
+(406,2,'Computer',406,0,0,0,0,1,NULL),
+(407,2,'Computer',407,0,0,0,0,1,NULL),
+(408,2,'Computer',408,0,0,0,0,1,NULL),
+(409,2,'Computer',409,0,0,0,0,1,NULL),
+(410,2,'Computer',410,0,0,0,0,1,NULL),
+(411,2,'Computer',411,0,0,0,0,1,NULL),
+(412,2,'Computer',412,0,0,0,0,1,NULL),
+(413,2,'Computer',413,0,0,0,0,1,NULL),
+(414,2,'Computer',414,0,0,0,0,1,NULL),
+(415,2,'Computer',415,0,0,0,0,1,NULL),
+(416,2,'Computer',416,0,0,0,0,1,NULL),
+(417,2,'Computer',417,0,0,0,0,1,NULL),
+(418,2,'Computer',418,0,0,0,0,1,NULL),
+(419,2,'Computer',419,0,0,0,0,1,NULL),
+(420,2,'Computer',420,0,0,0,0,1,NULL),
+(421,2,'Computer',421,0,0,0,0,1,NULL),
+(422,2,'Computer',422,0,0,0,0,1,NULL),
+(423,2,'Computer',423,0,0,0,0,1,NULL),
+(424,2,'Computer',424,0,0,0,0,1,NULL),
+(425,2,'Computer',425,0,0,0,0,1,NULL),
+(426,2,'Computer',426,0,0,0,0,1,NULL),
+(427,2,'Computer',427,0,0,0,0,1,NULL),
+(428,2,'Computer',428,0,0,0,0,1,NULL),
+(429,2,'Computer',429,0,0,0,0,1,NULL),
+(430,2,'Computer',430,0,0,0,0,1,NULL),
+(431,2,'Computer',431,0,0,0,0,1,NULL),
+(432,2,'Computer',432,0,0,0,0,1,NULL),
+(433,2,'Computer',433,0,0,0,0,1,NULL),
+(434,2,'Computer',434,0,0,0,0,1,NULL),
+(435,2,'Computer',435,0,0,0,0,1,NULL),
+(436,2,'Computer',436,0,0,0,0,1,NULL),
+(437,2,'Computer',437,0,0,0,0,1,NULL),
+(438,2,'Computer',438,0,0,0,0,1,NULL),
+(439,2,'Computer',439,0,0,0,0,1,NULL),
+(440,2,'Computer',440,0,0,0,0,1,NULL),
+(441,2,'Computer',441,0,0,0,0,1,NULL),
+(442,2,'Computer',442,0,0,0,0,1,NULL),
+(443,2,'Computer',443,0,0,0,0,1,NULL),
+(444,2,'Computer',444,0,0,0,0,1,NULL),
+(445,2,'Computer',445,0,0,0,0,1,NULL),
+(446,2,'Computer',446,0,0,0,0,1,NULL),
+(447,2,'Computer',447,0,0,0,0,1,NULL),
+(448,2,'Computer',448,0,0,0,0,1,NULL),
+(449,2,'Computer',449,0,0,0,0,1,NULL),
+(450,2,'Computer',450,0,0,0,0,1,NULL),
+(451,2,'Computer',451,0,0,0,0,1,NULL),
+(452,2,'Computer',452,0,0,0,0,1,NULL),
+(453,2,'Computer',453,0,0,0,0,1,NULL),
+(454,2,'Computer',454,0,0,0,0,1,NULL),
+(455,2,'Computer',455,0,0,0,0,1,NULL),
+(456,2,'Computer',456,0,0,0,0,1,NULL),
+(457,2,'Computer',457,0,0,0,0,1,NULL),
+(458,2,'Computer',458,0,0,0,0,1,NULL),
+(459,2,'Computer',459,0,0,0,0,1,NULL),
+(460,2,'Computer',460,0,0,0,0,1,NULL),
+(461,2,'Computer',461,0,0,0,0,1,NULL),
+(462,2,'Computer',462,0,0,0,0,1,NULL),
+(463,2,'Computer',463,0,0,0,0,1,NULL),
+(464,2,'Computer',464,0,0,0,0,1,NULL),
+(465,2,'Computer',465,0,0,0,0,1,NULL),
+(466,2,'Computer',466,0,0,0,0,1,NULL),
+(467,2,'Computer',467,0,0,0,0,1,NULL),
+(468,2,'Computer',468,0,0,0,0,1,NULL),
+(469,2,'Computer',469,0,0,0,0,1,NULL),
+(470,2,'Computer',470,0,0,0,0,1,NULL),
+(471,2,'Computer',471,0,0,0,0,1,NULL),
+(472,2,'Computer',472,0,0,0,0,1,NULL),
+(473,2,'Computer',473,0,0,0,0,1,NULL),
+(474,2,'Computer',474,0,0,0,0,1,NULL),
+(475,2,'Computer',475,0,0,0,0,1,NULL),
+(476,2,'Computer',476,0,0,0,0,1,NULL),
+(477,2,'Computer',477,0,0,0,0,1,NULL),
+(478,2,'Computer',478,0,0,0,0,1,NULL),
+(479,2,'Computer',479,0,0,0,0,1,NULL),
+(480,2,'Computer',480,0,0,0,0,1,NULL),
+(481,2,'Computer',481,0,0,0,0,1,NULL),
+(482,2,'Computer',482,0,0,0,0,1,NULL),
+(483,2,'Computer',483,0,0,0,0,1,NULL),
+(484,2,'Computer',484,0,0,0,0,1,NULL),
+(485,2,'Computer',485,0,0,0,0,1,NULL),
+(486,2,'Computer',486,0,0,0,0,1,NULL),
+(487,2,'Computer',487,0,0,0,0,1,NULL),
+(488,2,'Computer',488,0,0,0,0,1,NULL),
+(489,2,'Computer',489,0,0,0,0,1,NULL),
+(490,2,'Computer',490,0,0,0,0,1,NULL),
+(491,2,'Computer',491,0,0,0,0,1,NULL),
+(492,2,'Computer',492,0,0,0,0,1,NULL),
+(493,2,'Computer',493,0,0,0,0,1,NULL),
+(494,2,'Computer',494,0,0,0,0,1,NULL),
+(495,2,'Computer',495,0,0,0,0,1,NULL),
+(496,2,'Computer',496,0,0,0,0,1,NULL),
+(497,2,'Computer',497,0,0,0,0,1,NULL),
+(498,2,'Computer',498,0,0,0,0,1,NULL),
+(499,2,'Computer',499,0,0,0,0,1,NULL),
+(500,2,'Computer',500,0,0,0,0,1,NULL),
+(501,2,'Computer',501,0,0,0,0,1,NULL),
+(502,2,'Computer',502,0,0,0,0,1,NULL),
+(503,2,'Computer',503,0,0,0,0,1,NULL),
+(504,2,'Computer',504,0,0,0,0,1,NULL),
+(505,2,'Computer',505,0,0,0,0,1,NULL),
+(506,2,'Computer',506,0,0,0,0,1,NULL),
+(507,2,'Computer',507,0,0,0,0,1,NULL),
+(508,2,'Computer',508,0,0,0,0,1,NULL),
+(509,2,'Computer',509,0,0,0,0,1,NULL),
+(510,2,'Computer',510,0,0,0,0,1,NULL),
+(511,2,'Computer',511,0,0,0,0,1,NULL),
+(512,2,'Computer',512,0,0,0,0,1,NULL),
+(513,2,'Computer',513,0,0,0,0,1,NULL),
+(514,2,'Computer',514,0,0,0,0,1,NULL),
+(515,2,'Computer',515,0,0,0,0,1,NULL),
+(516,2,'Computer',516,0,0,0,0,1,NULL),
+(517,2,'Computer',517,0,0,0,0,1,NULL),
+(518,2,'Computer',518,0,0,0,0,1,NULL),
+(519,2,'Computer',519,0,0,0,0,1,NULL),
+(520,2,'Computer',520,0,0,0,0,1,NULL),
+(521,2,'Computer',521,0,0,0,0,1,NULL),
+(522,2,'Computer',522,0,0,0,0,1,NULL),
+(523,2,'Computer',523,0,0,0,0,1,NULL),
+(524,2,'Computer',524,0,0,0,0,1,NULL),
+(525,2,'Computer',525,0,0,0,0,1,NULL),
+(526,2,'Computer',526,0,0,0,0,1,NULL),
+(527,2,'Computer',527,0,0,0,0,1,NULL),
+(528,2,'Computer',528,0,0,0,0,1,NULL),
+(529,2,'Computer',529,0,0,0,0,1,NULL),
+(530,2,'Computer',530,0,0,0,0,1,NULL),
+(531,2,'Computer',531,0,0,0,0,1,NULL),
+(532,2,'Computer',532,0,0,0,0,1,NULL),
+(533,2,'Computer',533,0,0,0,0,1,NULL),
+(534,2,'Computer',534,0,0,0,0,1,NULL),
+(535,2,'Computer',535,0,0,0,0,1,NULL),
+(536,2,'Computer',536,0,0,0,0,1,NULL),
+(537,2,'Computer',537,0,0,0,0,1,NULL),
+(538,2,'Computer',538,0,0,0,0,1,NULL),
+(539,2,'Computer',539,0,0,0,0,1,NULL),
+(540,2,'Computer',540,0,0,0,0,1,NULL),
+(541,2,'Computer',541,0,0,0,0,1,NULL),
+(542,2,'Computer',542,0,0,0,0,1,NULL),
+(543,2,'Computer',543,0,0,0,0,1,NULL),
+(544,2,'Computer',544,0,0,0,0,1,NULL),
+(545,2,'Computer',545,0,0,0,0,1,NULL),
+(546,2,'Computer',546,0,0,0,0,1,NULL),
+(547,2,'Computer',547,0,0,0,0,1,NULL),
+(548,2,'Computer',548,0,0,0,0,1,NULL),
+(549,2,'Computer',549,0,0,0,0,1,NULL),
+(550,2,'Computer',550,0,0,0,0,1,NULL),
+(551,2,'Computer',551,0,0,0,0,1,NULL),
+(552,2,'Computer',552,0,0,0,0,1,NULL),
+(553,2,'Computer',553,0,0,0,0,1,NULL),
+(554,2,'Computer',554,0,0,0,0,1,NULL),
+(555,2,'Computer',555,0,0,0,0,1,NULL),
+(556,2,'Computer',556,0,0,0,0,1,NULL),
+(557,2,'Computer',557,0,0,0,0,1,NULL),
+(558,2,'Computer',558,0,0,0,0,1,NULL),
+(559,2,'Computer',559,0,0,0,0,1,NULL),
+(560,2,'Computer',560,0,0,0,0,1,NULL),
+(561,2,'Computer',561,0,0,0,0,1,NULL),
+(562,2,'Computer',562,0,0,0,0,1,NULL),
+(563,2,'Computer',563,0,0,0,0,1,NULL),
+(564,2,'Computer',564,0,0,0,0,1,NULL),
+(565,2,'Computer',565,0,0,0,0,1,NULL),
+(566,2,'Computer',566,0,0,0,0,1,NULL),
+(567,2,'Computer',567,0,0,0,0,1,NULL),
+(568,2,'Computer',568,0,0,0,0,1,NULL),
+(569,2,'Computer',569,0,0,0,0,1,NULL),
+(570,2,'Computer',570,0,0,0,0,1,NULL),
+(571,2,'Computer',571,0,0,0,0,1,NULL),
+(572,2,'Computer',572,0,0,0,0,1,NULL),
+(573,2,'Computer',573,0,0,0,0,1,NULL),
+(574,2,'Computer',574,0,0,0,0,1,NULL),
+(575,2,'Computer',575,0,0,0,0,1,NULL),
+(576,2,'Computer',576,0,0,0,0,1,NULL),
+(577,2,'Computer',577,0,0,0,0,1,NULL),
+(578,2,'Computer',578,0,0,0,0,1,NULL),
+(579,2,'Computer',579,0,0,0,0,1,NULL),
+(580,2,'Computer',580,0,0,0,0,1,NULL),
+(581,2,'Computer',581,0,0,0,0,1,NULL),
+(582,2,'Computer',582,0,0,0,0,1,NULL),
+(583,2,'Computer',583,0,0,0,0,1,NULL),
+(584,2,'Computer',584,0,0,0,0,1,NULL),
+(585,2,'Computer',585,0,0,0,0,1,NULL),
+(586,2,'Computer',586,0,0,0,0,1,NULL),
+(587,2,'Computer',587,0,0,0,0,1,NULL),
+(588,2,'Computer',588,0,0,0,0,1,NULL),
+(589,2,'Computer',589,0,0,0,0,1,NULL),
+(590,2,'Computer',590,0,0,0,0,1,NULL),
+(591,2,'Computer',591,0,0,0,0,1,NULL),
+(592,2,'Computer',592,0,0,0,0,1,NULL),
+(593,2,'Computer',593,0,0,0,0,1,NULL),
+(594,2,'Computer',594,0,0,0,0,1,NULL),
+(595,2,'Computer',595,0,0,0,0,1,NULL),
+(596,2,'Computer',596,0,0,0,0,1,NULL),
+(597,2,'Computer',597,0,0,0,0,1,NULL),
+(598,2,'Computer',598,0,0,0,0,1,NULL),
+(599,2,'Computer',599,0,0,0,0,1,NULL),
+(600,2,'Computer',600,0,0,0,0,1,NULL),
+(601,2,'Computer',601,0,0,0,0,1,NULL),
+(602,2,'Computer',602,0,0,0,0,1,NULL),
+(603,2,'Computer',603,0,0,0,0,1,NULL),
+(604,2,'Computer',604,0,0,0,0,1,NULL),
+(605,2,'Computer',605,0,0,0,0,1,NULL),
+(606,2,'Computer',606,0,0,0,0,1,NULL),
+(607,2,'Computer',607,0,0,0,0,1,NULL),
+(608,2,'Computer',608,0,0,0,0,1,NULL),
+(609,2,'Computer',609,0,0,0,0,1,NULL),
+(610,2,'Computer',610,0,0,0,0,1,NULL),
+(611,2,'Computer',611,0,0,0,0,1,NULL),
+(612,2,'Computer',612,0,0,0,0,1,NULL),
+(613,2,'Computer',613,0,0,0,0,1,NULL),
+(614,2,'Computer',614,0,0,0,0,1,NULL),
+(615,2,'Computer',615,0,0,0,0,1,NULL),
+(616,2,'Computer',616,0,0,0,0,1,NULL),
+(617,2,'Computer',617,0,0,0,0,1,NULL),
+(618,2,'Computer',618,0,0,0,0,1,NULL),
+(619,2,'Computer',619,0,0,0,0,1,NULL),
+(620,2,'Computer',620,0,0,0,0,1,NULL),
+(621,2,'Computer',621,0,0,0,0,1,NULL),
+(622,2,'Computer',622,0,0,0,0,1,NULL),
+(623,2,'Computer',623,0,0,0,0,1,NULL),
+(624,2,'Computer',624,0,0,0,0,1,NULL),
+(625,2,'Computer',625,0,0,0,0,1,NULL),
+(626,2,'Computer',626,0,0,0,0,1,NULL),
+(627,2,'Computer',627,0,0,0,0,1,NULL),
+(628,2,'Computer',628,0,0,0,0,1,NULL),
+(629,2,'Computer',629,0,0,0,0,1,NULL),
+(630,2,'Computer',630,0,0,0,0,1,NULL),
+(631,2,'Computer',631,0,0,0,0,1,NULL),
+(632,2,'Computer',632,0,0,0,0,1,NULL),
+(633,2,'Computer',633,0,0,0,0,1,NULL),
+(634,2,'Computer',634,0,0,0,0,1,NULL),
+(635,2,'Computer',635,0,0,0,0,1,NULL),
+(636,2,'Computer',636,0,0,0,0,1,NULL),
+(637,2,'Computer',637,0,0,0,0,1,NULL),
+(638,2,'Computer',638,0,0,0,0,1,NULL),
+(639,2,'Computer',639,0,0,0,0,1,NULL),
+(640,2,'Computer',640,0,0,0,0,1,NULL),
+(641,2,'Computer',641,0,0,0,0,1,NULL),
+(642,2,'Computer',642,0,0,0,0,1,NULL),
+(643,2,'Computer',643,0,0,0,0,1,NULL),
+(644,2,'Computer',644,0,0,0,0,1,NULL),
+(645,2,'Computer',645,0,0,0,0,1,NULL),
+(646,2,'Computer',646,0,0,0,0,1,NULL),
+(647,2,'Computer',647,0,0,0,0,1,NULL),
+(648,2,'Computer',648,0,0,0,0,1,NULL),
+(649,2,'Computer',649,0,0,0,0,1,NULL),
+(650,2,'Computer',650,0,0,0,0,1,NULL),
+(651,2,'Computer',651,0,0,0,0,1,NULL),
+(652,2,'Computer',652,0,0,0,0,1,NULL),
+(653,2,'Computer',653,0,0,0,0,1,NULL),
+(654,2,'Computer',654,0,0,0,0,1,NULL),
+(655,2,'Computer',655,0,0,0,0,1,NULL),
+(656,2,'Computer',656,0,0,0,0,1,NULL),
+(657,2,'Computer',657,0,0,0,0,1,NULL),
+(658,2,'Computer',658,0,0,0,0,1,NULL),
+(659,2,'Computer',659,0,0,0,0,1,NULL),
+(660,2,'Computer',660,0,0,0,0,1,NULL),
+(661,2,'Computer',661,0,0,0,0,1,NULL),
+(662,2,'Computer',662,0,0,0,0,1,NULL),
+(663,2,'Computer',663,0,0,0,0,1,NULL),
+(664,2,'Computer',664,0,0,0,0,1,NULL),
+(665,2,'Computer',665,0,0,0,0,1,NULL),
+(666,2,'Computer',666,0,0,0,0,1,NULL),
+(667,2,'Computer',667,0,0,0,0,1,NULL),
+(668,2,'Computer',668,0,0,0,0,1,NULL),
+(669,2,'Computer',669,0,0,0,0,1,NULL),
+(670,2,'Computer',670,0,0,0,0,1,NULL),
+(671,2,'Computer',671,0,0,0,0,1,NULL),
+(672,2,'Computer',672,0,0,0,0,1,NULL),
+(673,2,'Computer',673,0,0,0,0,1,NULL),
+(674,2,'Computer',674,0,0,0,0,1,NULL),
+(675,2,'Computer',675,0,0,0,0,1,NULL),
+(676,2,'Computer',676,0,0,0,0,1,NULL),
+(677,2,'Computer',677,0,0,0,0,1,NULL),
+(678,2,'Computer',678,0,0,0,0,1,NULL),
+(679,2,'Computer',679,0,0,0,0,1,NULL),
+(680,2,'Computer',680,0,0,0,0,1,NULL),
+(681,2,'Computer',681,0,0,0,0,1,NULL),
+(682,2,'Computer',682,0,0,0,0,1,NULL),
+(683,2,'Computer',683,0,0,0,0,1,NULL),
+(684,2,'Computer',684,0,0,0,0,1,NULL),
+(685,2,'Computer',685,0,0,0,0,1,NULL),
+(686,2,'Computer',686,0,0,0,0,1,NULL),
+(687,2,'Computer',687,0,0,0,0,1,NULL),
+(688,2,'Computer',688,0,0,0,0,1,NULL),
+(689,2,'Computer',689,0,0,0,0,1,NULL),
+(690,2,'Computer',690,0,0,0,0,1,NULL),
+(691,2,'Computer',691,0,0,0,0,1,NULL),
+(692,2,'Computer',692,0,0,0,0,1,NULL),
+(693,2,'Computer',693,0,0,0,0,1,NULL),
+(694,2,'Computer',694,0,0,0,0,1,NULL),
+(695,2,'Computer',695,0,0,0,0,1,NULL),
+(696,2,'Computer',696,0,0,0,0,1,NULL),
+(697,2,'Computer',697,0,0,0,0,1,NULL),
+(698,2,'Computer',698,0,0,0,0,1,NULL),
+(699,2,'Computer',699,0,0,0,0,1,NULL),
+(700,2,'Computer',700,0,0,0,0,1,NULL),
+(701,2,'Computer',701,0,0,0,0,1,NULL),
+(702,2,'Computer',702,0,0,0,0,1,NULL),
+(703,2,'Computer',703,0,0,0,0,1,NULL),
+(704,2,'Computer',704,0,0,0,0,1,NULL),
+(705,2,'Computer',705,0,0,0,0,1,NULL),
+(706,2,'Computer',706,0,0,0,0,1,NULL),
+(707,2,'Computer',707,0,0,0,0,1,NULL),
+(708,2,'Computer',708,0,0,0,0,1,NULL),
+(709,2,'Computer',709,0,0,0,0,1,NULL),
+(710,2,'Computer',710,0,0,0,0,1,NULL),
+(711,2,'Computer',711,0,0,0,0,1,NULL),
+(712,2,'Computer',712,0,0,0,0,1,NULL),
+(713,2,'Computer',713,0,0,0,0,1,NULL),
+(714,2,'Computer',714,0,0,0,0,1,NULL),
+(715,2,'Computer',715,0,0,0,0,1,NULL),
+(716,2,'Computer',716,0,0,0,0,1,NULL),
+(717,2,'Computer',717,0,0,0,0,1,NULL),
+(718,2,'Computer',718,0,0,0,0,1,NULL),
+(719,2,'Computer',719,0,0,0,0,1,NULL),
+(720,2,'Computer',720,0,0,0,0,1,NULL),
+(721,2,'Computer',721,0,0,0,0,1,NULL),
+(722,2,'Computer',722,0,0,0,0,1,NULL),
+(723,2,'Computer',723,0,0,0,0,1,NULL),
+(724,2,'Computer',724,0,0,0,0,1,NULL),
+(725,2,'Computer',725,0,0,0,0,1,NULL),
+(726,2,'Computer',726,0,0,0,0,1,NULL),
+(727,2,'Computer',727,0,0,0,0,1,NULL),
+(728,2,'Computer',728,0,0,0,0,1,NULL),
+(729,2,'Computer',729,0,0,0,0,1,NULL),
+(730,2,'Computer',730,0,0,0,0,1,NULL),
+(731,2,'Computer',731,0,0,0,0,1,NULL),
+(732,2,'Computer',732,0,0,0,0,1,NULL),
+(733,2,'Computer',733,0,0,0,0,1,NULL),
+(734,2,'Computer',734,0,0,0,0,1,NULL),
+(735,2,'Computer',735,0,0,0,0,1,NULL),
+(736,2,'Computer',736,0,0,0,0,1,NULL),
+(737,2,'Computer',737,0,0,0,0,1,NULL),
+(738,2,'Computer',738,0,0,0,0,1,NULL),
+(739,2,'Computer',739,0,0,0,0,1,NULL),
+(740,2,'Computer',740,0,0,0,0,1,NULL),
+(741,2,'Computer',741,0,0,0,0,1,NULL),
+(742,2,'Computer',742,0,0,0,0,1,NULL),
+(743,2,'Computer',743,0,0,0,0,1,NULL),
+(744,2,'Computer',744,0,0,0,0,1,NULL),
+(745,2,'Computer',745,0,0,0,0,1,NULL),
+(746,2,'Computer',746,0,0,0,0,1,NULL),
+(747,2,'Computer',747,0,0,0,0,1,NULL),
+(748,2,'Computer',748,0,0,0,0,1,NULL),
+(749,2,'Computer',749,0,0,0,0,1,NULL),
+(750,2,'Computer',750,0,0,0,0,1,NULL),
+(751,2,'Computer',751,0,0,0,0,1,NULL),
+(752,2,'Computer',752,0,0,0,0,1,NULL),
+(753,2,'Computer',753,0,0,0,0,1,NULL),
+(754,2,'Computer',754,0,0,0,0,1,NULL),
+(755,2,'Computer',755,0,0,0,0,1,NULL),
+(756,2,'Computer',756,0,0,0,0,1,NULL),
+(757,2,'Computer',757,0,0,0,0,1,NULL),
+(758,2,'Computer',758,0,0,0,0,1,NULL),
+(759,2,'Computer',759,0,0,0,0,1,NULL),
+(760,2,'Computer',760,0,0,0,0,1,NULL),
+(761,2,'Computer',761,0,0,0,0,1,NULL),
+(762,2,'Computer',762,0,0,0,0,1,NULL),
+(763,2,'Computer',763,0,0,0,0,1,NULL),
+(764,2,'Computer',764,0,0,0,0,1,NULL),
+(765,2,'Computer',765,0,0,0,0,1,NULL),
+(766,2,'Computer',766,0,0,0,0,1,NULL),
+(767,2,'Computer',767,0,0,0,0,1,NULL);
 /*!40000 ALTER TABLE `glpi_items_softwareversions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -8887,7 +9801,7 @@ CREATE TABLE `glpi_locations` (
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`),
   KEY `level` (`level`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -8901,7 +9815,9 @@ INSERT INTO `glpi_locations` VALUES
 (2,0,0,'Étage 02',1,'Lycée Camille Sée > Étage 02','',2,'{\"1\":1}',NULL,'Avenue de l’Europe','68000','Colmar','Grand Est','France','01','','','','','2026-05-04 11:20:17','2026-05-04 11:20:17'),
 (3,0,0,'Salle 307',2,'Lycée Camille Sée > Étage 02 > Salle 307','',3,'{\"1\":1,\"2\":2}','{\"3\":3}','','68000','Colmar','Grand Est','France','01','307','','','','2026-05-04 11:21:08','2026-05-04 11:21:08'),
 (4,0,0,'Étage 01',1,'Lycée Camille Sée > Étage 01','',2,'{\"1\":1}',NULL,'Avenue de l’Europe','68000','Colmar','Grand Est','France','01','','','','','2026-05-04 11:29:56','2026-05-04 11:29:56'),
-(5,0,0,'Direction',4,'Lycée Camille Sée > Étage 01 > Direction','',3,'{\"1\":1,\"4\":4}',NULL,'Avenue de l’Europe','68000','Colmar','Grand Est','France','01','','','','','2026-05-04 11:30:38','2026-05-04 11:30:38');
+(5,0,0,'Direction',4,'Lycée Camille Sée > Étage 01 > Direction','',3,'{\"1\":1,\"4\":4}',NULL,'Avenue de l’Europe','68000','Colmar','Grand Est','France','01','','','','','2026-05-04 11:30:38','2026-05-04 11:30:38'),
+(6,0,0,'Rez-de-chaussée',1,'Lycée Camille Sée > Rez-de-chaussée','',2,'{\"1\":1}',NULL,'Avenue de l’Europe','68000','Colmar','Grand Est','France','01','','','','','2026-05-04 11:56:59','2026-05-04 11:56:59'),
+(7,0,0,'Salle Serveur',4,'Lycée Camille Sée > Étage 01 > Salle Serveur','',3,'{\"1\":1,\"4\":4}',NULL,'Avenue de l’Europe','68000','Colmar','Grand Est','France','01','99','','','','2026-05-04 11:59:58','2026-05-04 11:59:58');
 /*!40000 ALTER TABLE `glpi_locations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -8961,7 +9877,7 @@ CREATE TABLE `glpi_logs` (
   KEY `itemtype_link` (`itemtype_link`),
   KEY `item` (`itemtype`,`items_id`),
   KEY `id_search_option` (`id_search_option`)
-) ENGINE=InnoDB AUTO_INCREMENT=756 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=801 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -9725,7 +10641,52 @@ INSERT INTO `glpi_logs` VALUES
 (752,'State',5,'0',20,'glpi (2)','2026-05-04 11:31:03',0,'',''),
 (753,'Computer',1,'',0,'glpi (2)','2026-05-04 11:31:13',31,'En Service (1)','En Production (5)'),
 (754,'Computer',1,'',0,'glpi (2)','2026-05-04 11:31:13',3,'Lycée Camille Sée &#62; Étage 02 &#62; Salle 307 (3)','Lycée Camille Sée &#62; Étage 01 &#62; Direction (5)'),
-(755,'Computer',1,'',0,'glpi (2)','2026-05-04 11:34:18',1,'PC001','PC-Direction-01');
+(755,'Computer',1,'',0,'glpi (2)','2026-05-04 11:34:18',1,'PC001','PC-Direction-01'),
+(756,'Manufacturer',9,'0',20,'glpi (2)','2026-05-04 11:40:17',0,'',''),
+(757,'DeviceProcessor',1,'0',20,'glpi (2)','2026-05-04 11:40:33',0,'',''),
+(758,'DeviceProcessor',1,'',0,'glpi (2)','2026-05-04 11:40:45',1,'Intel Core i5-1050°','Intel Core i5-10500'),
+(759,'Computer',1,'DeviceProcessor',1,'glpi (2)','2026-05-04 11:41:40',0,'','Intel Core i5-10500 (1)'),
+(760,'Item_DeviceProcessor',1,'0',20,'glpi (2)','2026-05-04 11:41:40',0,'',''),
+(761,'DeviceMemory',1,'0',20,'glpi (2)','2026-05-04 11:42:27',0,'',''),
+(762,'DeviceMemory',2,'0',20,'glpi (2)','2026-05-04 11:42:37',0,'',''),
+(763,'DeviceMemory',3,'0',20,'glpi (2)','2026-05-04 11:42:45',0,'',''),
+(764,'Manufacturer',10,'0',20,'glpi (2)','2026-05-04 11:44:27',0,'',''),
+(765,'Manufacturer',11,'0',20,'glpi (2)','2026-05-04 11:44:33',0,'',''),
+(766,'Manufacturer',12,'0',20,'glpi (2)','2026-05-04 11:44:41',0,'',''),
+(767,'DeviceHardDriveModel',1,'0',20,'glpi (2)','2026-05-04 11:45:04',0,'',''),
+(768,'DeviceHardDrive',1,'0',20,'glpi (2)','2026-05-04 11:45:19',0,'',''),
+(769,'DeviceMemory',1,'',0,'glpi (2)','2026-05-04 11:45:47',1,'16Go','Intel RAM 16Go'),
+(770,'DeviceMemory',3,'',0,'glpi (2)','2026-05-04 11:45:59',1,'8Go','Intel RAM 8Go'),
+(771,'DeviceMemory',2,'',0,'glpi (2)','2026-05-04 11:46:14',1,'32Go','Intel RAM 32Go'),
+(772,'Computer',1,'DeviceHardDrive',1,'glpi (2)','2026-05-04 11:47:26',0,'','Kingston SSD 512 Go (1)'),
+(773,'Item_DeviceHardDrive',1,'0',20,'glpi (2)','2026-05-04 11:47:26',0,'',''),
+(774,'Computer',1,'DeviceMemory',1,'glpi (2)','2026-05-04 11:47:40',0,'','Intel RAM 16Go (1)'),
+(775,'Item_DeviceMemory',1,'0',20,'glpi (2)','2026-05-04 11:47:40',0,'',''),
+(776,'Manufacturer',13,'0',20,'glpi (2)','2026-05-04 11:48:50',0,'',''),
+(777,'MonitorModel',1,'0',20,'glpi (2)','2026-05-04 11:49:14',0,'',''),
+(778,'Monitor',1,'0',20,'glpi (2)','2026-05-04 11:49:41',0,'',''),
+(779,'Computer',1,'Monitor',15,'glpi (2)','2026-05-04 11:50:38',0,'','Écran-Direction-01 (1)'),
+(780,'Monitor',1,'Computer',15,'glpi (2)','2026-05-04 11:50:38',0,'','PC-Direction-01 (1)'),
+(781,'Computer',1,'',0,'glpi (2)','2026-05-04 11:51:20',7,'Kevin MEYER',''),
+(782,'Computer',1,'',0,'glpi (2)','2026-05-04 11:51:20',70,'Kevin (5)','&nbsp; (0)'),
+(783,'User',7,'Profile',17,'glpi (2)','2026-05-04 11:54:45',0,'','Entité racine (0), Self-Service (1)'),
+(784,'Profile',1,'User',17,'glpi (2)','2026-05-04 11:54:45',0,'','Normal (7), Entité racine (0)'),
+(785,'Entity',0,'User',17,'glpi (2)','2026-05-04 11:54:45',0,'','Normal (7), Self-Service (1)'),
+(786,'User',7,'0',20,'glpi (2)','2026-05-04 11:54:45',0,'',''),
+(787,'Location',1,'Location',17,'glpi (2)','2026-05-04 11:56:59',0,'','Rez-de-chaussée (6)'),
+(788,'Location',6,'0',20,'glpi (2)','2026-05-04 11:56:59',0,'',''),
+(789,'PrinterModel',1,'0',20,'glpi (2)','2026-05-04 11:57:43',0,'',''),
+(790,'Printer',1,'0',20,'glpi (2)','2026-05-04 11:58:10',0,'',''),
+(791,'PrinterModel',1,'',0,'glpi (2)','2026-05-04 11:58:27',1,'LaserJet','LaserJet Pro M404n'),
+(792,'Location',4,'Location',17,'glpi (2)','2026-05-04 11:59:58',0,'','Salle Serveur (7)'),
+(793,'Location',7,'0',20,'glpi (2)','2026-05-04 11:59:58',0,'',''),
+(794,'NetworkEquipmentType',1,'0',20,'glpi (2)','2026-05-04 12:00:32',0,'',''),
+(795,'Manufacturer',14,'0',20,'glpi (2)','2026-05-04 12:00:44',0,'',''),
+(796,'NetworkEquipmentModel',1,'0',20,'glpi (2)','2026-05-04 12:01:12',0,'',''),
+(797,'NetworkEquipment',1,'0',20,'glpi (2)','2026-05-04 12:01:42',0,'',''),
+(798,'Config',1,'',0,'glpi (2)','2026-05-04 12:02:51',1,'enabled_inventory (inventory) 0','1'),
+(799,'Config',1,'',0,'glpi (2)','2026-05-04 12:02:51',1,'stale_agents_action (inventory) [0]','[\"0\"]'),
+(800,'Agent',1,'0',20,'','2026-05-04 12:33:34',0,'','');
 /*!40000 ALTER TABLE `glpi_logs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -9826,7 +10787,7 @@ CREATE TABLE `glpi_manufacturers` (
   KEY `name` (`name`),
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -9843,7 +10804,21 @@ INSERT INTO `glpi_manufacturers` VALUES
 (5,'Samsung','','2026-05-04 11:24:44','2026-05-04 11:24:44'),
 (6,'HP','','2026-05-04 11:24:51','2026-05-04 11:24:51'),
 (7,'Hyundai','','2026-05-04 11:25:02','2026-05-04 11:25:02'),
-(8,'Philips','','2026-05-04 11:25:06','2026-05-04 11:25:06');
+(8,'Philips','','2026-05-04 11:25:06','2026-05-04 11:25:06'),
+(9,'Intel','','2026-05-04 11:40:17','2026-05-04 11:40:17'),
+(10,'Kingston','','2026-05-04 11:44:27','2026-05-04 11:44:27'),
+(11,'Crucial','','2026-05-04 11:44:33','2026-05-04 11:44:33'),
+(12,'SanDisk','','2026-05-04 11:44:41','2026-05-04 11:44:41'),
+(13,'LG','','2026-05-04 11:48:50','2026-05-04 11:48:50'),
+(14,'Cisco','','2026-05-04 12:00:44','2026-05-04 12:00:44'),
+(15,'American Megatrends Inc.','','2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(16,'Intel Corporation','','2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(17,'Microsoft Corporation','','2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(18,'Mellanox Technologies','','2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(19,'Microsoft','','2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(20,'Ubuntu','','2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(21,'MariaDB','','2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(22,'Msft','','2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_manufacturers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -9875,7 +10850,7 @@ CREATE TABLE `glpi_monitormodels` (
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`),
   KEY `product_number` (`product_number`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -9884,6 +10859,8 @@ CREATE TABLE `glpi_monitormodels` (
 
 LOCK TABLES `glpi_monitormodels` WRITE;
 /*!40000 ALTER TABLE `glpi_monitormodels` DISABLE KEYS */;
+INSERT INTO `glpi_monitormodels` VALUES
+(1,'27UK850','','',0,1,1,0,0,0,NULL,NULL,NULL,'2026-05-04 11:49:14','2026-05-04 11:49:14');
 /*!40000 ALTER TABLE `glpi_monitormodels` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -9955,7 +10932,7 @@ CREATE TABLE `glpi_monitors` (
   KEY `date_creation` (`date_creation`),
   KEY `is_recursive` (`is_recursive`),
   KEY `date_mod` (`date_mod`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -9964,6 +10941,8 @@ CREATE TABLE `glpi_monitors` (
 
 LOCK TABLES `glpi_monitors` WRITE;
 /*!40000 ALTER TABLE `glpi_monitors` DISABLE KEYS */;
+INSERT INTO `glpi_monitors` VALUES
+(1,0,'Écran-Direction-01','2026-05-04 11:49:41','Kevin MEYER','',5,0,'','SN-LG-001','INV-002',0.00,0,0,0,0,0,0,0,0,5,0,1,13,1,0,0,NULL,5,0,5,0.0000,0,0,'','2026-05-04 11:49:41',0);
 /*!40000 ALTER TABLE `glpi_monitors` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -10055,7 +11034,7 @@ CREATE TABLE `glpi_networkequipmentmodels` (
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`),
   KEY `product_number` (`product_number`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -10064,6 +11043,8 @@ CREATE TABLE `glpi_networkequipmentmodels` (
 
 LOCK TABLES `glpi_networkequipmentmodels` WRITE;
 /*!40000 ALTER TABLE `glpi_networkequipmentmodels` DISABLE KEYS */;
+INSERT INTO `glpi_networkequipmentmodels` VALUES
+(1,'Catalyst 2960','','',0,1,1,0,0,0,NULL,NULL,NULL,'2026-05-04 12:01:12','2026-05-04 12:01:12');
 /*!40000 ALTER TABLE `glpi_networkequipmentmodels` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -10133,7 +11114,7 @@ CREATE TABLE `glpi_networkequipments` (
   KEY `date_creation` (`date_creation`),
   KEY `autoupdatesystems_id` (`autoupdatesystems_id`),
   KEY `snmpcredentials_id` (`snmpcredentials_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -10142,6 +11123,8 @@ CREATE TABLE `glpi_networkequipments` (
 
 LOCK TABLES `glpi_networkequipments` WRITE;
 /*!40000 ALTER TABLE `glpi_networkequipments` DISABLE KEYS */;
+INSERT INTO `glpi_networkequipments` VALUES
+(1,0,0,'SW-Principal-01',0,'DEG2344GF','SW-001','','',5,0,'2026-05-04 12:01:42','',7,2,1,1,14,0,0,NULL,0,0,1,0.0000,0,'','2026-05-04 12:01:42',0,'',0,'0',NULL,0);
 /*!40000 ALTER TABLE `glpi_networkequipments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -10162,7 +11145,7 @@ CREATE TABLE `glpi_networkequipmenttypes` (
   KEY `name` (`name`),
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -10171,6 +11154,8 @@ CREATE TABLE `glpi_networkequipmenttypes` (
 
 LOCK TABLES `glpi_networkequipmenttypes` WRITE;
 /*!40000 ALTER TABLE `glpi_networkequipmenttypes` DISABLE KEYS */;
+INSERT INTO `glpi_networkequipmenttypes` VALUES
+(1,'Switch','','2026-05-04 12:00:32','2026-05-04 12:00:32');
 /*!40000 ALTER TABLE `glpi_networkequipmenttypes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -10229,7 +11214,7 @@ CREATE TABLE `glpi_networknames` (
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`),
   KEY `ipnetworks_id` (`ipnetworks_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -10238,6 +11223,11 @@ CREATE TABLE `glpi_networknames` (
 
 LOCK TABLES `glpi_networknames` WRITE;
 /*!40000 ALTER TABLE `glpi_networknames` DISABLE KEYS */;
+INSERT INTO `glpi_networknames` VALUES
+(1,0,1,'NetworkPort','lo',NULL,0,0,0,1,'2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(2,0,2,'NetworkPort','eth0',NULL,0,0,0,1,'2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(3,0,3,'NetworkPort','enp9770s1',NULL,0,0,0,1,'2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(4,0,4,'NetworkPort','docker0',NULL,0,0,0,1,'2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_networknames` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -10379,7 +11369,7 @@ CREATE TABLE `glpi_networkportethernets` (
   KEY `speed` (`speed`),
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -10388,6 +11378,10 @@ CREATE TABLE `glpi_networkportethernets` (
 
 LOCK TABLES `glpi_networkportethernets` WRITE;
 /*!40000 ALTER TABLE `glpi_networkportethernets` DISABLE KEYS */;
+INSERT INTO `glpi_networkportethernets` VALUES
+(1,2,0,'',100000,'2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(2,3,0,'',100000,'2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(3,4,0,'',0,'2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_networkportethernets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -10506,7 +11500,7 @@ CREATE TABLE `glpi_networkportmetrics` (
   KEY `date` (`date`),
   KEY `date_creation` (`date_creation`),
   KEY `date_mod` (`date_mod`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -10515,6 +11509,11 @@ CREATE TABLE `glpi_networkportmetrics` (
 
 LOCK TABLES `glpi_networkportmetrics` WRITE;
 /*!40000 ALTER TABLE `glpi_networkportmetrics` DISABLE KEYS */;
+INSERT INTO `glpi_networkportmetrics` VALUES
+(1,'2026-05-04',0,0,0,0,1,'2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(2,'2026-05-04',0,0,0,0,2,'2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(3,'2026-05-04',0,0,0,0,3,'2026-05-04 12:33:37','2026-05-04 12:33:37'),
+(4,'2026-05-04',0,0,0,0,4,'2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_networkportmetrics` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -10565,7 +11564,7 @@ CREATE TABLE `glpi_networkports` (
   KEY `is_dynamic` (`is_dynamic`),
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -10574,6 +11573,11 @@ CREATE TABLE `glpi_networkports` (
 
 LOCK TABLES `glpi_networkports` WRITE;
 /*!40000 ALTER TABLE `glpi_networkports` DISABLE KEYS */;
+INSERT INTO `glpi_networkports` VALUES
+(1,2,'Computer',0,0,0,'lo','NetworkPortLocal','00:00:00:00:00:00',NULL,0,1,'2026-05-04 12:33:37','2026-05-04 12:33:37',0,0,'1',0,NULL,0,0,0,0,'2',NULL,NULL,NULL,0,NULL),
+(2,2,'Computer',0,0,1,'eth0','NetworkPortEthernet','7c:ed:8d:6b:43:23',NULL,0,1,'2026-05-04 12:33:37','2026-05-04 12:33:37',0,0,'1',0,NULL,0,0,0,0,'1',NULL,NULL,NULL,0,NULL),
+(3,2,'Computer',0,0,1,'enP9770s1','NetworkPortEthernet','7c:ed:8d:6b:43:23',NULL,0,1,'2026-05-04 12:33:37','2026-05-04 12:33:37',0,0,'1',0,NULL,0,0,0,0,'1',NULL,NULL,NULL,0,NULL),
+(4,2,'Computer',0,0,0,'docker0','NetworkPortEthernet','02:42:85:f9:ee:a6',NULL,0,1,'2026-05-04 12:33:37','2026-05-04 12:33:37',0,0,'1',0,NULL,0,0,0,0,'2',NULL,NULL,NULL,0,NULL);
 /*!40000 ALTER TABLE `glpi_networkports` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11811,7 +12815,7 @@ CREATE TABLE `glpi_operatingsystemarchitectures` (
   KEY `name` (`name`),
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11820,6 +12824,8 @@ CREATE TABLE `glpi_operatingsystemarchitectures` (
 
 LOCK TABLES `glpi_operatingsystemarchitectures` WRITE;
 /*!40000 ALTER TABLE `glpi_operatingsystemarchitectures` DISABLE KEYS */;
+INSERT INTO `glpi_operatingsystemarchitectures` VALUES
+(1,'x86_64','','2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_operatingsystemarchitectures` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11869,7 +12875,7 @@ CREATE TABLE `glpi_operatingsystemkernels` (
   KEY `name` (`name`),
   KEY `date_creation` (`date_creation`),
   KEY `date_mod` (`date_mod`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11878,6 +12884,8 @@ CREATE TABLE `glpi_operatingsystemkernels` (
 
 LOCK TABLES `glpi_operatingsystemkernels` WRITE;
 /*!40000 ALTER TABLE `glpi_operatingsystemkernels` DISABLE KEYS */;
+INSERT INTO `glpi_operatingsystemkernels` VALUES
+(1,'linux','','2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_operatingsystemkernels` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11900,7 +12908,7 @@ CREATE TABLE `glpi_operatingsystemkernelversions` (
   KEY `operatingsystemkernels_id` (`operatingsystemkernels_id`),
   KEY `date_creation` (`date_creation`),
   KEY `date_mod` (`date_mod`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11909,6 +12917,8 @@ CREATE TABLE `glpi_operatingsystemkernelversions` (
 
 LOCK TABLES `glpi_operatingsystemkernelversions` WRITE;
 /*!40000 ALTER TABLE `glpi_operatingsystemkernelversions` DISABLE KEYS */;
+INSERT INTO `glpi_operatingsystemkernelversions` VALUES
+(1,1,'6.8.0-1044-azure','','2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_operatingsystemkernelversions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11929,7 +12939,7 @@ CREATE TABLE `glpi_operatingsystems` (
   KEY `name` (`name`),
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11938,6 +12948,8 @@ CREATE TABLE `glpi_operatingsystems` (
 
 LOCK TABLES `glpi_operatingsystems` WRITE;
 /*!40000 ALTER TABLE `glpi_operatingsystems` DISABLE KEYS */;
+INSERT INTO `glpi_operatingsystems` VALUES
+(1,'Ubuntu 24.04.4 LTS','','2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_operatingsystems` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11987,7 +12999,7 @@ CREATE TABLE `glpi_operatingsystemversions` (
   KEY `name` (`name`),
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11996,6 +13008,8 @@ CREATE TABLE `glpi_operatingsystemversions` (
 
 LOCK TABLES `glpi_operatingsystemversions` WRITE;
 /*!40000 ALTER TABLE `glpi_operatingsystemversions` DISABLE KEYS */;
+INSERT INTO `glpi_operatingsystemversions` VALUES
+(1,'24.04.4 LTS (Noble Numbat)','','2026-05-04 12:33:37','2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_operatingsystemversions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -13011,7 +14025,7 @@ CREATE TABLE `glpi_printermodels` (
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`),
   KEY `product_number` (`product_number`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -13020,6 +14034,8 @@ CREATE TABLE `glpi_printermodels` (
 
 LOCK TABLES `glpi_printermodels` WRITE;
 /*!40000 ALTER TABLE `glpi_printermodels` DISABLE KEYS */;
+INSERT INTO `glpi_printermodels` VALUES
+(1,'LaserJet Pro M404n','','','2026-05-04 11:58:27','2026-05-04 11:57:43',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `glpi_printermodels` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -13097,7 +14113,7 @@ CREATE TABLE `glpi_printers` (
   KEY `date_creation` (`date_creation`),
   KEY `snmpcredentials_id` (`snmpcredentials_id`),
   KEY `autoupdatesystems_id` (`autoupdatesystems_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -13106,6 +14122,8 @@ CREATE TABLE `glpi_printers` (
 
 LOCK TABLES `glpi_printers` WRITE;
 /*!40000 ALTER TABLE `glpi_printers` DISABLE KEYS */;
+INSERT INTO `glpi_printers` VALUES
+(1,0,0,'Imprimante-RDC-01','2026-05-04 11:58:10','','',5,0,'DCGRZTY24G','',0,0,0,0,0,'','0',6,0,0,1,6,0,0,0,NULL,0,0,0,0,5,0.0000,0,'','2026-05-04 11:58:10','',NULL,0,0);
 /*!40000 ALTER TABLE `glpi_printers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -14441,7 +15459,7 @@ CREATE TABLE `glpi_profiles_users` (
   KEY `users_id` (`users_id`),
   KEY `is_recursive` (`is_recursive`),
   KEY `is_dynamic` (`is_dynamic`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -14455,7 +15473,8 @@ INSERT INTO `glpi_profiles_users` VALUES
 (3,3,1,0,1,0,0),
 (4,4,6,0,1,0,0),
 (5,5,2,0,1,0,0),
-(6,5,4,0,0,0,0);
+(6,5,4,0,0,0,0),
+(7,7,1,0,0,0,0);
 /*!40000 ALTER TABLE `glpi_profiles_users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -15850,7 +16869,7 @@ CREATE TABLE `glpi_rulematchedlogs` (
   KEY `agents_id` (`agents_id`),
   KEY `item` (`itemtype`,`items_id`),
   KEY `rules_id` (`rules_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -15859,6 +16878,9 @@ CREATE TABLE `glpi_rulematchedlogs` (
 
 LOCK TABLES `glpi_rulematchedlogs` WRITE;
 /*!40000 ALTER TABLE `glpi_rulematchedlogs` DISABLE KEYS */;
+INSERT INTO `glpi_rulematchedlogs` VALUES
+(1,'2026-05-04 12:33:40',1,'DatabaseInstance',67,1,'inventory'),
+(2,'2026-05-04 12:33:40',2,'Computer',13,1,'inventory');
 /*!40000 ALTER TABLE `glpi_rulematchedlogs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -16468,7 +17490,7 @@ CREATE TABLE `glpi_softwarecategories` (
   KEY `name` (`name`),
   KEY `softwarecategories_id` (`softwarecategories_id`),
   KEY `level` (`level`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -16478,7 +17500,36 @@ CREATE TABLE `glpi_softwarecategories` (
 LOCK TABLES `glpi_softwarecategories` WRITE;
 /*!40000 ALTER TABLE `glpi_softwarecategories` DISABLE KEYS */;
 INSERT INTO `glpi_softwarecategories` VALUES
-(1,'Inventoried',NULL,0,'Software from inventories',1,NULL,NULL);
+(1,'Inventoried',NULL,0,'Software from inventories',1,NULL,NULL),
+(2,'admin','',0,'admin',1,'[]',NULL),
+(3,'httpd','',0,'httpd',1,'[]',NULL),
+(4,'oldlibs','',0,'oldlibs',1,'[]',NULL),
+(5,'devel','',0,'devel',1,'[]',NULL),
+(6,'shells','',0,'shells',1,'[]',NULL),
+(7,'utils','',0,'utils',1,'[]',NULL),
+(8,'misc','',0,'misc',1,'[]',NULL),
+(9,'default','',0,'default',1,'[]',NULL),
+(10,'interpreters','',0,'interpreters',1,'[]',NULL),
+(11,'web','',0,'web',1,'[]',NULL),
+(12,'database','',0,'database',1,'[]',NULL),
+(13,'fonts','',0,'fonts',1,'[]',NULL),
+(14,'libs','',0,'libs',1,'[]',NULL),
+(15,'introspection','',0,'introspection',1,'[]',NULL),
+(16,'vcs','',0,'vcs',1,'[]',NULL),
+(17,'doc','',0,'doc',1,'[]',NULL),
+(18,'net','',0,'net',1,'[]',NULL),
+(19,'text','',0,'text',1,'[]',NULL),
+(20,'libdevel','',0,'libdevel',1,'[]',NULL),
+(21,'perl','',0,'perl',1,'[]',NULL),
+(22,'php','',0,'php',1,'[]',NULL),
+(23,'debug','',0,'debug',1,'[]',NULL),
+(24,'javascript','',0,'javascript',1,'[]',NULL),
+(25,'mail','',0,'mail',1,'[]',NULL),
+(26,'python','',0,'python',1,'[]',NULL),
+(27,'x11','',0,'x11',1,'[]',NULL),
+(28,'localization','',0,'localization',1,'[]',NULL),
+(29,'-','',0,'-',1,'[]',NULL),
+(30,'editors','',0,'editors',1,'[]',NULL);
 /*!40000 ALTER TABLE `glpi_softwarecategories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -16655,7 +17706,7 @@ CREATE TABLE `glpi_softwares` (
   KEY `is_helpdesk_visible` (`is_helpdesk_visible`),
   KEY `groups_id_tech` (`groups_id_tech`),
   KEY `date_creation` (`date_creation`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=768 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -16664,6 +17715,774 @@ CREATE TABLE `glpi_softwares` (
 
 LOCK TABLES `glpi_softwares` WRITE;
 /*!40000 ALTER TABLE `glpi_softwares` DISABLE KEYS */;
+INSERT INTO `glpi_softwares` VALUES
+(1,0,0,'adduser',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(2,0,0,'apache2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,3,1,'2026-05-04 12:33:37',NULL),
+(3,0,0,'apache2-bin',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,3,1,'2026-05-04 12:33:37',NULL),
+(4,0,0,'apache2-data',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,3,1,'2026-05-04 12:33:37',NULL),
+(5,0,0,'apache2-utils',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,3,1,'2026-05-04 12:33:37',NULL),
+(6,0,0,'apt',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(7,0,0,'apt-transport-https',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,4,1,'2026-05-04 12:33:37',NULL),
+(8,0,0,'apt-utils',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(9,0,0,'autoconf',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(10,0,0,'automake',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(11,0,0,'autotools-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(12,0,0,'base-files',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(13,0,0,'base-passwd',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(14,0,0,'bash',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,6,1,'2026-05-04 12:33:37',NULL),
+(15,0,0,'bash-completion',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,6,1,'2026-05-04 12:33:37',NULL),
+(16,0,0,'binutils',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(17,0,0,'binutils-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(18,0,0,'binutils-x86-64-linux-gnu',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(19,0,0,'bison',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(20,0,0,'bsdextrautils',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(21,0,0,'bsdutils',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(22,0,0,'build-essential',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(23,0,0,'bzip2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(24,0,0,'ca-certificates',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,8,1,'2026-05-04 12:33:37',NULL),
+(25,0,0,'clang',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(26,0,0,'clang-18',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(27,0,0,'cmake',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(28,0,0,'cmake-data',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(29,0,0,'conda',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,9,1,'2026-05-04 12:33:37',NULL),
+(30,0,0,'coreutils',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(31,0,0,'cpp',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,10,1,'2026-05-04 12:33:37',NULL),
+(32,0,0,'cpp-13',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,10,1,'2026-05-04 12:33:37',NULL),
+(33,0,0,'cpp-13-x86-64-linux-gnu',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,10,1,'2026-05-04 12:33:37',NULL),
+(34,0,0,'cpp-x86-64-linux-gnu',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,10,1,'2026-05-04 12:33:37',NULL),
+(35,0,0,'cppcheck',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(36,0,0,'curl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,11,1,'2026-05-04 12:33:37',NULL),
+(37,0,0,'dash',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,6,1,'2026-05-04 12:33:37',NULL),
+(38,0,0,'dbus',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(39,0,0,'dbus-bin',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(40,0,0,'dbus-daemon',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(41,0,0,'dbus-session-bus-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(42,0,0,'dbus-system-bus-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(43,0,0,'debconf',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(44,0,0,'debianutils',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(45,0,0,'default-libmysqlclient-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,12,1,'2026-05-04 12:33:37',NULL),
+(46,0,0,'dialog',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,8,1,'2026-05-04 12:33:37',NULL),
+(47,0,0,'diffutils',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(48,0,0,'dirmngr',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(49,0,0,'distro-info-data',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(50,0,0,'dmidecode',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(51,0,0,'dpkg',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(52,0,0,'dpkg-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(53,0,0,'e2fsprogs',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(54,0,0,'fdisk',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(55,0,0,'file',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(56,0,0,'findutils',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(57,0,0,'fish',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,6,1,'2026-05-04 12:33:37',NULL),
+(58,0,0,'fish-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,6,1,'2026-05-04 12:33:37',NULL),
+(59,0,0,'fontconfig',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,13,1,'2026-05-04 12:33:37',NULL),
+(60,0,0,'fontconfig-config',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,13,1,'2026-05-04 12:33:37',NULL),
+(61,0,0,'fonts-dejavu-core',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,13,1,'2026-05-04 12:33:37',NULL),
+(62,0,0,'fonts-dejavu-mono',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,13,1,'2026-05-04 12:33:37',NULL),
+(63,0,0,'g++',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(64,0,0,'g++-13',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(65,0,0,'g++-13-x86-64-linux-gnu',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(66,0,0,'g++-x86-64-linux-gnu',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(67,0,0,'galera-4',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(68,0,0,'gawk',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,10,1,'2026-05-04 12:33:37',NULL),
+(69,0,0,'gcc',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(70,0,0,'gcc-13',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(71,0,0,'gcc-13-base',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(72,0,0,'gcc-13-x86-64-linux-gnu',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(73,0,0,'gcc-14-base',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(74,0,0,'gcc-x86-64-linux-gnu',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(75,0,0,'gdb',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(76,0,0,'gettext',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(77,0,0,'gettext-base',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(78,0,0,'gh',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,0,1,'2026-05-04 12:33:37',NULL),
+(79,0,0,'gir1.2-girepository-2.0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,15,1,'2026-05-04 12:33:37',NULL),
+(80,0,0,'gir1.2-glib-2.0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,15,1,'2026-05-04 12:33:37',NULL),
+(81,0,0,'gir1.2-packagekitglib-1.0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,15,1,'2026-05-04 12:33:37',NULL),
+(82,0,0,'gir1.2-secret-1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,15,1,'2026-05-04 12:33:37',NULL),
+(83,0,0,'git',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,16,1,'2026-05-04 12:33:37',NULL),
+(84,0,0,'git-man',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,17,1,'2026-05-04 12:33:37',NULL),
+(85,0,0,'glpi-agent',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,18,1,'2026-05-04 12:33:37',NULL),
+(86,0,0,'gnupg',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(87,0,0,'gnupg-utils',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(88,0,0,'gnupg2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,4,1,'2026-05-04 12:33:37',NULL),
+(89,0,0,'gpg',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(90,0,0,'gpg-agent',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(91,0,0,'gpgconf',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(92,0,0,'gpgsm',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(93,0,0,'gpgv',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(94,0,0,'grep',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(95,0,0,'groff-base',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,19,1,'2026-05-04 12:33:37',NULL),
+(96,0,0,'gzip',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(97,0,0,'hdparm',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(98,0,0,'hostname',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(99,0,0,'htop',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(100,0,0,'icu-devtools',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(101,0,0,'init-system-helpers',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(102,0,0,'inotify-tools',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,8,1,'2026-05-04 12:33:37',NULL),
+(103,0,0,'iproute2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,18,1,'2026-05-04 12:33:37',NULL),
+(104,0,0,'iptables',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,18,1,'2026-05-04 12:33:37',NULL),
+(105,0,0,'iso-codes',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,8,1,'2026-05-04 12:33:37',NULL),
+(106,0,0,'javascript-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,11,1,'2026-05-04 12:33:37',NULL),
+(107,0,0,'jq',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(108,0,0,'keyboxd',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(109,0,0,'less',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,19,1,'2026-05-04 12:33:37',NULL),
+(110,0,0,'lib32gcc-s1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(111,0,0,'lib32stdc++6',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(112,0,0,'libacl1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(113,0,0,'libalgorithm-c3-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(114,0,0,'libaom3',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(115,0,0,'libapache2-mod-php',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(116,0,0,'libapache2-mod-php8.3',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,3,1,'2026-05-04 12:33:37',NULL),
+(117,0,0,'libapparmor1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(118,0,0,'libappstream5',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(119,0,0,'libapr1t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(120,0,0,'libaprutil1-dbd-sqlite3',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(121,0,0,'libaprutil1-ldap',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(122,0,0,'libaprutil1t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(123,0,0,'libapt-pkg6.0t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(124,0,0,'libarchive13t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(125,0,0,'libargon2-1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(126,0,0,'libargon2-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(127,0,0,'libasan8',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(128,0,0,'libassuan0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(129,0,0,'libatomic1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(130,0,0,'libattr1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(131,0,0,'libaudit-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(132,0,0,'libaudit1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(133,0,0,'libauthen-sasl-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(134,0,0,'libavahi-client3',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(135,0,0,'libavahi-common-data',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(136,0,0,'libavahi-common3',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(137,0,0,'libb-hooks-endofscope-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(138,0,0,'libb-hooks-op-check-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(139,0,0,'libbabeltrace1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(140,0,0,'libbinutils',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(141,0,0,'libblkid-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(142,0,0,'libblkid1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(143,0,0,'libbpf1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(144,0,0,'libbrotli-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(145,0,0,'libbrotli1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(146,0,0,'libbsd-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(147,0,0,'libbsd0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(148,0,0,'libbz2-1.0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(149,0,0,'libbz2-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(150,0,0,'libc-bin',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(151,0,0,'libc-dev-bin',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(152,0,0,'libc6',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(153,0,0,'libc6-dbg',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,23,1,'2026-05-04 12:33:37',NULL),
+(154,0,0,'libc6-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(155,0,0,'libc6-i386',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(156,0,0,'libcairo2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(157,0,0,'libcap-ng0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(158,0,0,'libcap2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(159,0,0,'libcap2-bin',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(160,0,0,'libcbor0.10',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(161,0,0,'libcc1-0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(162,0,0,'libcgi-fast-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(163,0,0,'libcgi-pm-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(164,0,0,'libclang-common-18-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(165,0,0,'libclang-cpp18',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(166,0,0,'libclang-rt-18-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(167,0,0,'libclang1-18',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(168,0,0,'libclass-c3-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(169,0,0,'libclass-c3-xs-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(170,0,0,'libclass-data-inheritable-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(171,0,0,'libclass-inspector-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(172,0,0,'libclass-method-modifiers-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(173,0,0,'libclass-singleton-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(174,0,0,'libclass-xsaccessor-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(175,0,0,'libclone-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(176,0,0,'libcom-err2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(177,0,0,'libconfig-inifiles-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(178,0,0,'libcpanel-json-xs-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(179,0,0,'libcrypt-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(180,0,0,'libcrypt1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(181,0,0,'libcryptsetup12',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(182,0,0,'libctf-nobfd0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(183,0,0,'libctf0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(184,0,0,'libcups2t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(185,0,0,'libcurl3t64-gnutls',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(186,0,0,'libcurl4-openssl-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(187,0,0,'libcurl4t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(188,0,0,'libdata-dump-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(189,0,0,'libdata-optlist-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(190,0,0,'libdatetime-locale-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(191,0,0,'libdatetime-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(192,0,0,'libdatetime-timezone-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(193,0,0,'libdatrie1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(194,0,0,'libdb5.3t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(195,0,0,'libdbd-mysql-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(196,0,0,'libdbi-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(197,0,0,'libdbus-1-3',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(198,0,0,'libde265-0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(199,0,0,'libdebconfclient0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(200,0,0,'libdebuginfod-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(201,0,0,'libdebuginfod1t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(202,0,0,'libdeflate0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(203,0,0,'libdevel-callchecker-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(204,0,0,'libdevel-caller-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(205,0,0,'libdevel-lexalias-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(206,0,0,'libdevel-stacktrace-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(207,0,0,'libdevmapper1.02.1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(208,0,0,'libdpkg-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(209,0,0,'libduktape207',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(210,0,0,'libdw1t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(211,0,0,'libdynaloader-functions-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(212,0,0,'libedit-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(213,0,0,'libedit2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(214,0,0,'libelf1t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(215,0,0,'libencode-locale-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(216,0,0,'liberror-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(217,0,0,'libeval-closure-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(218,0,0,'libevent-2.1-7t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(219,0,0,'libexception-class-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(220,0,0,'libexif12',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(221,0,0,'libexpat1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(222,0,0,'libexpat1-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(223,0,0,'libext2fs2t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(224,0,0,'libfcgi-bin',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(225,0,0,'libfcgi-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(226,0,0,'libfcgi0t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(227,0,0,'libfdisk1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(228,0,0,'libffi-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(229,0,0,'libffi8',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(230,0,0,'libfido2-1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(231,0,0,'libfile-listing-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(232,0,0,'libfile-sharedir-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(233,0,0,'libfile-which-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(234,0,0,'libfont-afm-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(235,0,0,'libfontconfig-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(236,0,0,'libfontconfig1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(237,0,0,'libfontconfig1-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,4,1,'2026-05-04 12:33:37',NULL),
+(238,0,0,'libfreetype-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(239,0,0,'libfreetype6',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(240,0,0,'libfribidi0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(241,0,0,'libgc1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(242,0,0,'libgcc-13-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(243,0,0,'libgcc-s1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(244,0,0,'libgcrypt20',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(245,0,0,'libgcrypt20-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(246,0,0,'libgd3',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(247,0,0,'libgdbm-compat4t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(248,0,0,'libgdbm-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(249,0,0,'libgdbm6t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(250,0,0,'libgdiplus',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(251,0,0,'libgif7',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(252,0,0,'libgirepository-1.0-1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(253,0,0,'libgirepository-2.0-0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(254,0,0,'libglib2.0-0t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(255,0,0,'libglib2.0-bin',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,8,1,'2026-05-04 12:33:37',NULL),
+(256,0,0,'libglib2.0-data',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(257,0,0,'libglib2.0-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(258,0,0,'libglib2.0-dev-bin',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(259,0,0,'libgmp-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(260,0,0,'libgmp10',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(261,0,0,'libgmpxx4ldbl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(262,0,0,'libgnutls-dane0t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(263,0,0,'libgnutls-openssl27t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(264,0,0,'libgnutls28-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(265,0,0,'libgnutls30t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(266,0,0,'libgomp1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(267,0,0,'libgpg-error-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(268,0,0,'libgpg-error0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(269,0,0,'libgpm2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(270,0,0,'libgprofng0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(271,0,0,'libgraphite2-3',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(272,0,0,'libgssapi-krb5-2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(273,0,0,'libgstreamer1.0-0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(274,0,0,'libharfbuzz0b',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(275,0,0,'libheif-plugin-aomdec',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(276,0,0,'libheif-plugin-aomenc',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(277,0,0,'libheif-plugin-libde265',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(278,0,0,'libheif1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(279,0,0,'libhogweed6t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(280,0,0,'libhtml-form-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(281,0,0,'libhtml-format-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(282,0,0,'libhtml-parser-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(283,0,0,'libhtml-tagset-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(284,0,0,'libhtml-template-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(285,0,0,'libhtml-tree-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(286,0,0,'libhttp-cookies-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(287,0,0,'libhttp-daemon-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(288,0,0,'libhttp-date-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(289,0,0,'libhttp-message-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(290,0,0,'libhttp-negotiate-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(291,0,0,'libhwasan0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(292,0,0,'libicu-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(293,0,0,'libicu74',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(294,0,0,'libidn2-0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(295,0,0,'libidn2-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(296,0,0,'libimport-into-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(297,0,0,'libinotifytools0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(298,0,0,'libio-html-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(299,0,0,'libio-pty-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(300,0,0,'libio-socket-ssl-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(301,0,0,'libip4tc2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(302,0,0,'libip6tc2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(303,0,0,'libipc-run-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(304,0,0,'libipt2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(305,0,0,'libisl23',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(306,0,0,'libitm1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(307,0,0,'libjansson4',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(308,0,0,'libjbig0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(309,0,0,'libjpeg-turbo8',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(310,0,0,'libjpeg8',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(311,0,0,'libjq1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(312,0,0,'libjs-jquery',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,24,1,'2026-05-04 12:33:37',NULL),
+(313,0,0,'libjs-sphinxdoc',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,24,1,'2026-05-04 12:33:37',NULL),
+(314,0,0,'libjs-underscore',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,24,1,'2026-05-04 12:33:37',NULL),
+(315,0,0,'libjson-c5',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(316,0,0,'libjsoncpp25',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(317,0,0,'libk5crypto3',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(318,0,0,'libkeyutils1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(319,0,0,'libkmod2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(320,0,0,'libkrb5-3',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(321,0,0,'libkrb5support0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(322,0,0,'libksba8',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(323,0,0,'libldap2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(324,0,0,'liblerc4',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(325,0,0,'liblldb-18',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(326,0,0,'libllvm18',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(327,0,0,'liblsan0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(328,0,0,'libltdl7',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(329,0,0,'liblttng-ust-common1t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(330,0,0,'liblttng-ust-ctl5t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(331,0,0,'liblttng-ust1t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(332,0,0,'liblua5.4-0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(333,0,0,'liblwp-mediatypes-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(334,0,0,'liblwp-protocol-https-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(335,0,0,'liblz4-1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(336,0,0,'liblzma-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(337,0,0,'liblzma5',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(338,0,0,'liblzo2-2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(339,0,0,'libmagic-mgc',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(340,0,0,'libmagic1t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(341,0,0,'libmailtools-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,25,1,'2026-05-04 12:33:37',NULL),
+(342,0,0,'libmariadb3',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(343,0,0,'libmd-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(344,0,0,'libmd0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(345,0,0,'libmnl0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(346,0,0,'libmodule-implementation-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(347,0,0,'libmodule-runtime-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(348,0,0,'libmoo-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(349,0,0,'libmount-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(350,0,0,'libmount1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(351,0,0,'libmpc3',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(352,0,0,'libmpfr6',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(353,0,0,'libmro-compat-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(354,0,0,'libmysqlclient-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(355,0,0,'libmysqlclient21',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(356,0,0,'libnamespace-autoclean-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(357,0,0,'libnamespace-clean-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(358,0,0,'libncurses-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(359,0,0,'libncurses6',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(360,0,0,'libncursesw6',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(361,0,0,'libnet-cups-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(362,0,0,'libnet-http-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(363,0,0,'libnet-ip-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(364,0,0,'libnet-smtp-ssl-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(365,0,0,'libnet-ssh2-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(366,0,0,'libnet-ssleay-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(367,0,0,'libnetfilter-conntrack3',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(368,0,0,'libnettle8t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(369,0,0,'libnfnetlink0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(370,0,0,'libnftables1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(371,0,0,'libnftnl11',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(372,0,0,'libnghttp2-14',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(373,0,0,'libnl-3-200',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(374,0,0,'libnl-genl-3-200',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(375,0,0,'libnpth0t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(376,0,0,'libnspr4',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(377,0,0,'libnspr4-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(378,0,0,'libnss3',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(379,0,0,'libnss3-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(380,0,0,'libnuma1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(381,0,0,'libobjc-13-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(382,0,0,'libobjc4',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(383,0,0,'libodbc2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(384,0,0,'libodbccr2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(385,0,0,'libodbcinst2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(386,0,0,'libonig-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(387,0,0,'libonig5',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(388,0,0,'libossp-uuid-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(389,0,0,'libossp-uuid16',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(390,0,0,'libp11-kit-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(391,0,0,'libp11-kit0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(392,0,0,'libpackage-stash-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(393,0,0,'libpackage-stash-xs-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(394,0,0,'libpackagekit-glib2-18',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(395,0,0,'libpadwalker-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(396,0,0,'libpam-modules',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(397,0,0,'libpam-modules-bin',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(398,0,0,'libpam-runtime',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(399,0,0,'libpam-systemd',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(400,0,0,'libpam0g',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(401,0,0,'libpango-1.0-0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(402,0,0,'libpangocairo-1.0-0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(403,0,0,'libpangoft2-1.0-0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(404,0,0,'libparallel-forkmanager-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(405,0,0,'libparams-classify-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(406,0,0,'libparams-util-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(407,0,0,'libparams-validationcompiler-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(408,0,0,'libparse-edid-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(409,0,0,'libpci3',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(410,0,0,'libpcre2-16-0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(411,0,0,'libpcre2-32-0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(412,0,0,'libpcre2-8-0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(413,0,0,'libpcre2-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(414,0,0,'libpcre2-posix3',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(415,0,0,'libpcre3',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(416,0,0,'libperl5.38t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(417,0,0,'libpfm4',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(418,0,0,'libpipeline1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(419,0,0,'libpixman-1-0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(420,0,0,'libpkgconf3',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(421,0,0,'libpng-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(422,0,0,'libpng16-16t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(423,0,0,'libpolkit-agent-1-0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(424,0,0,'libpolkit-gobject-1-0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(425,0,0,'libpopt0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(426,0,0,'libpq-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(427,0,0,'libpq5',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(428,0,0,'libproc-daemon-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(429,0,0,'libproc-processtable-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(430,0,0,'libproc2-0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(431,0,0,'libpsl5t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(432,0,0,'libpthread-stubs0-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(433,0,0,'libpython3-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(434,0,0,'libpython3-stdlib',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(435,0,0,'libpython3.12-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(436,0,0,'libpython3.12-minimal',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(437,0,0,'libpython3.12-stdlib',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(438,0,0,'libpython3.12t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(439,0,0,'libquadmath0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(440,0,0,'libreadline-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(441,0,0,'libreadline8t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(442,0,0,'libreadonly-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(443,0,0,'libref-util-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(444,0,0,'libref-util-xs-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(445,0,0,'librhash0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(446,0,0,'librole-tiny-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(447,0,0,'librtmp1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(448,0,0,'libsasl2-2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(449,0,0,'libsasl2-modules-db',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(450,0,0,'libseccomp2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(451,0,0,'libsecret-1-0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(452,0,0,'libsecret-1-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(453,0,0,'libsecret-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(454,0,0,'libselinux1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(455,0,0,'libselinux1-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(456,0,0,'libsemanage-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(457,0,0,'libsemanage2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(458,0,0,'libsepol-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(459,0,0,'libsepol2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(460,0,0,'libsframe1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(461,0,0,'libsharpyuv0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(462,0,0,'libsigsegv2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(463,0,0,'libsmartcols1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(464,0,0,'libsnappy1v5',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(465,0,0,'libsodium-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(466,0,0,'libsodium23',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(467,0,0,'libsource-highlight-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(468,0,0,'libsource-highlight4t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(469,0,0,'libspecio-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(470,0,0,'libsqlite3-0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(471,0,0,'libsqlite3-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(472,0,0,'libss2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(473,0,0,'libssh-4',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(474,0,0,'libssh2-1t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(475,0,0,'libssl-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(476,0,0,'libssl1.1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(477,0,0,'libssl3t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(478,0,0,'libstdc++-13-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(479,0,0,'libstdc++6',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(480,0,0,'libstemmer0d',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(481,0,0,'libsub-exporter-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(482,0,0,'libsub-exporter-progressive-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(483,0,0,'libsub-identify-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(484,0,0,'libsub-install-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(485,0,0,'libsub-name-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(486,0,0,'libsub-quote-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(487,0,0,'libsystemd-shared',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(488,0,0,'libsystemd0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(489,0,0,'libtasn1-6',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(490,0,0,'libtasn1-6-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(491,0,0,'libtcl8.6',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(492,0,0,'libterm-readkey-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(493,0,0,'libtext-template-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(494,0,0,'libthai-data',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(495,0,0,'libthai0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(496,0,0,'libtiff6',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(497,0,0,'libtime-duration-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(498,0,0,'libtimedate-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(499,0,0,'libtinfo6',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(500,0,0,'libtinyxml2-10',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(501,0,0,'libtirpc-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(502,0,0,'libtirpc3t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(503,0,0,'libtk8.6',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(504,0,0,'libtool',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(505,0,0,'libtry-tiny-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(506,0,0,'libtsan2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(507,0,0,'libubsan1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(508,0,0,'libuchardet0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(509,0,0,'libudev1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(510,0,0,'libunbound8',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(511,0,0,'libunistring5',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(512,0,0,'libuniversal-require-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(513,0,0,'libunwind8',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(514,0,0,'liburi-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(515,0,0,'liburing2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(516,0,0,'libusb-1.0-0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(517,0,0,'libuuid1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(518,0,0,'libuv1t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(519,0,0,'libvariable-magic-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(520,0,0,'libwebp7',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(521,0,0,'libwrap0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(522,0,0,'libwww-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(523,0,0,'libwww-robotrules-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(524,0,0,'libx11-6',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(525,0,0,'libx11-data',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,27,1,'2026-05-04 12:33:37',NULL),
+(526,0,0,'libx11-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(527,0,0,'libxau-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(528,0,0,'libxau6',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(529,0,0,'libxcb-render0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(530,0,0,'libxcb-shm0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(531,0,0,'libxcb1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(532,0,0,'libxcb1-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(533,0,0,'libxdmcp-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(534,0,0,'libxdmcp6',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(535,0,0,'libxext-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(536,0,0,'libxext6',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(537,0,0,'libxft-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(538,0,0,'libxft2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(539,0,0,'libxml-libxml-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(540,0,0,'libxml-namespacesupport-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(541,0,0,'libxml-parser-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(542,0,0,'libxml-sax-base-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(543,0,0,'libxml-sax-expat-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(544,0,0,'libxml-sax-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(545,0,0,'libxml2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(546,0,0,'libxml2-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(547,0,0,'libxmlb2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(548,0,0,'libxmlsec1-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(549,0,0,'libxmlsec1t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(550,0,0,'libxmlsec1t64-gcrypt',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(551,0,0,'libxmlsec1t64-gnutls',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(552,0,0,'libxmlsec1t64-nss',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(553,0,0,'libxmlsec1t64-openssl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(554,0,0,'libxpm4',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(555,0,0,'libxrender-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(556,0,0,'libxrender1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(557,0,0,'libxslt1-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(558,0,0,'libxslt1.1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(559,0,0,'libxss-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(560,0,0,'libxss1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(561,0,0,'libxstring-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(562,0,0,'libxtables12',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(563,0,0,'libxxhash0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(564,0,0,'libyaml-0-2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(565,0,0,'libyaml-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(566,0,0,'libyaml-libyaml-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(567,0,0,'libyaml-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(568,0,0,'libyaml-tiny-perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(569,0,0,'libz3-4',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(570,0,0,'libz3-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(571,0,0,'libzip4t64',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(572,0,0,'libzstd-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(573,0,0,'libzstd1',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(574,0,0,'linux-libc-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(575,0,0,'lldb',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(576,0,0,'lldb-18',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(577,0,0,'llvm',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(578,0,0,'llvm-18',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(579,0,0,'llvm-18-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(580,0,0,'llvm-18-linker-tools',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(581,0,0,'llvm-18-runtime',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(582,0,0,'llvm-18-tools',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(583,0,0,'llvm-runtime',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(584,0,0,'locales',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,28,1,'2026-05-04 12:33:37',NULL),
+(585,0,0,'login',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(586,0,0,'logsave',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(587,0,0,'lsb-release',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,8,1,'2026-05-04 12:33:37',NULL),
+(588,0,0,'lsof',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(589,0,0,'lto-disabled-list',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(590,0,0,'lynx',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,11,1,'2026-05-04 12:33:37',NULL),
+(591,0,0,'lynx-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,11,1,'2026-05-04 12:33:37',NULL),
+(592,0,0,'m4',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,10,1,'2026-05-04 12:33:37',NULL),
+(593,0,0,'mailcap',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(594,0,0,'make',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(595,0,0,'man-db',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,17,1,'2026-05-04 12:33:37',NULL),
+(596,0,0,'manpages',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,17,1,'2026-05-04 12:33:37',NULL),
+(597,0,0,'manpages-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,17,1,'2026-05-04 12:33:37',NULL),
+(598,0,0,'mariadb-client',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,12,1,'2026-05-04 12:33:37',NULL),
+(599,0,0,'mariadb-client-core',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,12,1,'2026-05-04 12:33:37',NULL),
+(600,0,0,'mariadb-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,12,1,'2026-05-04 12:33:37',NULL),
+(601,0,0,'mariadb-plugin-provider-bzip2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,12,1,'2026-05-04 12:33:37',NULL),
+(602,0,0,'mariadb-plugin-provider-lz4',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,12,1,'2026-05-04 12:33:37',NULL),
+(603,0,0,'mariadb-plugin-provider-lzma',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,12,1,'2026-05-04 12:33:37',NULL),
+(604,0,0,'mariadb-plugin-provider-lzo',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,12,1,'2026-05-04 12:33:37',NULL),
+(605,0,0,'mariadb-plugin-provider-snappy',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,12,1,'2026-05-04 12:33:37',NULL),
+(606,0,0,'mariadb-server',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,12,1,'2026-05-04 12:33:37',NULL),
+(607,0,0,'mariadb-server-core',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,12,1,'2026-05-04 12:33:37',NULL),
+(608,0,0,'mawk',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,10,1,'2026-05-04 12:33:37',NULL),
+(609,0,0,'media-types',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,18,1,'2026-05-04 12:33:37',NULL),
+(610,0,0,'moby-buildx',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,29,1,'2026-05-04 12:33:37',NULL),
+(611,0,0,'moby-cli',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,29,1,'2026-05-04 12:33:37',NULL),
+(612,0,0,'moby-compose',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,29,1,'2026-05-04 12:33:37',NULL),
+(613,0,0,'moby-containerd',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,29,1,'2026-05-04 12:33:37',NULL),
+(614,0,0,'moby-engine',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,29,1,'2026-05-04 12:33:37',NULL),
+(615,0,0,'moby-runc',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,29,1,'2026-05-04 12:33:37',NULL),
+(616,0,0,'moby-tini',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,29,1,'2026-05-04 12:33:37',NULL),
+(617,0,0,'moreutils',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(618,0,0,'mount',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(619,0,0,'mysql-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,12,1,'2026-05-04 12:33:37',NULL),
+(620,0,0,'nano',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,30,1,'2026-05-04 12:33:37',NULL),
+(621,0,0,'ncdu',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(622,0,0,'ncurses-base',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,8,1,'2026-05-04 12:33:37',NULL),
+(623,0,0,'ncurses-bin',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(624,0,0,'net-tools',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,18,1,'2026-05-04 12:33:37',NULL),
+(625,0,0,'netbase',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(626,0,0,'nettle-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(627,0,0,'nftables',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,18,1,'2026-05-04 12:33:37',NULL),
+(628,0,0,'openssh-client',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,18,1,'2026-05-04 12:33:37',NULL),
+(629,0,0,'openssh-server',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,18,1,'2026-05-04 12:33:37',NULL),
+(630,0,0,'openssh-sftp-server',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,18,1,'2026-05-04 12:33:37',NULL),
+(631,0,0,'openssl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(632,0,0,'packagekit',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(633,0,0,'passwd',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(634,0,0,'patch',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,16,1,'2026-05-04 12:33:37',NULL),
+(635,0,0,'pci.ids',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(636,0,0,'pciutils',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(637,0,0,'perl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(638,0,0,'perl-base',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(639,0,0,'perl-modules-5.38',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(640,0,0,'perl-openssl-defaults',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,21,1,'2026-05-04 12:33:37',NULL),
+(641,0,0,'php',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(642,0,0,'php-bz2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(643,0,0,'php-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(644,0,0,'php-curl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(645,0,0,'php-gd',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(646,0,0,'php-intl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(647,0,0,'php-ldap',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(648,0,0,'php-mbstring',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(649,0,0,'php-xml',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(650,0,0,'php-zip',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(651,0,0,'php8.3',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(652,0,0,'php8.3-bz2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(653,0,0,'php8.3-cli',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(654,0,0,'php8.3-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(655,0,0,'php8.3-curl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(656,0,0,'php8.3-gd',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(657,0,0,'php8.3-intl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(658,0,0,'php8.3-ldap',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(659,0,0,'php8.3-mbstring',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(660,0,0,'php8.3-mysql',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(661,0,0,'php8.3-opcache',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(662,0,0,'php8.3-readline',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(663,0,0,'php8.3-xml',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(664,0,0,'php8.3-zip',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,22,1,'2026-05-04 12:33:37',NULL),
+(665,0,0,'pigz',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(666,0,0,'pinentry-curses',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(667,0,0,'pkg-config',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,4,1,'2026-05-04 12:33:37',NULL),
+(668,0,0,'pkgconf',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(669,0,0,'pkgconf-bin',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(670,0,0,'polkitd',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(671,0,0,'powermgmt-base',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(672,0,0,'procps',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(673,0,0,'psmisc',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(674,0,0,'pv',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(675,0,0,'python-apt-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(676,0,0,'python3',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(677,0,0,'python3-apt',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(678,0,0,'python3-blinker',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(679,0,0,'python3-cffi-backend',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(680,0,0,'python3-cryptography',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(681,0,0,'python3-dbus',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(682,0,0,'python3-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(683,0,0,'python3-distro',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(684,0,0,'python3-gi',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(685,0,0,'python3-httplib2',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(686,0,0,'python3-jwt',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(687,0,0,'python3-launchpadlib',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(688,0,0,'python3-lazr.restfulclient',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(689,0,0,'python3-lazr.uri',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(690,0,0,'python3-lldb-18',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(691,0,0,'python3-minimal',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(692,0,0,'python3-oauthlib',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(693,0,0,'python3-packaging',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(694,0,0,'python3-pip',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(695,0,0,'python3-pkg-resources',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(696,0,0,'python3-pygments',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(697,0,0,'python3-pyparsing',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(698,0,0,'python3-setuptools',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(699,0,0,'python3-six',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(700,0,0,'python3-software-properties',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(701,0,0,'python3-wadllib',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(702,0,0,'python3-wheel',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(703,0,0,'python3-yaml',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(704,0,0,'python3.12',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(705,0,0,'python3.12-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(706,0,0,'python3.12-minimal',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,26,1,'2026-05-04 12:33:37',NULL),
+(707,0,0,'re2c',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(708,0,0,'readline-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(709,0,0,'rpcsvc-proto',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(710,0,0,'rsync',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,18,1,'2026-05-04 12:33:37',NULL),
+(711,0,0,'sed',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(712,0,0,'sensible-utils',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(713,0,0,'sgml-base',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,19,1,'2026-05-04 12:33:37',NULL),
+(714,0,0,'socat',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,18,1,'2026-05-04 12:33:37',NULL),
+(715,0,0,'software-properties-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(716,0,0,'sqlite3',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,12,1,'2026-05-04 12:33:37',NULL),
+(717,0,0,'ssl-cert',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(718,0,0,'strace',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(719,0,0,'sudo',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(720,0,0,'swig3.0',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,10,1,'2026-05-04 12:33:37',NULL),
+(721,0,0,'systemd',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(722,0,0,'systemd-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(723,0,0,'systemd-sysv',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(724,0,0,'sysvinit-utils',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,2,1,'2026-05-04 12:33:37',NULL),
+(725,0,0,'tar',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(726,0,0,'tcl',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,10,1,'2026-05-04 12:33:37',NULL),
+(727,0,0,'tcl-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(728,0,0,'tcl8.6',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,10,1,'2026-05-04 12:33:37',NULL),
+(729,0,0,'tcl8.6-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(730,0,0,'tk',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,10,1,'2026-05-04 12:33:37',NULL),
+(731,0,0,'tk-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(732,0,0,'tk8.6',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,10,1,'2026-05-04 12:33:37',NULL),
+(733,0,0,'tk8.6-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(734,0,0,'tree',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(735,0,0,'tzdata',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,28,1,'2026-05-04 12:33:37',NULL),
+(736,0,0,'ubuntu-keyring',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,8,1,'2026-05-04 12:33:37',NULL),
+(737,0,0,'ucf',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(738,0,0,'unixodbc-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(739,0,0,'unixodbc-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(740,0,0,'unminimize',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(741,0,0,'unzip',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(742,0,0,'usbutils',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(743,0,0,'util-linux',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(744,0,0,'uuid-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(745,0,0,'valgrind',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,5,1,'2026-05-04 12:33:37',NULL),
+(746,0,0,'vim',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,30,1,'2026-05-04 12:33:37',NULL),
+(747,0,0,'vim-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,30,1,'2026-05-04 12:33:37',NULL),
+(748,0,0,'vim-doc',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,17,1,'2026-05-04 12:33:37',NULL),
+(749,0,0,'vim-runtime',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,30,1,'2026-05-04 12:33:37',NULL),
+(750,0,0,'vim-tiny',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,30,1,'2026-05-04 12:33:37',NULL),
+(751,0,0,'wget',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,11,1,'2026-05-04 12:33:37',NULL),
+(752,0,0,'x11-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,27,1,'2026-05-04 12:33:37',NULL),
+(753,0,0,'x11proto-core-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,4,1,'2026-05-04 12:33:37',NULL),
+(754,0,0,'x11proto-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,27,1,'2026-05-04 12:33:37',NULL),
+(755,0,0,'xml-core',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,19,1,'2026-05-04 12:33:37',NULL),
+(756,0,0,'xorg-sgml-doctools',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,27,1,'2026-05-04 12:33:37',NULL),
+(757,0,0,'xsel',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,27,1,'2026-05-04 12:33:37',NULL),
+(758,0,0,'xtail',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(759,0,0,'xtrans-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,27,1,'2026-05-04 12:33:37',NULL),
+(760,0,0,'xxd',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,30,1,'2026-05-04 12:33:37',NULL),
+(761,0,0,'xz-utils',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(762,0,0,'zip',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,7,1,'2026-05-04 12:33:37',NULL),
+(763,0,0,'zlib1g',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,14,1,'2026-05-04 12:33:37',NULL),
+(764,0,0,'zlib1g-dev',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,20,1,'2026-05-04 12:33:37',NULL),
+(765,0,0,'zsh',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,6,1,'2026-05-04 12:33:37',NULL),
+(766,0,0,'zsh-common',NULL,0,0,0,0,0,20,0,0,NULL,NULL,0,0,0.0000,1,6,1,'2026-05-04 12:33:37',NULL),
+(767,0,0,'Ubuntu 24.04.4 LTS',NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0.0000,1,0,1,'2026-05-04 12:33:37',NULL);
 /*!40000 ALTER TABLE `glpi_softwares` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -16696,7 +18515,7 @@ CREATE TABLE `glpi_softwareversions` (
   KEY `operatingsystems_id` (`operatingsystems_id`),
   KEY `date_mod` (`date_mod`),
   KEY `date_creation` (`date_creation`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=768 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -16705,6 +18524,774 @@ CREATE TABLE `glpi_softwareversions` (
 
 LOCK TABLES `glpi_softwareversions` WRITE;
 /*!40000 ALTER TABLE `glpi_softwareversions` DISABLE KEYS */;
+INSERT INTO `glpi_softwareversions` VALUES
+(1,0,0,1,0,'3.137ubuntu1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(2,0,0,2,0,'2.4.58-1ubuntu8.11','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(3,0,0,3,0,'2.4.58-1ubuntu8.11','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(4,0,0,4,0,'2.4.58-1ubuntu8.11','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(5,0,0,5,0,'2.4.58-1ubuntu8.11','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(6,0,0,6,0,'2.8.3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(7,0,0,7,0,'2.8.3','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(8,0,0,8,0,'2.8.3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(9,0,0,9,0,'2.71-3','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(10,0,0,10,0,'1:1.16.5-1.3ubuntu1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(11,0,0,11,0,'20220109.1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(12,0,0,12,0,'13ubuntu10.4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(13,0,0,13,0,'3.6.3build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(14,0,0,14,0,'5.2.21-2ubuntu4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(15,0,0,15,0,'1:2.11-8','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(16,0,0,16,0,'2.42-4ubuntu2.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(17,0,0,17,0,'2.42-4ubuntu2.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(18,0,0,18,0,'2.42-4ubuntu2.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(19,0,0,19,0,'2:3.8.2+dfsg-1build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(20,0,0,20,0,'2.39.3-9ubuntu6.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(21,0,0,21,0,'1:2.39.3-9ubuntu6.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(22,0,0,22,0,'12.10ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(23,0,0,23,0,'1.0.8-5.1build0.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(24,0,0,24,0,'20240203','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(25,0,0,25,0,'1:18.0-59~exp2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(26,0,0,26,0,'1:18.1.3-1ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(27,0,0,27,0,'3.28.3-1build7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(28,0,0,28,0,'3.28.3-1build7','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(29,0,0,29,0,'24.5.0-0','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(30,0,0,30,0,'9.4-3ubuntu6.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(31,0,0,31,0,'4:13.2.0-7ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(32,0,0,32,0,'13.3.0-6ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(33,0,0,33,0,'13.3.0-6ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(34,0,0,34,0,'4:13.2.0-7ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(35,0,0,35,0,'2.13.0-2ubuntu3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(36,0,0,36,0,'8.5.0-2ubuntu10.7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(37,0,0,37,0,'0.5.12-6ubuntu5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(38,0,0,38,0,'1.14.10-4ubuntu4.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(39,0,0,39,0,'1.14.10-4ubuntu4.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(40,0,0,40,0,'1.14.10-4ubuntu4.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(41,0,0,41,0,'1.14.10-4ubuntu4.1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(42,0,0,42,0,'1.14.10-4ubuntu4.1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(43,0,0,43,0,'1.5.86ubuntu1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(44,0,0,44,0,'5.17build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(45,0,0,45,0,'1.1.0build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(46,0,0,46,0,'1.3-20240101-1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(47,0,0,47,0,'1:3.10-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(48,0,0,48,0,'2.4.4-2ubuntu17.4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(49,0,0,49,0,'0.60ubuntu0.5','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(50,0,0,50,0,'3.5-3ubuntu0.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(51,0,0,51,0,'1.22.6ubuntu6.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(52,0,0,52,0,'1.22.6ubuntu6.5','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(53,0,0,53,0,'1.47.0-2.4~exp1ubuntu4.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(54,0,0,54,0,'2.39.3-9ubuntu6.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(55,0,0,55,0,'1:5.45-3build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(56,0,0,56,0,'4.9.0-5build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(57,0,0,57,0,'3.7.0-1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(58,0,0,58,0,'3.7.0-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(59,0,0,59,0,'2.15.0-1.1ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(60,0,0,60,0,'2.15.0-1.1ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(61,0,0,61,0,'2.37-8','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(62,0,0,62,0,'2.37-8','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(63,0,0,63,0,'4:13.2.0-7ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(64,0,0,64,0,'13.3.0-6ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(65,0,0,65,0,'13.3.0-6ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(66,0,0,66,0,'4:13.2.0-7ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(67,0,0,67,0,'26.4.16-2build4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(68,0,0,68,0,'1:5.2.1-2build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(69,0,0,69,0,'4:13.2.0-7ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(70,0,0,70,0,'13.3.0-6ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(71,0,0,71,0,'13.3.0-6ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(72,0,0,72,0,'13.3.0-6ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(73,0,0,73,0,'14.2.0-4ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(74,0,0,74,0,'4:13.2.0-7ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(75,0,0,75,0,'15.0.50.20240403-0ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(76,0,0,76,0,'0.21-14ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(77,0,0,77,0,'0.21-14ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(78,0,0,78,0,'2.88.0','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(79,0,0,79,0,'1.80.1-1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(80,0,0,80,0,'2.80.0-6ubuntu3.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(81,0,0,81,0,'1.2.8-2ubuntu1.4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(82,0,0,82,0,'0.21.4-1build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(83,0,0,83,0,'1:2.43.0-1ubuntu7.3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(84,0,0,84,0,'1:2.43.0-1ubuntu7.3','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(85,0,0,85,0,'1:1.17-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(86,0,0,86,0,'2.4.4-2ubuntu17.4','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(87,0,0,87,0,'2.4.4-2ubuntu17.4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(88,0,0,88,0,'2.4.4-2ubuntu17.4','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(89,0,0,89,0,'2.4.4-2ubuntu17.4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(90,0,0,90,0,'2.4.4-2ubuntu17.4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(91,0,0,91,0,'2.4.4-2ubuntu17.4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(92,0,0,92,0,'2.4.4-2ubuntu17.4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(93,0,0,93,0,'2.4.4-2ubuntu17.4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(94,0,0,94,0,'3.11-4build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(95,0,0,95,0,'1.23.0-3build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(96,0,0,96,0,'1.12-1ubuntu3.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(97,0,0,97,0,'9.65+ds-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(98,0,0,98,0,'3.23+nmu2ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(99,0,0,99,0,'3.3.0-4build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(100,0,0,100,0,'74.2-1ubuntu3.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(101,0,0,101,0,'1.66ubuntu1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(102,0,0,102,0,'3.22.6.0-4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(103,0,0,103,0,'6.1.0-1ubuntu6.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(104,0,0,104,0,'1.8.10-3ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(105,0,0,105,0,'4.16.0-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(106,0,0,106,0,'11+nmu1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(107,0,0,107,0,'1.7.1-3ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(108,0,0,108,0,'2.4.4-2ubuntu17.4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(109,0,0,109,0,'590-2ubuntu2.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(110,0,0,110,0,'14.2.0-4ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(111,0,0,111,0,'14.2.0-4ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(112,0,0,112,0,'2.3.2-1build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(113,0,0,113,0,'0.11-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(114,0,0,114,0,'3.8.2-2ubuntu0.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(115,0,0,115,0,'2:8.3+93ubuntu2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(116,0,0,116,0,'8.3.6-0ubuntu0.24.04.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(117,0,0,117,0,'4.0.1really4.0.1-0ubuntu0.24.04.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(118,0,0,118,0,'1.0.2-1build6','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(119,0,0,119,0,'1.7.2-3.1ubuntu0.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(120,0,0,120,0,'1.6.3-1.1ubuntu7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(121,0,0,121,0,'1.6.3-1.1ubuntu7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(122,0,0,122,0,'1.6.3-1.1ubuntu7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(123,0,0,123,0,'2.8.3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(124,0,0,124,0,'3.7.2-2ubuntu0.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(125,0,0,125,0,'0~20190702+dfsg-4build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(126,0,0,126,0,'0~20190702+dfsg-4build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(127,0,0,127,0,'14.2.0-4ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(128,0,0,128,0,'2.5.6-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(129,0,0,129,0,'14.2.0-4ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(130,0,0,130,0,'1:2.5.2-1build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(131,0,0,131,0,'1:3.1.2-2.1build1.1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(132,0,0,132,0,'1:3.1.2-2.1build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(133,0,0,133,0,'2.1700-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(134,0,0,134,0,'0.8-13ubuntu6.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(135,0,0,135,0,'0.8-13ubuntu6.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(136,0,0,136,0,'0.8-13ubuntu6.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(137,0,0,137,0,'0.28-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(138,0,0,138,0,'0.22-3build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(139,0,0,139,0,'1.5.11-3build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(140,0,0,140,0,'2.42-4ubuntu2.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(141,0,0,141,0,'2.39.3-9ubuntu6.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(142,0,0,142,0,'2.39.3-9ubuntu6.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(143,0,0,143,0,'1:1.3.0-2build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(144,0,0,144,0,'1.1.0-2build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(145,0,0,145,0,'1.1.0-2build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(146,0,0,146,0,'0.12.1-1build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(147,0,0,147,0,'0.12.1-1build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(148,0,0,148,0,'1.0.8-5.1build0.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(149,0,0,149,0,'1.0.8-5.1build0.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(150,0,0,150,0,'2.39-0ubuntu8.7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(151,0,0,151,0,'2.39-0ubuntu8.7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(152,0,0,152,0,'2.39-0ubuntu8.7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(153,0,0,153,0,'2.39-0ubuntu8.7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(154,0,0,154,0,'2.39-0ubuntu8.7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(155,0,0,155,0,'2.39-0ubuntu8.7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(156,0,0,156,0,'1.18.0-3build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(157,0,0,157,0,'0.8.4-2build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(158,0,0,158,0,'1:2.66-5ubuntu2.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(159,0,0,159,0,'1:2.66-5ubuntu2.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(160,0,0,160,0,'0.10.2-1.2ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(161,0,0,161,0,'14.2.0-4ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(162,0,0,162,0,'1:2.17-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(163,0,0,163,0,'4.63-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(164,0,0,164,0,'1:18.1.3-1ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(165,0,0,165,0,'1:18.1.3-1ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(166,0,0,166,0,'1:18.1.3-1ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(167,0,0,167,0,'1:18.1.3-1ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(168,0,0,168,0,'0.35-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(169,0,0,169,0,'0.15-1build6','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(170,0,0,170,0,'0.08-3','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(171,0,0,171,0,'1.36-3','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(172,0,0,172,0,'2.15-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(173,0,0,173,0,'1.6-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(174,0,0,174,0,'1.19-4build4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(175,0,0,175,0,'0.46-1build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(176,0,0,176,0,'1.47.0-2.4~exp1ubuntu4.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(177,0,0,177,0,'3.000003-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(178,0,0,178,0,'4.37-1ubuntu0.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(179,0,0,179,0,'1:4.4.36-4build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(180,0,0,180,0,'1:4.4.36-4build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(181,0,0,181,0,'2:2.7.0-1ubuntu4.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(182,0,0,182,0,'2.42-4ubuntu2.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(183,0,0,183,0,'2.42-4ubuntu2.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(184,0,0,184,0,'2.4.7-1.2ubuntu7.9','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(185,0,0,185,0,'8.5.0-2ubuntu10.7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(186,0,0,186,0,'8.5.0-2ubuntu10.7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(187,0,0,187,0,'8.5.0-2ubuntu10.7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(188,0,0,188,0,'1.25-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(189,0,0,189,0,'0.114-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(190,0,0,190,0,'1:1.37-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(191,0,0,191,0,'2:1.65-1build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(192,0,0,192,0,'1:2.62-1+2024a','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(193,0,0,193,0,'0.2.13-3build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(194,0,0,194,0,'5.3.28+dfsg2-7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(195,0,0,195,0,'4.052-1ubuntu3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(196,0,0,196,0,'1.643-4build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(197,0,0,197,0,'1.14.10-4ubuntu4.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(198,0,0,198,0,'1.0.15-1build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(199,0,0,199,0,'0.271ubuntu3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(200,0,0,200,0,'0.190-1.1ubuntu0.1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(201,0,0,201,0,'0.190-1.1ubuntu0.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(202,0,0,202,0,'1.19-1build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(203,0,0,203,0,'0.008-2build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(204,0,0,204,0,'2.07-1build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(205,0,0,205,0,'0.05-3build4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(206,0,0,206,0,'2.0500-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(207,0,0,207,0,'2:1.02.185-3ubuntu3.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(208,0,0,208,0,'1.22.6ubuntu6.5','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(209,0,0,209,0,'2.7.0+tests-0ubuntu3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(210,0,0,210,0,'0.190-1.1ubuntu0.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(211,0,0,211,0,'0.003-3','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(212,0,0,212,0,'3.1-20230828-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(213,0,0,213,0,'3.1-20230828-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(214,0,0,214,0,'0.190-1.1ubuntu0.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(215,0,0,215,0,'1.05-3','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(216,0,0,216,0,'0.17029-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(217,0,0,217,0,'0.14-3','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(218,0,0,218,0,'2.1.12-stable-9ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(219,0,0,219,0,'1.45-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(220,0,0,220,0,'0.6.24-1build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(221,0,0,221,0,'2.6.1-2ubuntu0.4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(222,0,0,222,0,'2.6.1-2ubuntu0.4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(223,0,0,223,0,'1.47.0-2.4~exp1ubuntu4.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(224,0,0,224,0,'2.4.2-2.1ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(225,0,0,225,0,'0.82+ds-3build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(226,0,0,226,0,'2.4.2-2.1ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(227,0,0,227,0,'2.39.3-9ubuntu6.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(228,0,0,228,0,'3.4.6-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(229,0,0,229,0,'3.4.6-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(230,0,0,230,0,'1.14.0-1build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(231,0,0,231,0,'6.16-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(232,0,0,232,0,'1.118-3','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(233,0,0,233,0,'1.27-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(234,0,0,234,0,'1.20-4','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(235,0,0,235,0,'2.15.0-1.1ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(236,0,0,236,0,'2.15.0-1.1ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(237,0,0,237,0,'2.15.0-1.1ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(238,0,0,238,0,'2.13.2+dfsg-1build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(239,0,0,239,0,'2.13.2+dfsg-1build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(240,0,0,240,0,'1.0.13-3build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(241,0,0,241,0,'1:8.2.6-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(242,0,0,242,0,'13.3.0-6ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(243,0,0,243,0,'14.2.0-4ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(244,0,0,244,0,'1.10.3-2build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(245,0,0,245,0,'1.10.3-2build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(246,0,0,246,0,'2.3.3-9ubuntu5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(247,0,0,247,0,'1.23-5.1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(248,0,0,248,0,'1.23-5.1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(249,0,0,249,0,'1.23-5.1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(250,0,0,250,0,'6.1+dfsg-1build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(251,0,0,251,0,'5.2.2-1ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(252,0,0,252,0,'1.80.1-1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(253,0,0,253,0,'2.80.0-6ubuntu3.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(254,0,0,254,0,'2.80.0-6ubuntu3.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(255,0,0,255,0,'2.80.0-6ubuntu3.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(256,0,0,256,0,'2.80.0-6ubuntu3.8','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(257,0,0,257,0,'2.80.0-6ubuntu3.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(258,0,0,258,0,'2.80.0-6ubuntu3.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(259,0,0,259,0,'2:6.3.0+dfsg-2ubuntu6.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(260,0,0,260,0,'2:6.3.0+dfsg-2ubuntu6.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(261,0,0,261,0,'2:6.3.0+dfsg-2ubuntu6.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(262,0,0,262,0,'3.8.3-1.1ubuntu3.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(263,0,0,263,0,'3.8.3-1.1ubuntu3.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(264,0,0,264,0,'3.8.3-1.1ubuntu3.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(265,0,0,265,0,'3.8.3-1.1ubuntu3.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(266,0,0,266,0,'14.2.0-4ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(267,0,0,267,0,'1.47-3build2.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(268,0,0,268,0,'1.47-3build2.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(269,0,0,269,0,'1.20.7-11','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(270,0,0,270,0,'2.42-4ubuntu2.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(271,0,0,271,0,'1.3.14-2build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(272,0,0,272,0,'1.20.1-6ubuntu2.6','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(273,0,0,273,0,'1.24.2-1ubuntu0.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(274,0,0,274,0,'8.3.0-2build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(275,0,0,275,0,'1.17.6-1ubuntu4.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(276,0,0,276,0,'1.17.6-1ubuntu4.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(277,0,0,277,0,'1.17.6-1ubuntu4.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(278,0,0,278,0,'1.17.6-1ubuntu4.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(279,0,0,279,0,'3.9.1-2.2build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(280,0,0,280,0,'6.11-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(281,0,0,281,0,'2.16-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(282,0,0,282,0,'3.81-1build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(283,0,0,283,0,'3.20-6','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(284,0,0,284,0,'2.97-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(285,0,0,285,0,'5.07-3','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(286,0,0,286,0,'6.11-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(287,0,0,287,0,'6.16-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(288,0,0,288,0,'6.06-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(289,0,0,289,0,'6.45-1ubuntu1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(290,0,0,290,0,'6.01-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(291,0,0,291,0,'14.2.0-4ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(292,0,0,292,0,'74.2-1ubuntu3.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(293,0,0,293,0,'74.2-1ubuntu3.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(294,0,0,294,0,'2.3.7-2build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(295,0,0,295,0,'2.3.7-2build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(296,0,0,296,0,'1.002005-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(297,0,0,297,0,'3.22.6.0-4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(298,0,0,298,0,'1.004-3','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(299,0,0,299,0,'1:1.20-1build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(300,0,0,300,0,'2.085-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(301,0,0,301,0,'1.8.10-3ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(302,0,0,302,0,'1.8.10-3ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(303,0,0,303,0,'20231003.0-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(304,0,0,304,0,'2.0.6-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(305,0,0,305,0,'0.26-3build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(306,0,0,306,0,'14.2.0-4ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(307,0,0,307,0,'2.14-2build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(308,0,0,308,0,'2.1-6.1ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(309,0,0,309,0,'2.1.5-2ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(310,0,0,310,0,'8c-2ubuntu11','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(311,0,0,311,0,'1.7.1-3ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(312,0,0,312,0,'3.6.1+dfsg+~3.5.14-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(313,0,0,313,0,'7.2.6-6','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(314,0,0,314,0,'1.13.4~dfsg+~1.11.4-3','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(315,0,0,315,0,'0.17-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(316,0,0,316,0,'1.9.5-6build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(317,0,0,317,0,'1.20.1-6ubuntu2.6','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(318,0,0,318,0,'1.6.3-3build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(319,0,0,319,0,'31+20240202-2ubuntu7.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(320,0,0,320,0,'1.20.1-6ubuntu2.6','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(321,0,0,321,0,'1.20.1-6ubuntu2.6','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(322,0,0,322,0,'1.6.6-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(323,0,0,323,0,'2.6.10+dfsg-0ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(324,0,0,324,0,'4.0.0+ds-4ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(325,0,0,325,0,'1:18.1.3-1ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(326,0,0,326,0,'1:18.1.3-1ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(327,0,0,327,0,'14.2.0-4ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(328,0,0,328,0,'2.4.7-7build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(329,0,0,329,0,'2.13.7-1.1ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(330,0,0,330,0,'2.13.7-1.1ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(331,0,0,331,0,'2.13.7-1.1ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(332,0,0,332,0,'5.4.6-3build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(333,0,0,333,0,'6.04-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(334,0,0,334,0,'6.13-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(335,0,0,335,0,'1.9.4-1build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(336,0,0,336,0,'5.6.1+really5.4.5-1ubuntu0.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(337,0,0,337,0,'5.6.1+really5.4.5-1ubuntu0.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(338,0,0,338,0,'2.10-2build4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(339,0,0,339,0,'1:5.45-3build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(340,0,0,340,0,'1:5.45-3build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(341,0,0,341,0,'2.21-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(342,0,0,342,0,'1:10.11.14-0ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(343,0,0,343,0,'1.1.0-2build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(344,0,0,344,0,'1.1.0-2build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(345,0,0,345,0,'1.0.5-2build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(346,0,0,346,0,'0.09-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(347,0,0,347,0,'0.016-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(348,0,0,348,0,'2.005005-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(349,0,0,349,0,'2.39.3-9ubuntu6.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(350,0,0,350,0,'2.39.3-9ubuntu6.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(351,0,0,351,0,'1.3.1-1build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(352,0,0,352,0,'4.2.1-1build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(353,0,0,353,0,'0.15-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(354,0,0,354,0,'8.0.45-0ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(355,0,0,355,0,'8.0.45-0ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(356,0,0,356,0,'0.29-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(357,0,0,357,0,'0.27-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(358,0,0,358,0,'6.4+20240113-1ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(359,0,0,359,0,'6.4+20240113-1ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(360,0,0,360,0,'6.4+20240113-1ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(361,0,0,361,0,'0.64-3ubuntu5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(362,0,0,362,0,'6.23-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(363,0,0,363,0,'1.26-3ubuntu0.24.04.1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(364,0,0,364,0,'1.04-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(365,0,0,365,0,'0.73-1build4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(366,0,0,366,0,'1.94-1build4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(367,0,0,367,0,'1.0.9-6build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(368,0,0,368,0,'3.9.1-2.2build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(369,0,0,369,0,'1.0.2-2build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(370,0,0,370,0,'1.0.9-1ubuntu0.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(371,0,0,371,0,'1.2.6-2build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(372,0,0,372,0,'1.59.0-1ubuntu0.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(373,0,0,373,0,'3.7.0-0.3build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(374,0,0,374,0,'3.7.0-0.3build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(375,0,0,375,0,'1.6-3.1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(376,0,0,376,0,'2:4.35-1.1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(377,0,0,377,0,'2:4.35-1.1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(378,0,0,378,0,'2:3.98-1ubuntu0.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(379,0,0,379,0,'2:3.98-1ubuntu0.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(380,0,0,380,0,'2.0.18-1ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(381,0,0,381,0,'13.3.0-6ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(382,0,0,382,0,'14.2.0-4ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(383,0,0,383,0,'2.3.12-1ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(384,0,0,384,0,'2.3.12-1ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(385,0,0,385,0,'2.3.12-1ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(386,0,0,386,0,'6.9.9-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(387,0,0,387,0,'6.9.9-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(388,0,0,388,0,'1.6.2-1.5build13','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(389,0,0,389,0,'1.6.2-1.5build13','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(390,0,0,390,0,'0.25.3-4ubuntu2.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(391,0,0,391,0,'0.25.3-4ubuntu2.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(392,0,0,392,0,'0.40-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(393,0,0,393,0,'0.30-1build4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(394,0,0,394,0,'1.2.8-2ubuntu1.4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(395,0,0,395,0,'2.5-1build6','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(396,0,0,396,0,'1.5.3-5ubuntu5.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(397,0,0,397,0,'1.5.3-5ubuntu5.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(398,0,0,398,0,'1.5.3-5ubuntu5.5','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(399,0,0,399,0,'255.4-1ubuntu8.12','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(400,0,0,400,0,'1.5.3-5ubuntu5.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(401,0,0,401,0,'1.52.1+ds-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(402,0,0,402,0,'1.52.1+ds-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(403,0,0,403,0,'1.52.1+ds-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(404,0,0,404,0,'2.02-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(405,0,0,405,0,'0.015-2build5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(406,0,0,406,0,'1.102-2build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(407,0,0,407,0,'0.31-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(408,0,0,408,0,'1.0.7-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(409,0,0,409,0,'1:3.10.0-2build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(410,0,0,410,0,'10.42-4ubuntu2.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(411,0,0,411,0,'10.42-4ubuntu2.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(412,0,0,412,0,'10.42-4ubuntu2.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(413,0,0,413,0,'10.42-4ubuntu2.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(414,0,0,414,0,'10.42-4ubuntu2.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(415,0,0,415,0,'2:8.39-15build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(416,0,0,416,0,'5.38.2-3.2ubuntu0.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(417,0,0,417,0,'4.13.0+git32-g0d4ed0e-1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(418,0,0,418,0,'1.5.7-2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(419,0,0,419,0,'0.42.2-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(420,0,0,420,0,'1.8.1-2build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(421,0,0,421,0,'1.6.43-5ubuntu0.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(422,0,0,422,0,'1.6.43-5ubuntu0.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(423,0,0,423,0,'124-2ubuntu1.24.04.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(424,0,0,424,0,'124-2ubuntu1.24.04.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(425,0,0,425,0,'1.19+dfsg-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(426,0,0,426,0,'16.13-0ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(427,0,0,427,0,'16.13-0ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(428,0,0,428,0,'0.23-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(429,0,0,429,0,'0.636-1build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(430,0,0,430,0,'2:4.0.4-4ubuntu3.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(431,0,0,431,0,'0.21.2-1.1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(432,0,0,432,0,'0.4-1build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(433,0,0,433,0,'3.12.3-0ubuntu2.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(434,0,0,434,0,'3.12.3-0ubuntu2.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(435,0,0,435,0,'3.12.3-1ubuntu0.12','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(436,0,0,436,0,'3.12.3-1ubuntu0.12','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(437,0,0,437,0,'3.12.3-1ubuntu0.12','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(438,0,0,438,0,'3.12.3-1ubuntu0.12','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(439,0,0,439,0,'14.2.0-4ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(440,0,0,440,0,'8.2-4build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(441,0,0,441,0,'8.2-4build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(442,0,0,442,0,'2.050-3','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(443,0,0,443,0,'0.204-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(444,0,0,444,0,'0.117-2build4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(445,0,0,445,0,'1.4.3-3build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(446,0,0,446,0,'2.002004-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(447,0,0,447,0,'2.4+20151223.gitfa8646d.1-2build7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(448,0,0,448,0,'2.1.28+dfsg1-5ubuntu3.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(449,0,0,449,0,'2.1.28+dfsg1-5ubuntu3.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(450,0,0,450,0,'2.5.5-1ubuntu3.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(451,0,0,451,0,'0.21.4-1build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(452,0,0,452,0,'0.21.4-1build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(453,0,0,453,0,'0.21.4-1build3','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(454,0,0,454,0,'3.5-2ubuntu2.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(455,0,0,455,0,'3.5-2ubuntu2.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(456,0,0,456,0,'3.5-1build5','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(457,0,0,457,0,'3.5-1build5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(458,0,0,458,0,'3.5-2build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(459,0,0,459,0,'3.5-2build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(460,0,0,460,0,'2.42-4ubuntu2.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(461,0,0,461,0,'1.3.2-0.4build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(462,0,0,462,0,'2.14-1ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(463,0,0,463,0,'2.39.3-9ubuntu6.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(464,0,0,464,0,'1.1.10-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(465,0,0,465,0,'1.0.18-1ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(466,0,0,466,0,'1.0.18-1ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(467,0,0,467,0,'3.1.9-4.3build1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(468,0,0,468,0,'3.1.9-4.3build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(469,0,0,469,0,'0.48-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(470,0,0,470,0,'3.45.1-1ubuntu2.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(471,0,0,471,0,'3.45.1-1ubuntu2.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(472,0,0,472,0,'1.47.0-2.4~exp1ubuntu4.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(473,0,0,473,0,'0.10.6-2ubuntu0.3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(474,0,0,474,0,'1.11.0-4.1build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(475,0,0,475,0,'3.0.13-0ubuntu3.7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(476,0,0,476,0,'1.1.0g-2ubuntu4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(477,0,0,477,0,'3.0.13-0ubuntu3.7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(478,0,0,478,0,'13.3.0-6ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(479,0,0,479,0,'14.2.0-4ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(480,0,0,480,0,'2.2.0-4build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(481,0,0,481,0,'0.990-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(482,0,0,482,0,'0.001013-3','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(483,0,0,483,0,'0.14-3build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(484,0,0,484,0,'0.929-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(485,0,0,485,0,'0.27-1build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(486,0,0,486,0,'2.006008-1ubuntu1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(487,0,0,487,0,'255.4-1ubuntu8.12','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(488,0,0,488,0,'255.4-1ubuntu8.12','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(489,0,0,489,0,'4.19.0-3ubuntu0.24.04.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(490,0,0,490,0,'4.19.0-3ubuntu0.24.04.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(491,0,0,491,0,'8.6.14+dfsg-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(492,0,0,492,0,'2.38-2build4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(493,0,0,493,0,'1.61-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(494,0,0,494,0,'0.1.29-2build1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(495,0,0,495,0,'0.1.29-2build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(496,0,0,496,0,'4.5.1+git230720-4ubuntu2.4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(497,0,0,497,0,'1.21-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(498,0,0,498,0,'2.3300-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(499,0,0,499,0,'6.4+20240113-1ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(500,0,0,500,0,'10.0.0+dfsg-2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(501,0,0,501,0,'1.3.4+ds-1.1build1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(502,0,0,502,0,'1.3.4+ds-1.1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(503,0,0,503,0,'8.6.14-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(504,0,0,504,0,'2.4.7-7build1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(505,0,0,505,0,'0.31-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(506,0,0,506,0,'14.2.0-4ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(507,0,0,507,0,'14.2.0-4ubuntu2~24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(508,0,0,508,0,'0.0.8-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(509,0,0,509,0,'255.4-1ubuntu8.12','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(510,0,0,510,0,'1.19.2-1ubuntu3.7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(511,0,0,511,0,'1.1-2build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(512,0,0,512,0,'0.19-3','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(513,0,0,513,0,'1.6.2-3build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(514,0,0,514,0,'5.27-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(515,0,0,515,0,'2.5-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(516,0,0,516,0,'2:1.0.27-1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(517,0,0,517,0,'2.39.3-9ubuntu6.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(518,0,0,518,0,'1.48.0-1.1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(519,0,0,519,0,'0.63-1build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(520,0,0,520,0,'1.3.2-0.4build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(521,0,0,521,0,'7.6.q-33','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(522,0,0,522,0,'6.76-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(523,0,0,523,0,'6.02-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(524,0,0,524,0,'2:1.8.7-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(525,0,0,525,0,'2:1.8.7-1build1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(526,0,0,526,0,'2:1.8.7-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(527,0,0,527,0,'1:1.0.9-1build6','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(528,0,0,528,0,'1:1.0.9-1build6','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(529,0,0,529,0,'1.15-1ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(530,0,0,530,0,'1.15-1ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(531,0,0,531,0,'1.15-1ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(532,0,0,532,0,'1.15-1ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(533,0,0,533,0,'1:1.1.3-0ubuntu6','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(534,0,0,534,0,'1:1.1.3-0ubuntu6','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(535,0,0,535,0,'2:1.3.4-1build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(536,0,0,536,0,'2:1.3.4-1build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(537,0,0,537,0,'2.3.6-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(538,0,0,538,0,'2.3.6-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(539,0,0,539,0,'2.0207+dfsg+really+2.0134-1build4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(540,0,0,540,0,'1.12-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(541,0,0,541,0,'2.47-1ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(542,0,0,542,0,'1.09-3','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(543,0,0,543,0,'0.51-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(544,0,0,544,0,'1.02+dfsg-3','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(545,0,0,545,0,'2.9.14+dfsg-1.3ubuntu3.7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(546,0,0,546,0,'2.9.14+dfsg-1.3ubuntu3.7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(547,0,0,547,0,'0.3.18-1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(548,0,0,548,0,'1.2.39-5build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(549,0,0,549,0,'1.2.39-5build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(550,0,0,550,0,'1.2.39-5build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(551,0,0,551,0,'1.2.39-5build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(552,0,0,552,0,'1.2.39-5build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(553,0,0,553,0,'1.2.39-5build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(554,0,0,554,0,'1:3.5.17-1build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(555,0,0,555,0,'1:0.9.10-1.1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(556,0,0,556,0,'1:0.9.10-1.1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(557,0,0,557,0,'1.1.39-0exp1ubuntu0.24.04.3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(558,0,0,558,0,'1.1.39-0exp1ubuntu0.24.04.3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(559,0,0,559,0,'1:1.2.3-1build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(560,0,0,560,0,'1:1.2.3-1build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(561,0,0,561,0,'0.005-2build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(562,0,0,562,0,'1.8.10-3ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(563,0,0,563,0,'0.8.2-2build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(564,0,0,564,0,'0.2.5-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(565,0,0,565,0,'0.2.5-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(566,0,0,566,0,'0.89+ds-1ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(567,0,0,567,0,'1.31-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(568,0,0,568,0,'1.74-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(569,0,0,569,0,'4.8.12-3.1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(570,0,0,570,0,'4.8.12-3.1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(571,0,0,571,0,'1.7.3-1.1ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(572,0,0,572,0,'1.5.5+dfsg2-2build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(573,0,0,573,0,'1.5.5+dfsg2-2build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(574,0,0,574,0,'6.8.0-101.101','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(575,0,0,575,0,'1:18.0-59~exp2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(576,0,0,576,0,'1:18.1.3-1ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(577,0,0,577,0,'1:18.0-59~exp2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(578,0,0,578,0,'1:18.1.3-1ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(579,0,0,579,0,'1:18.1.3-1ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(580,0,0,580,0,'1:18.1.3-1ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(581,0,0,581,0,'1:18.1.3-1ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(582,0,0,582,0,'1:18.1.3-1ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(583,0,0,583,0,'1:18.0-59~exp2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(584,0,0,584,0,'2.39-0ubuntu8.7','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(585,0,0,585,0,'1:4.13+dfsg1-4ubuntu3.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(586,0,0,586,0,'1.47.0-2.4~exp1ubuntu4.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(587,0,0,587,0,'12.0-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(588,0,0,588,0,'4.95.0-1build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(589,0,0,589,0,'47','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(590,0,0,590,0,'2.9.0rel.0-2build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(591,0,0,591,0,'2.9.0rel.0-2build2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(592,0,0,592,0,'1.4.19-4build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(593,0,0,593,0,'3.70+nmu1ubuntu1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(594,0,0,594,0,'4.3-4.1build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(595,0,0,595,0,'2.12.0-4build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(596,0,0,596,0,'6.7-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(597,0,0,597,0,'6.7-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(598,0,0,598,0,'1:10.11.14-0ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(599,0,0,599,0,'1:10.11.14-0ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(600,0,0,600,0,'1:10.11.14-0ubuntu0.24.04.1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(601,0,0,601,0,'1:10.11.14-0ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(602,0,0,602,0,'1:10.11.14-0ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(603,0,0,603,0,'1:10.11.14-0ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(604,0,0,604,0,'1:10.11.14-0ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(605,0,0,605,0,'1:10.11.14-0ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(606,0,0,606,0,'1:10.11.14-0ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(607,0,0,607,0,'1:10.11.14-0ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(608,0,0,608,0,'1.3.4.20240123-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(609,0,0,609,0,'10.1.0','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(610,0,0,610,0,'0.32.1-ubuntu24.04u1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(611,0,0,611,0,'29.3.0-ubuntu24.04u1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(612,0,0,612,0,'5.1.0-ubuntu24.04u1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(613,0,0,613,0,'2.2.1-ubuntu24.04u1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(614,0,0,614,0,'29.3.0-ubuntu24.04u1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(615,0,0,615,0,'1.4.0-ubuntu24.04u2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(616,0,0,616,0,'0.19.0-ubuntu24.04u2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(617,0,0,617,0,'0.69-1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(618,0,0,618,0,'2.39.3-9ubuntu6.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(619,0,0,619,0,'5.8+1.1.0build1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(620,0,0,620,0,'7.2-2ubuntu0.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(621,0,0,621,0,'1.19-0.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(622,0,0,622,0,'6.4+20240113-1ubuntu2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(623,0,0,623,0,'6.4+20240113-1ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(624,0,0,624,0,'2.10-0.1ubuntu4.4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(625,0,0,625,0,'6.4','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(626,0,0,626,0,'3.9.1-2.2build1.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(627,0,0,627,0,'1.0.9-1ubuntu0.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(628,0,0,628,0,'1:9.6p1-3ubuntu13.14','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(629,0,0,629,0,'1:9.6p1-3ubuntu13.14','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(630,0,0,630,0,'1:9.6p1-3ubuntu13.14','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(631,0,0,631,0,'3.0.13-0ubuntu3.7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(632,0,0,632,0,'1.2.8-2ubuntu1.4','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(633,0,0,633,0,'1:4.13+dfsg1-4ubuntu3.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(634,0,0,634,0,'2.7.6-7build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(635,0,0,635,0,'0.0~2024.03.31-1ubuntu0.1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(636,0,0,636,0,'1:3.10.0-2build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(637,0,0,637,0,'5.38.2-3.2ubuntu0.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(638,0,0,638,0,'5.38.2-3.2ubuntu0.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(639,0,0,639,0,'5.38.2-3.2ubuntu0.2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(640,0,0,640,0,'7build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(641,0,0,641,0,'2:8.3+93ubuntu2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(642,0,0,642,0,'2:8.3+93ubuntu2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(643,0,0,643,0,'2:93ubuntu2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(644,0,0,644,0,'2:8.3+93ubuntu2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(645,0,0,645,0,'2:8.3+93ubuntu2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(646,0,0,646,0,'2:8.3+93ubuntu2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(647,0,0,647,0,'2:8.3+93ubuntu2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(648,0,0,648,0,'2:8.3+93ubuntu2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(649,0,0,649,0,'2:8.3+93ubuntu2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(650,0,0,650,0,'2:8.3+93ubuntu2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(651,0,0,651,0,'8.3.6-0ubuntu0.24.04.8','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(652,0,0,652,0,'8.3.6-0ubuntu0.24.04.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(653,0,0,653,0,'8.3.6-0ubuntu0.24.04.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(654,0,0,654,0,'8.3.6-0ubuntu0.24.04.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(655,0,0,655,0,'8.3.6-0ubuntu0.24.04.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(656,0,0,656,0,'8.3.6-0ubuntu0.24.04.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(657,0,0,657,0,'8.3.6-0ubuntu0.24.04.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(658,0,0,658,0,'8.3.6-0ubuntu0.24.04.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(659,0,0,659,0,'8.3.6-0ubuntu0.24.04.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(660,0,0,660,0,'8.3.6-0ubuntu0.24.04.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(661,0,0,661,0,'8.3.6-0ubuntu0.24.04.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(662,0,0,662,0,'8.3.6-0ubuntu0.24.04.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(663,0,0,663,0,'8.3.6-0ubuntu0.24.04.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(664,0,0,664,0,'8.3.6-0ubuntu0.24.04.8','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(665,0,0,665,0,'2.8-1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(666,0,0,666,0,'1.2.1-3ubuntu5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(667,0,0,667,0,'1.8.1-2build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(668,0,0,668,0,'1.8.1-2build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(669,0,0,669,0,'1.8.1-2build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(670,0,0,670,0,'124-2ubuntu1.24.04.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(671,0,0,671,0,'1.37ubuntu0.1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(672,0,0,672,0,'2:4.0.4-4ubuntu3.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(673,0,0,673,0,'23.7-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(674,0,0,674,0,'1.8.5-2build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(675,0,0,675,0,'2.7.7ubuntu5.2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(676,0,0,676,0,'3.12.3-0ubuntu2.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(677,0,0,677,0,'2.7.7ubuntu5.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(678,0,0,678,0,'1.7.0-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(679,0,0,679,0,'1.16.0-2build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(680,0,0,680,0,'41.0.7-4ubuntu0.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(681,0,0,681,0,'1.3.2-5build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(682,0,0,682,0,'3.12.3-0ubuntu2.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(683,0,0,683,0,'1.9.0-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(684,0,0,684,0,'3.48.2-1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(685,0,0,685,0,'0.20.4-3','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(686,0,0,686,0,'2.7.0-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(687,0,0,687,0,'1.11.0-6','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(688,0,0,688,0,'0.14.6-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(689,0,0,689,0,'1.0.6-3','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(690,0,0,690,0,'1:18.1.3-1ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(691,0,0,691,0,'3.12.3-0ubuntu2.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(692,0,0,692,0,'3.2.2-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(693,0,0,693,0,'24.0-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(694,0,0,694,0,'24.0+dfsg-1ubuntu1.3','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(695,0,0,695,0,'68.1.2-2ubuntu1.2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(696,0,0,696,0,'2.17.2+dfsg-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(697,0,0,697,0,'3.1.1-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(698,0,0,698,0,'68.1.2-2ubuntu1.2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(699,0,0,699,0,'1.16.0-4','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(700,0,0,700,0,'0.99.49.4','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(701,0,0,701,0,'1.3.6-5','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(702,0,0,702,0,'0.42.0-2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(703,0,0,703,0,'6.0.1-2build2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(704,0,0,704,0,'3.12.3-1ubuntu0.12','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(705,0,0,705,0,'3.12.3-1ubuntu0.12','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(706,0,0,706,0,'3.12.3-1ubuntu0.12','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(707,0,0,707,0,'3.1-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(708,0,0,708,0,'8.2-4build1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(709,0,0,709,0,'1.4.2-0ubuntu7','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(710,0,0,710,0,'3.2.7-1ubuntu1.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(711,0,0,711,0,'4.9-2build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(712,0,0,712,0,'0.0.22','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(713,0,0,713,0,'1.31','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(714,0,0,714,0,'1.8.0.0-4build3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(715,0,0,715,0,'0.99.49.4','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(716,0,0,716,0,'3.45.1-1ubuntu2.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(717,0,0,717,0,'1.1.2ubuntu1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(718,0,0,718,0,'6.8-0ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(719,0,0,719,0,'1.9.15p5-3ubuntu5.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(720,0,0,720,0,'3.0.12-2.2ubuntu1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(721,0,0,721,0,'255.4-1ubuntu8.12','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(722,0,0,722,0,'255.4-1ubuntu8.12','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(723,0,0,723,0,'255.4-1ubuntu8.12','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(724,0,0,724,0,'3.08-6ubuntu3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(725,0,0,725,0,'1.35+dfsg-3build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(726,0,0,726,0,'8.6.14build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(727,0,0,727,0,'8.6.14build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(728,0,0,728,0,'8.6.14+dfsg-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(729,0,0,729,0,'8.6.14+dfsg-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(730,0,0,730,0,'8.6.14build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(731,0,0,731,0,'8.6.14build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(732,0,0,732,0,'8.6.14-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(733,0,0,733,0,'8.6.14-1build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(734,0,0,734,0,'2.1.1-2ubuntu3.24.04.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(735,0,0,735,0,'2025b-0ubuntu0.24.04.1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(736,0,0,736,0,'2023.11.28.1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(737,0,0,737,0,'3.0043+nmu1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(738,0,0,738,0,'2.3.12-1ubuntu0.24.04.1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(739,0,0,739,0,'2.3.12-1ubuntu0.24.04.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(740,0,0,740,0,'0.2.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(741,0,0,741,0,'6.0-28ubuntu4.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(742,0,0,742,0,'1:017-3build1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(743,0,0,743,0,'2.39.3-9ubuntu6.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(744,0,0,744,0,'2.39.3-9ubuntu6.5','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(745,0,0,745,0,'1:3.22.0-0ubuntu3','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(746,0,0,746,0,'2:9.1.0016-1ubuntu7.9','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(747,0,0,747,0,'2:9.1.0016-1ubuntu7.9','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(748,0,0,748,0,'2:9.1.0016-1ubuntu7.9','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(749,0,0,749,0,'2:9.1.0016-1ubuntu7.9','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(750,0,0,750,0,'2:9.1.0016-1ubuntu7.9','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(751,0,0,751,0,'1.21.4-1ubuntu4.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(752,0,0,752,0,'1:7.7+23ubuntu3','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(753,0,0,753,0,'2023.2-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(754,0,0,754,0,'2023.2-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(755,0,0,755,0,'0.19','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(756,0,0,756,0,'1:1.11-1.1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(757,0,0,757,0,'1.2.1-1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(758,0,0,758,0,'2.1-9','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(759,0,0,759,0,'1.4.0-1','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(760,0,0,760,0,'2:9.1.0016-1ubuntu7.9','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(761,0,0,761,0,'5.6.1+really5.4.5-1ubuntu0.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(762,0,0,762,0,'3.0-13ubuntu0.2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(763,0,0,763,0,'1:1.3.dfsg-3.1ubuntu2.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(764,0,0,764,0,'1:1.3.dfsg-3.1ubuntu2.1','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(765,0,0,765,0,'5.9-6ubuntu2','amd64',NULL,1,NULL,'2026-05-04 12:33:37'),
+(766,0,0,766,0,'5.9-6ubuntu2','all',NULL,1,NULL,'2026-05-04 12:33:37'),
+(767,0,0,767,0,'24.04.4 LTS (Noble Numbat)','x86_64',NULL,1,NULL,'2026-05-04 12:33:37');
 /*!40000 ALTER TABLE `glpi_softwareversions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -17953,7 +20540,7 @@ CREATE TABLE `glpi_users` (
   KEY `auths_id` (`auths_id`),
   KEY `default_requesttypes_id` (`default_requesttypes_id`),
   KEY `user_dn_hash` (`user_dn_hash`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -17963,11 +20550,12 @@ CREATE TABLE `glpi_users` (
 LOCK TABLES `glpi_users` WRITE;
 /*!40000 ALTER TABLE `glpi_users` DISABLE KEYS */;
 INSERT INTO `glpi_users` VALUES
-(2,'glpi','$2y$10$OJ7KH.0pOmx/ALFcYzDn2.NIQH/TQnfHj5xkfdts7tg4b4LCqG7a2','2026-04-28 08:04:10',NULL,NULL,NULL,NULL,NULL,0,NULL,0,20,1,NULL,0,1,'2026-05-04 11:03:15','2026-05-04 11:03:15',NULL,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'$2y$10$pf2WZ2.n1RHLPjBimSMbYObPgL3mxXNS86ZXFDGpjqdNvIph/CQGS','2026-05-04 11:03:15',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(2,'glpi','$2y$10$OJ7KH.0pOmx/ALFcYzDn2.NIQH/TQnfHj5xkfdts7tg4b4LCqG7a2','2026-04-28 08:04:10',NULL,NULL,NULL,NULL,NULL,0,NULL,0,20,1,NULL,0,1,'2026-05-04 12:23:50','2026-05-04 12:23:50',NULL,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'$2y$10$EJYgSOh3x.7WOYGpyeeMZe.8GC7sCzAYO3W3dQk3Jd17hJurnh.1y','2026-05-04 12:23:50',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (3,'post-only','$2y$10$dTMar1F3ef5X/H1IjX9gYOjQWBR1K4bERGf4/oTPxFtJE/c3vXILm',NULL,NULL,NULL,NULL,NULL,NULL,0,'en_GB',0,20,1,NULL,0,1,NULL,NULL,NULL,1,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,0,0,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL),
 (4,'tech','$2y$10$.xEgErizkp6Az0z.DHyoeOoenuh0RcsX4JapBk2JMD6VI17KtB1lO',NULL,NULL,NULL,NULL,NULL,NULL,0,'en_GB',0,20,1,NULL,0,1,NULL,NULL,NULL,1,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,0,0,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL),
 (5,'Kevin','$2y$10$Gf/qdwAFM3AxdNz5Qvof9ezrroRVcPqnpQV6zR5tXqN4f1P7BR1tu','2026-04-28 07:54:27',NULL,NULL,NULL,NULL,NULL,0,'en_GB',0,20,1,NULL,0,1,'2026-04-28 08:00:23','2026-04-28 08:01:48',NULL,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'$2y$10$jLJo6okkVFuu92gk3.F8j.YXw6FLkYggfWOW.ElgdshTZrJgVJa2e','2026-04-28 08:00:23',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(6,'glpi-system','',NULL,NULL,NULL,NULL,'Support',NULL,0,NULL,0,NULL,1,NULL,0,1,NULL,NULL,NULL,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,0,0,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL);
+(6,'glpi-system','',NULL,NULL,NULL,NULL,'Support',NULL,0,NULL,0,NULL,1,NULL,0,1,NULL,NULL,NULL,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,0,0,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL),
+(7,'Normal','$2y$10$lbyNacg0sgvRz6oruawawOZBIHyPjGVC3ACroqlIWk.OkSVMv48b6','2026-05-04 11:54:45','','','','','Normal',0,NULL,0,NULL,1,'',0,1,NULL,'2026-05-04 11:54:45',NULL,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2026-05-04 11:54:45',0,NULL,NULL,0,0,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `glpi_users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -18198,4 +20786,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-04 11:36:21
+-- Dump completed on 2026-05-04 12:44:32
